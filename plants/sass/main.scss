@@ -1,9 +1,10 @@
-@import './common';
-
 @import './utils/variables';
 @import './utils/placeholders';
+@import './utils/reset';
+
+@import './common';
 
 @import './components/buttons';
 
 @import './layout/header';
-@import './layout/footer';
+// @import './layout/footer';

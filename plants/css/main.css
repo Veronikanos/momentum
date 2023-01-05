@@ -1,1 +1,99 @@
-/*# sourceMappingURL=main.css.map */
+.btn {
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.75;
+  color: #717171;
+  background-color: #edf2ec;
+}
+
+ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  min-width: 1140px;
+  padding-right: 109px;
+  padding-left: 109px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: "Inika", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  border-radius: 10px;
+  border: 2px solid #e06733;
+  outline: none;
+  cursor: pointer;
+}
+.btn:hover, .btn:focus {
+  background-color: #e06733;
+  color: #ffffff;
+}
+
+.logo {
+  font-size: 16px;
+  line-height: 1.3125;
+  font-family: "Inika", serif;
+  color: #000000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  gap: 46px;
+}/*# sourceMappingURL=main.css.map */

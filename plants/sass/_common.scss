@@ -13,6 +13,10 @@ body {
   background-color: $background-color;
 }
 
+ul {
+  list-style: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -24,4 +28,10 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.container {
+  min-width: 1140px;
+  padding-right: 109px;
+  padding-left: 109px;
 }
