@@ -1,0 +1,33 @@
+.welcome {
+  &-btn {
+    padding: 14px 27px;
+    margin-bottom: 31.4px;
+  }
+
+  &-container {
+    display: flex;
+    gap: 224px;
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+
+  &__wrapper {
+    padding-top: 36px;
+    // padding-bottom: 94px;
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: calc(50 / 45);
+    margin-bottom: 42px;
+
+    & span {
+      color: $green;
+    }
+  }
+
+  &__text {
+    margin-bottom: 48px;
+  }
+}

@@ -14,4 +14,20 @@
     display: flex;
     gap: 46px;
   }
+
+  &-item {
+    padding: 42px 0;
+    &__link {
+      line-height: calc(50 / 16);
+      font-family: 'Inika', serif;
+      font-size: 16px;
+      color: $links-color;
+    }
+
+    &__link:hover,
+    &__link:focus {
+      color: $orange;
+      @extend %transition;
+    }
+  }
 }
