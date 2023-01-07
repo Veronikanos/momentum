@@ -6,8 +6,8 @@ html {
 body {
   // width: 1440px;
   margin: 0 auto;
-  // font-family: 'Inika', serif;
-  font-family: 'Inter', sans-serif;
+  // font-family: $inika;
+  font-family: $inter;
   font-weight: 400;
   font-size: 20px;
   line-height: calc(35 / 20);
@@ -33,4 +33,12 @@ body {
   margin: 0 auto;
   padding-right: 109px;
   padding-left: 109px;
+}
+
+.header {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: calc(52 / 40);
+  font-family: '', serif;
+  color: $green;
 }

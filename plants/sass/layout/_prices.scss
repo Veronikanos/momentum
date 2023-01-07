@@ -1,0 +1,76 @@
+.prices {
+  background-color: $white;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 115px;
+  }
+
+  &-block {
+    display: inline-block;
+    padding: 34px 41px;
+    border-radius: 20px;
+    border: 1px solid $border-color;
+
+    &__item {
+      min-width: 250px;
+      background-color: $background-color;
+      border-radius: 20px;
+      border: 1px solid inherit;
+    }
+
+    &__item:not(:last-of-type) {
+      margin-bottom: 32px;
+    }
+
+    & span {
+      display: block;
+      padding: 16px 40px;
+      font-family: $inter;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 20px;
+      color: $black;
+    }
+  }
+
+  &__header {
+    margin-bottom: 60px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: calc(48 / 40);
+    font-family: $inter;
+    color: $black;
+  }
+
+  .contact {
+    text-align: end;
+    background-image: url('../img/leafsSmall.png');
+    background-repeat: no-repeat;
+  }
+
+  .contact-header {
+    max-width: 452px;
+    margin-bottom: 38px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: calc(50 / 40);
+    font-family: $inter;
+    color: $black;
+
+    & span {
+      color: $green;
+    }
+  }
+
+  .contact-btn {
+    padding: 12px 31px;
+    color: $orange;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: calc(26 / 20);
+    font-family: $inika;
+  }
+}

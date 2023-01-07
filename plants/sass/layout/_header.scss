@@ -1,7 +1,7 @@
 .logo {
   font-size: 16px;
   line-height: calc(21 / 16);
-  font-family: 'Inika', serif;
+  font-family: $inika;
   color: #000000;
 }
 
@@ -19,7 +19,7 @@
     padding: 42px 0;
     &__link {
       line-height: calc(50 / 16);
-      font-family: 'Inika', serif;
+      font-family: $inika;
       font-size: 16px;
       color: $links-color;
     }

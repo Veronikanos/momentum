@@ -1,0 +1,62 @@
+.service {
+  .wrapper {
+    display: flex;
+    gap: 142px;
+    margin-bottom: 90px;
+  }
+  &-container {
+    padding-top: 40px;
+    padding-bottom: 121px;
+  }
+  &__header {
+    max-width: 306px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 38px;
+    align-items: center;
+  }
+
+  &-btn {
+    min-width: 161px;
+    padding: 12px 40px;
+    font-size: 20px;
+    font-family: $inika;
+    line-height: calc(26 / 20);
+    color: $orange;
+  }
+  &__gallery {
+    display: flex;
+    row-gap: 55px;
+    column-gap: 117px;
+    flex-wrap: wrap;
+    &-item {
+      max-width: 329px;
+    }
+    &-image {
+      border-radius: 20px 20px 0 0;
+    }
+    &-text {
+      padding-top: 10px;
+      padding-bottom: 36px;
+      text-align: center;
+      border: 1px solid $border-color;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .gallery-item-header {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      font-family: $inter;
+      color: $orange;
+
+      & + p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: calc(20 / 16);
+      }
+    }
+  }
+}
