@@ -11,14 +11,20 @@
   &-block {
     display: inline-block;
     padding: 34px 41px;
+    margin-bottom: 14px;
     border-radius: 20px;
     border: 1px solid $border-color;
 
     &__item {
       min-width: 250px;
+      padding: 16px 40px;
       background-color: $background-color;
       border-radius: 20px;
       border: 1px solid inherit;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     &__item:not(:last-of-type) {
@@ -26,14 +32,22 @@
     }
 
     & span {
-      display: block;
-      padding: 16px 40px;
+      display: inline-block;
+      // padding: 16px 40px;
       font-family: $inter;
       font-weight: 700;
       font-size: 20px;
       line-height: 20px;
       color: $black;
     }
+
+    &__btn {
+      background-color: $arrow-background;
+    }
+  }
+
+  &-arrow {
+    stroke: $grey;
   }
 
   &__header {
@@ -49,6 +63,7 @@
     text-align: end;
     background-image: url('../img/leafsSmall.png');
     background-repeat: no-repeat;
+    background-position: right bottom;
   }
 
   .contact-header {
@@ -72,5 +87,10 @@
     font-size: 20px;
     line-height: calc(26 / 20);
     font-family: $inika;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
   }
 }

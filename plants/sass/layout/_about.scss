@@ -2,15 +2,24 @@
   background-color: $white;
 
   &-container {
-    display: flex;
-    gap: 153px;
     padding-top: 93px;
     padding-bottom: 94px;
   }
 
+  &__wrapper {
+    width: 549px;
+    padding-top: 68px;
+    padding-bottom: 61px;
+  }
+
+  &__background {
+    background-image: url('../img/houseplant.png');
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
   &__header {
-    max-block-size: 463px;
-    margin-top: 68px;
+    max-width: 463px;
     margin-bottom: 40px;
 
     & span {

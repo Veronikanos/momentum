@@ -5,14 +5,19 @@
   }
 
   &-container {
-    display: flex;
-    gap: 224px;
     padding-top: 62px;
     padding-bottom: 62px;
   }
 
+  &__background {
+    background-image: url('../img/leafs.png');
+    background-repeat: no-repeat;
+  }
+
   &__wrapper {
+    width: 549px;
     padding-top: 36px;
+    margin-left: auto;
     // padding-bottom: 94px;
   }
 
