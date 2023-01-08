@@ -1,9 +1,15 @@
 footer {
   background-color: #fff;
   color: $black;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: calc(50 / 20);
 
   a:hover {
-    text-decoration: underline;
+    // text-decoration: underline;
+    color: $orange;
+    fill: $orange;
+    stroke: $orange;
   }
 
   .footer {
@@ -12,16 +18,26 @@ footer {
       padding-bottom: 40px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
     &__contacts {
-      display: flex;
+      display: inline-flex;
       gap: 20px;
     }
 
     &__social {
-      display: flex;
+      display: inline-flex;
       gap: 30px;
+    }
+
+    &__social a {
+      width: 32px;
+      height: 32px;
+      @extend %centered;
+      transition-property: fill, stroke, color;
+      transition-duration: $transition-duration;
+      transition-timing-function: $transition-timing-function;
     }
   }
 }

@@ -1,11 +1,11 @@
-.circle-btn {
+footer .footer__social a, .circle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-item__link:hover, .nav-item__link:focus, .btn {
-  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
 ul {
@@ -370,21 +370,34 @@ body {
 footer {
   background-color: #fff;
   color: #000000;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 2.5;
 }
 footer a:hover {
-  text-decoration: underline;
+  color: #e06733;
+  fill: #e06733;
+  stroke: #e06733;
 }
 footer .footer-container {
   padding-top: 40px;
   padding-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 footer .footer__contacts {
-  display: flex;
+  display: inline-flex;
   gap: 20px;
 }
 footer .footer__social {
-  display: flex;
+  display: inline-flex;
   gap: 30px;
+}
+footer .footer__social a {
+  width: 32px;
+  height: 32px;
+  transition-property: fill, stroke, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }/*# sourceMappingURL=main.css.map */
