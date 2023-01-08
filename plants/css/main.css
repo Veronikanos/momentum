@@ -365,4 +365,26 @@ body {
 }
 .contacts__btn {
   background-color: #aea1a1;
+}
+
+footer {
+  background-color: #fff;
+  color: #000000;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .footer-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__contacts {
+  display: flex;
+  gap: 20px;
+}
+footer .footer__social {
+  display: flex;
+  gap: 30px;
 }/*# sourceMappingURL=main.css.map */

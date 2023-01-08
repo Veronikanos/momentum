@@ -7,6 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Plants</title>
+    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -33,19 +34,19 @@
           </a>
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="nav-item__link" href="">Home</a>
+              <a class="nav-item__link" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-item__link" href="">About us</a>
+              <a class="nav-item__link" href="#about">About us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-item__link" href="">Service</a>
+              <a class="nav-item__link" href="#service">Service</a>
             </li>
             <li class="nav-item">
-              <a class="nav-item__link" href="">Price</a>
+              <a class="nav-item__link" href="#price">Price</a>
             </li>
             <li class="nav-item">
-              <a class="nav-item__link" href="">Contacts</a>
+              <a class="nav-item__link" href="#contacts">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -71,7 +72,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="container about-container">
           <div class="about__background">
             <div class="about__wrapper">
@@ -92,7 +93,7 @@
           </div>
         </div>
       </section>
-      <section class="service">
+      <section class="service" id="service">
         <div class="container service-container">
           <div class="wrapper">
             <h2 class="header service__header">
@@ -180,7 +181,7 @@
           </ul>
         </div>
       </section>
-      <section class="prices">
+      <section class="prices" id="prices">
         <div class="container prices-container">
           <div class="">
             <h2 class="prices__header">Prices</h2>
@@ -225,7 +226,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <div class="container contacts-container">
           <div class="wrapper">
             <h2 class="header contacts__header">Contact us</h2>
@@ -241,6 +242,23 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="container footer-container">
+        <ul class="footer__contacts">
+          <li>&copy;</li>
+          <li>2022</li>
+          <li><a href="https://github.com/Veronikanos">github</a></li>
+        </ul>
+        <a href="https://rs.school/js-stage0/"
+          >Rolling Scopes School</a
+        >
+        <ul class="footer__social">
+          <li><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
