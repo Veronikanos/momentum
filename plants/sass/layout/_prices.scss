@@ -10,7 +10,7 @@
 
   &-block {
     display: inline-block;
-    padding: 34px 41px;
+    padding: 32px 41px;
     margin-bottom: 14px;
     border-radius: 20px;
     border: 1px solid $border-color;
@@ -28,7 +28,7 @@
     }
 
     &__item:not(:last-of-type) {
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     & span {
@@ -81,12 +81,13 @@
   }
 
   .contact-btn {
-    padding: 12px 31px;
+    padding: 11px 32px;
     color: $orange;
     font-weight: 700;
     font-size: 20px;
     line-height: calc(26 / 20);
     font-family: $inika;
+    border-radius: 5px;
 
     &:hover,
     &:focus {

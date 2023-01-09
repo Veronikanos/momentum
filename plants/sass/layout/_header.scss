@@ -25,7 +25,7 @@
   }
 
   &-item {
-    padding: 42px 0;
+    padding: 42px 1px;
     &__link {
       line-height: calc(50 / 16);
       font-family: $inika;
@@ -36,6 +36,7 @@
     &__link:hover,
     &__link:focus {
       color: $orange;
+      font-weight: 700;
       @extend %transition;
     }
   }

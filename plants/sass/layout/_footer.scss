@@ -6,7 +6,6 @@ footer {
   line-height: calc(50 / 20);
 
   a:hover {
-    // text-decoration: underline;
     color: $orange;
     fill: $orange;
     stroke: $orange;
@@ -21,14 +20,10 @@ footer {
       align-items: center;
     }
 
-    &__contacts {
-      display: inline-flex;
-      gap: 20px;
-    }
-
+    &__contacts,
     &__social {
       display: inline-flex;
-      gap: 30px;
+      gap: 20px;
     }
 
     &__social a {

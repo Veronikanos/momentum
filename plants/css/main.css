@@ -44,8 +44,6 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.75;
-  color: #717171;
-  background-color: #edf2ec;
 }
 
 .visually-hidden {
@@ -128,7 +126,7 @@ body {
   gap: 46px;
 }
 .nav-item {
-  padding: 42px 0;
+  padding: 42px 1px;
 }
 .nav-item__link {
   line-height: 3.125;
@@ -138,10 +136,11 @@ body {
 }
 .nav-item__link:hover, .nav-item__link:focus {
   color: #e06733;
+  font-weight: 700;
 }
 
 .welcome-btn {
-  padding: 14px 27px;
+  padding: 11px 26px;
   margin-bottom: 31.4px;
 }
 .welcome-container {
@@ -189,19 +188,25 @@ body {
 }
 .about__header {
   max-width: 463px;
-  margin-bottom: 40px;
+  margin-bottom: 39px;
 }
 .about__header span {
   color: #e06733;
 }
 
+.about__text {
+  width: 605px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
 .service .wrapper {
   display: flex;
   gap: 142px;
-  margin-bottom: 90px;
+  margin-bottom: 78px;
 }
 .service-container {
-  padding-top: 40px;
+  padding-top: 38px;
   padding-bottom: 121px;
 }
 .service__header {
@@ -214,10 +219,11 @@ body {
 }
 .service-btn {
   min-width: 161px;
-  padding: 12px 40px;
+  padding: 10px 40px;
   font-size: 20px;
   font-family: "Inika", serif;
   line-height: 1.3;
+  border-radius: 5px;
   color: #e06733;
 }
 .service__gallery {
@@ -241,7 +247,7 @@ body {
   border-radius: 0 0 20px 20px;
 }
 .service__gallery .gallery-item-header {
-  margin-bottom: 10px;
+  margin-bottom: 13px;
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
@@ -265,7 +271,7 @@ body {
 }
 .prices-block {
   display: inline-block;
-  padding: 34px 41px;
+  padding: 32px 41px;
   margin-bottom: 14px;
   border-radius: 20px;
   border: 1px solid #e3e1d5;
@@ -281,7 +287,7 @@ body {
   align-items: center;
 }
 .prices-block__item:not(:last-of-type) {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 .prices-block span {
   display: inline-block;
@@ -324,19 +330,20 @@ body {
   color: #499a18;
 }
 .prices .contact-btn {
-  padding: 12px 31px;
+  padding: 11px 32px;
   color: #e06733;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.3;
   font-family: "Inika", serif;
+  border-radius: 5px;
 }
 .prices .contact-btn:hover, .prices .contact-btn:focus {
   color: #ffffff;
 }
 
 .contacts-container {
-  padding-top: 60px;
+  padding-top: 55px;
 }
 .contacts .wrapper {
   height: 497px;
@@ -386,13 +393,9 @@ footer .footer-container {
   justify-content: space-between;
   align-items: center;
 }
-footer .footer__contacts {
+footer .footer__contacts, footer .footer__social {
   display: inline-flex;
   gap: 20px;
-}
-footer .footer__social {
-  display: inline-flex;
-  gap: 30px;
 }
 footer .footer__social a {
   width: 32px;

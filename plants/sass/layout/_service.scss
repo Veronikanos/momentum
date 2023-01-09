@@ -2,10 +2,10 @@
   .wrapper {
     display: flex;
     gap: 142px;
-    margin-bottom: 90px;
+    margin-bottom: 78px;
   }
   &-container {
-    padding-top: 40px;
+    padding-top: 38px;
     padding-bottom: 121px;
   }
   &__header {
@@ -19,10 +19,11 @@
 
   &-btn {
     min-width: 161px;
-    padding: 12px 40px;
+    padding: 10px 40px;
     font-size: 20px;
     font-family: $inika;
     line-height: calc(26 / 20);
+    border-radius: 5px;
     color: $orange;
   }
   &__gallery {
@@ -45,7 +46,7 @@
     }
 
     .gallery-item-header {
-      margin-bottom: 10px;
+      margin-bottom: 13px;
       font-size: 20px;
       font-weight: 700;
       line-height: 1;
