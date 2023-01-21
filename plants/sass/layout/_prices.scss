@@ -3,21 +3,33 @@
 
   &-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding-top: 40px;
-    padding-bottom: 115px;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 19px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      padding-top: 40px;
+      padding-bottom: 115px;
+    }
   }
 
   &-block {
     display: inline-block;
-    padding: 32px 41px;
+    padding: 29px 22px;
     margin-bottom: 14px;
     border-radius: 20px;
     border: 1px solid $border-color;
 
+    @media screen and (min-width: 768px) {
+      padding: 32px 41px;
+    }
+
     &__item {
-      min-width: 250px;
-      padding: 16px 40px;
+      min-width: 180px;
+      padding: 15px 40px 15px 30px;
       background-color: $background-color;
       border-radius: 20px;
       border: 1px solid inherit;
@@ -25,10 +37,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media screen and (min-width: 768px) {
+        min-width: 250px;
+        padding: 16px 40px 16px 40px;
+      }
     }
 
     &__item:not(:last-of-type) {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 30px;
+      }
     }
 
     & span {
@@ -36,9 +57,13 @@
       // padding: 16px 40px;
       font-family: $inter;
       font-weight: 700;
-      font-size: 20px;
-      line-height: 20px;
+      font-size: 15px;
+      line-height: calc(20 / 15);
       color: $black;
+      @media screen and (min-width: 768px) {
+        font-size: 20px;
+        line-height: calc(20 / 20);
+      }
     }
 
     &__btn {
@@ -51,12 +76,17 @@
   }
 
   &__header {
-    margin-bottom: 60px;
-    font-size: 40px;
+    margin-bottom: 38px;
+    font-size: 25px;
     font-weight: 700;
-    line-height: calc(48 / 40);
+    line-height: calc(30 / 25);
     font-family: $inter;
     color: $black;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 60px;
+      font-size: 40px;
+      line-height: calc(48 / 40);
+    }
   }
 
   .contact {

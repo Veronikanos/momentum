@@ -44,9 +44,9 @@ body {
   line-height: calc(33 / 25);
   font-family: $inika;
   color: $green;
+  font-weight: 400;
 
   @media screen and (min-width: 768px) {
-    font-weight: 400;
     font-size: 40px;
     line-height: calc(52 / 40);
   }

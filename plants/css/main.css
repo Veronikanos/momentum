@@ -80,10 +80,10 @@ body {
   line-height: 1.32;
   font-family: "Inika", serif;
   color: #499a18;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .header {
-    font-weight: 400;
     font-size: 40px;
     line-height: 1.3;
   }
@@ -312,6 +312,7 @@ body {
 }
 .service-container {
   padding-top: 30px;
+  padding-bottom: 27px;
 }
 @media screen and (min-width: 768px) {
   .service-container {
@@ -415,20 +416,35 @@ body {
 }
 .prices-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-top: 40px;
-  padding-bottom: 115px;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 19px;
+}
+@media screen and (min-width: 768px) {
+  .prices-container {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 115px;
+  }
 }
 .prices-block {
   display: inline-block;
-  padding: 32px 41px;
+  padding: 29px 22px;
   margin-bottom: 14px;
   border-radius: 20px;
   border: 1px solid #e3e1d5;
 }
+@media screen and (min-width: 768px) {
+  .prices-block {
+    padding: 32px 41px;
+  }
+}
 .prices-block__item {
-  min-width: 250px;
-  padding: 16px 40px;
+  min-width: 180px;
+  padding: 15px 40px 15px 30px;
   background-color: #edf2ec;
   border-radius: 20px;
   border: 1px solid inherit;
@@ -436,16 +452,33 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .prices-block__item {
+    min-width: 250px;
+    padding: 16px 40px 16px 40px;
+  }
+}
 .prices-block__item:not(:last-of-type) {
-  margin-bottom: 30px;
+  margin-bottom: 12px;
+}
+@media screen and (min-width: 768px) {
+  .prices-block__item:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
 }
 .prices-block span {
   display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 1.3333333333;
   color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .prices-block span {
+    font-size: 20px;
+    line-height: 1;
+  }
 }
 .prices-block__btn {
   background-color: #d9d9d9;
@@ -454,12 +487,19 @@ body {
   stroke: #717171;
 }
 .prices__header {
-  margin-bottom: 60px;
-  font-size: 40px;
+  margin-bottom: 38px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 1.2;
   font-family: "Inter", sans-serif;
   color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .prices__header {
+    margin-bottom: 60px;
+    font-size: 40px;
+    line-height: 1.2;
+  }
 }
 .prices .contact {
   text-align: end;
