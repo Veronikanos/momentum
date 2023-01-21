@@ -1,52 +1,89 @@
 .service {
   .wrapper {
     display: flex;
-    gap: 142px;
-    margin-bottom: 78px;
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 38px;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      gap: 142px;
+      margin-bottom: 78px;
+    }
   }
   &-container {
-    padding-top: 38px;
-    padding-bottom: 121px;
+    padding-top: 30px;
+    @media screen and (min-width: 768px) {
+      padding-top: 38px;
+      padding-bottom: 121px;
+    }
   }
   &__header {
-    max-width: 306px;
+    max-width: 187px;
+    @media screen and (min-width: 768px) {
+      max-width: 306px;
+    }
   }
   &__buttons {
     display: flex;
-    gap: 38px;
+    flex-wrap: wrap;
+    gap: 10px;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+      gap: 38px;
+    }
   }
 
   &-btn {
-    min-width: 161px;
-    padding: 10px 40px;
-    font-size: 20px;
+    padding: 6px 29px 7px;
+    min-width: 121px;
+    font-size: 15px;
     font-family: $inika;
-    line-height: calc(26 / 20);
+    line-height: calc(20 / 15);
     border-radius: 5px;
     color: $orange;
+
+    @media screen and (min-width: 768px) {
+      min-width: 161px;
+      padding: 10px 40px;
+    }
   }
+
   &__gallery {
     display: flex;
-    row-gap: 55px;
-    column-gap: 117px;
+    gap: 34px;
     flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+      row-gap: 55px;
+      column-gap: 117px;
+    }
+
     &-item {
-      max-width: 329px;
+      max-width: 279px;
+      @media screen and (min-width: 768px) {
+        max-width: 329px;
+      }
     }
     &-image {
       border-radius: 20px 20px 0 0;
     }
     &-text {
       padding-top: 10px;
-      padding-bottom: 36px;
+      padding-bottom: 18px;
       text-align: center;
       border: 1px solid $border-color;
       border-radius: 0 0 20px 20px;
+      @media screen and (min-width: 768px) {
+        padding-bottom: 36px;
+      }
     }
 
     .gallery-item-header {
-      margin-bottom: 13px;
+      margin-bottom: 10px;
       font-size: 20px;
       font-weight: 700;
       line-height: 1;
@@ -54,6 +91,12 @@
       color: $orange;
 
       & + p {
+        max-width: 201px;
+        margin: 0 auto;
+
+        @media screen and (min-width: 768px) {
+          max-width: 100%;
+        }
         font-size: 16px;
         font-weight: 400;
         line-height: calc(20 / 16);
