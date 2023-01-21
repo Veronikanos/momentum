@@ -7,7 +7,6 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 25px;
-    padding-bottom: 19px;
     @media screen and (min-width: 768px) {
       flex-direction: row;
       align-items: flex-start;
@@ -19,7 +18,7 @@
   &-block {
     display: inline-block;
     padding: 29px 22px;
-    margin-bottom: 14px;
+    margin-bottom: 21px;
     border-radius: 20px;
     border: 1px solid $border-color;
 
@@ -60,6 +59,7 @@
       font-size: 15px;
       line-height: calc(20 / 15);
       color: $black;
+
       @media screen and (min-width: 768px) {
         font-size: 20px;
         line-height: calc(20 / 20);
@@ -90,20 +90,34 @@
   }
 
   .contact {
-    text-align: end;
-    background-image: url('../img/leafsSmall.png');
-    background-repeat: no-repeat;
-    background-position: right bottom;
+    text-align: center;
+    max-width: 230px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+      padding-bottom: 0;
+      background-image: url('../img/leafsSmall.png');
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      text-align: end;
+    }
   }
 
   .contact-header {
     max-width: 452px;
-    margin-bottom: 38px;
-    font-size: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: calc(50 / 40);
+    line-height: calc(35 / 20);
     font-family: $inter;
     color: $black;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 38px;
+      font-size: 40px;
+      line-height: calc(50 / 40);
+    }
 
     & span {
       color: $green;
@@ -111,13 +125,18 @@
   }
 
   .contact-btn {
-    padding: 11px 32px;
+    padding: 8px 24px 6px;
     color: $orange;
     font-weight: 700;
-    font-size: 20px;
-    line-height: calc(26 / 20);
+    font-size: 15px;
+    line-height: calc(20 / 15);
     font-family: $inika;
     border-radius: 5px;
+    @media screen and (min-width: 768px) {
+      padding: 11px 32px;
+      font-size: 20px;
+      line-height: calc(26 / 20);
+    }
 
     &:hover,
     &:focus {

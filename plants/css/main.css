@@ -420,7 +420,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-top: 25px;
-  padding-bottom: 19px;
 }
 @media screen and (min-width: 768px) {
   .prices-container {
@@ -433,7 +432,7 @@ body {
 .prices-block {
   display: inline-block;
   padding: 29px 22px;
-  margin-bottom: 14px;
+  margin-bottom: 21px;
   border-radius: 20px;
   border: 1px solid #e3e1d5;
 }
@@ -502,60 +501,110 @@ body {
   }
 }
 .prices .contact {
-  text-align: end;
-  background-image: url("../img/leafsSmall.png");
-  background-repeat: no-repeat;
-  background-position: right bottom;
+  text-align: center;
+  max-width: 230px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .prices .contact {
+    max-width: 100%;
+    padding-bottom: 0;
+    background-image: url("../img/leafsSmall.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    text-align: end;
+  }
 }
 .prices .contact-header {
   max-width: 452px;
-  margin-bottom: 38px;
-  font-size: 40px;
+  margin-bottom: 20px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.75;
   font-family: "Inter", sans-serif;
   color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .prices .contact-header {
+    margin-bottom: 38px;
+    font-size: 40px;
+    line-height: 1.25;
+  }
 }
 .prices .contact-header span {
   color: #499a18;
 }
 .prices .contact-btn {
-  padding: 11px 32px;
+  padding: 8px 24px 6px;
   color: #e06733;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.3;
+  font-size: 15px;
+  line-height: 1.3333333333;
   font-family: "Inika", serif;
   border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .prices .contact-btn {
+    padding: 11px 32px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
 }
 .prices .contact-btn:hover, .prices .contact-btn:focus {
   color: #ffffff;
 }
 
 .contacts-container {
-  padding-top: 55px;
+  padding-top: 25px;
+}
+@media screen and (min-width: 768px) {
+  .contacts-container {
+    padding-top: 55px;
+  }
 }
 .contacts .wrapper {
-  height: 497px;
+  height: 418px;
+  background-size: 100px;
+  background-position: bottom;
   background-image: url("../img/contact_woman.png");
   background-repeat: no-repeat;
 }
+@media screen and (min-width: 768px) {
+  .contacts .wrapper {
+    height: 497px;
+  }
+}
 .contacts__header {
-  margin-bottom: 37px;
+  margin-bottom: 80px;
   font-weight: 700;
   text-align: center;
-  font-size: 40px;
-  line-height: 1.3;
+  font-size: 25px;
+  line-height: 1.32;
+}
+@media screen and (min-width: 768px) {
+  .contacts__header {
+    margin-bottom: 37px;
+    font-size: 40px;
+    line-height: 1.3;
+  }
 }
 .contacts .select {
-  width: 450px;
-  margin-left: auto;
-  padding: 5px 35px 5px 20px;
+  max-width: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 7px 20px 7px 20px;
+  margin: 0 auto;
   background: #d6e7d2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (min-width: 768px) {
+  .contacts .select {
+    width: 450px;
+    margin-left: auto;
+    padding: 5px 35px 5px 20px;
+  }
 }
 .contacts .select-arrow {
   stroke: #ffffff;
