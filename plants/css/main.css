@@ -165,33 +165,70 @@ body {
   }
 }
 .welcome-btn {
-  padding: 11px 26px;
-  margin-bottom: 31.4px;
+  padding: 5px 16px;
+  font-size: 10px;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .welcome-btn {
+    padding: 11px 26px;
+    margin-bottom: 31.4px;
+  }
+}
+.welcome__text {
+  font-size: 16px;
+  line-height: 1.5625;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 768px) {
+  .welcome__text {
+    margin-bottom: 48px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.75;
+  }
 }
 .welcome-container {
-  padding-top: 62px;
-  padding-bottom: 62px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
-.welcome__background {
-  background-image: url("../img/leafs.png");
-  background-repeat: no-repeat;
+@media screen and (min-width: 768px) {
+  .welcome-container {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .welcome__background {
+    background-image: url("../img/leafs.png");
+    background-repeat: no-repeat;
+  }
 }
 .welcome__wrapper {
-  width: 549px;
-  padding-top: 36px;
   margin-left: auto;
 }
+@media screen and (min-width: 768px) {
+  .welcome__wrapper {
+    width: 549px;
+    padding-top: 36px;
+  }
+}
 .welcome__header {
+  font-size: 25px;
   font-weight: 700;
-  font-size: 45px;
-  line-height: 1.1111111111;
-  margin-bottom: 42px;
+  line-height: 1.4;
+  margin-bottom: 21px;
+}
+@media screen and (min-width: 768px) {
+  .welcome__header {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.1111111111;
+    margin-bottom: 42px;
+  }
 }
 .welcome__header span {
   color: #499a18;
-}
-.welcome__text {
-  margin-bottom: 48px;
 }
 
 .about {
