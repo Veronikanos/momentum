@@ -1,38 +1,90 @@
 .welcome {
   &-btn {
-    padding: 11px 26px;
-    margin-bottom: 31.4px;
-  }
-
-  &-container {
-    padding-top: 62px;
-    padding-bottom: 62px;
-  }
-
-  &__background {
-    background-image: url('../img/leafs.png');
-    background-repeat: no-repeat;
-  }
-
-  &__wrapper {
-    width: 549px;
-    padding-top: 36px;
-    margin-left: auto;
-    // padding-bottom: 94px;
-  }
-
-  &__header {
-    font-weight: 700;
-    font-size: 45px;
-    line-height: calc(50 / 45);
-    margin-bottom: 42px;
-
-    & span {
-      color: $green;
+    padding: 7px 16px 5px;
+    font-size: 10px;
+    line-height: calc(20 / 10);
+    @media screen and (min-width: 768px) {
+      padding: 11px 26px;
+      margin-bottom: 31.4px;
+      font-size: 16px;
+      line-height: calc(20 / 16);
     }
   }
 
   &__text {
-    margin-bottom: 48px;
+    font-size: 17px;
+    line-height: calc(25 / 17);
+    margin-bottom: 25px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 48px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: calc(35 / 20);
+      max-width: 100%;
+    }
+  }
+
+  &-container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    @media screen and (min-width: 768px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding-top: 62px;
+      padding-bottom: 62px;
+    }
+  }
+
+  &__background {
+    @media screen and (min-width: 768px) {
+      background-image: url('../img/leafs.png');
+      background-repeat: no-repeat;
+
+      background-size: 280px;
+      background-position-x: right;
+    }
+    @media screen and (min-width: 1440px) {
+      background-size: 100%;
+    }
+  }
+
+  &__wrapper {
+    @media screen and (min-width: 768px) {
+      width: 341px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-left: auto;
+      width: 549px;
+      padding-top: 36px;
+    }
+  }
+
+  &__header {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: calc(35 / 25);
+    margin-bottom: 21px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 35px;
+      line-height: calc(50 / 35);
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1440px) {
+      font-size: 45px;
+      line-height: calc(50 / 45);
+      margin-bottom: 42px;
+    }
+
+    & span {
+      color: $green;
+    }
   }
 }

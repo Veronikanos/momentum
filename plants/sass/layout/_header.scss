@@ -1,6 +1,6 @@
 .logo {
   display: flex;
-  gap: 1px;
+  // gap: 1px;
   align-items: baseline;
   font-size: 16px;
   line-height: calc(21 / 16);
@@ -20,12 +20,20 @@
   align-items: center;
 
   &-list {
-    display: flex;
-    gap: 46px;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      gap: 46px;
+    }
   }
 
   &-item {
     padding: 42px 1px;
+    @media screen and (min-width: 768px) and (max-width: 1339px) {
+      padding: 35px 1px;
+    }
+
     &__link {
       line-height: calc(50 / 16);
       font-family: $inika;
@@ -34,10 +42,28 @@
     }
 
     &__link:hover,
-    &__link:focus {
+    &__link:focus,
+    &__link:active {
       color: $orange;
       font-weight: 700;
       @extend %transition;
+    }
+  }
+  button {
+    padding: 0;
+  }
+
+  .burger-menu {
+    background-color: transparent;
+    border: none;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &__icon {
+      // padding: 0;
     }
   }
 }

@@ -1,31 +1,61 @@
 .contacts {
   &-container {
-    padding-top: 55px;
+    padding: 25px 42px 0 42px;
+
+    @media screen and (min-width: 768px) {
+      padding-top: 40px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding-top: 55px;
+    }
   }
 
   & .wrapper {
-    height: 497px;
+    height: 420px;
+    background-size: 100px;
+    background-position: bottom;
     background-image: url('../img/contact_woman.png');
     background-repeat: no-repeat;
+    @media screen and (min-width: 768px) {
+      background-size: 200px;
+      height: 700px;
+    }
+    @media screen and (min-width: 1440px) {
+      height: 497px;
+    }
   }
 
   &__header {
-    margin-bottom: 37px;
+    margin-bottom: 80px;
     font-weight: 700;
     text-align: center;
-    font-size: 40px;
-    line-height: calc(52 / 40);
+    font-size: 25px;
+    line-height: calc(33 / 25);
+    @media screen and (min-width: 768px) {
+      margin-bottom: 100px;
+      font-size: 40px;
+      line-height: calc(52 / 40);
+    }
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 37px;
+    }
   }
 
   .select {
-    width: 450px;
-    margin-left: auto;
-    padding: 5px 35px 5px 20px;
+    // max-width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 7px 20px 7px 20px;
+    margin: 0 auto;
+
     background: $select-background;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media screen and (min-width: 768px) {
+      width: 450px;
+      margin-left: auto;
+      padding: 5px 35px 5px 20px;
+    }
 
     &-arrow {
       stroke: $white;

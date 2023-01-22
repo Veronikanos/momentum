@@ -3,21 +3,39 @@
 
   &-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding-top: 40px;
-    padding-bottom: 115px;
+    align-items: center;
+    padding-top: 25px;
+    @media screen and (min-width: 768px) {
+      padding-top: 32px;
+      padding-bottom: 86px;
+      flex-direction: row;
+      gap: 20px;
+    }
+    @media screen and (min-width: 1440px) {
+      // justify-content: space-between;
+      gap: 0;
+      align-items: flex-start;
+      padding-top: 40px;
+      padding-bottom: 115px;
+    }
   }
 
   &-block {
     display: inline-block;
-    padding: 32px 41px;
-    margin-bottom: 14px;
+    padding: 29px 22px;
+    margin-bottom: 21px;
     border-radius: 20px;
     border: 1px solid $border-color;
 
+    @media screen and (min-width: 768px) {
+      padding: 32px 41px;
+    }
+
     &__item {
-      min-width: 250px;
-      padding: 16px 40px;
+      min-width: 180px;
+      padding: 15px 40px 15px 30px;
       background-color: $background-color;
       border-radius: 20px;
       border: 1px solid inherit;
@@ -25,10 +43,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media screen and (min-width: 768px) {
+        min-width: 250px;
+        padding: 16px 40px 16px 40px;
+      }
+      @media screen and (min-width: 1440px) {
+        min-width: 250px;
+      }
     }
 
     &__item:not(:last-of-type) {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 30px;
+      }
     }
 
     & span {
@@ -36,9 +66,14 @@
       // padding: 16px 40px;
       font-family: $inter;
       font-weight: 700;
-      font-size: 20px;
-      line-height: 20px;
+      font-size: 15px;
+      line-height: calc(20 / 15);
       color: $black;
+
+      @media screen and (min-width: 768px) {
+        font-size: 20px;
+        line-height: calc(20 / 20);
+      }
     }
 
     &__btn {
@@ -51,29 +86,64 @@
   }
 
   &__header {
-    margin-bottom: 60px;
-    font-size: 40px;
+    margin-bottom: 38px;
+    text-align: center;
+    font-size: 25px;
     font-weight: 700;
-    line-height: calc(48 / 40);
+    line-height: calc(30 / 25);
     font-family: $inter;
     color: $black;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+      text-align: start;
+      font-size: 38px;
+      line-height: calc(48 / 38);
+    }
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 60px;
+    }
   }
 
   .contact {
-    text-align: end;
-    background-image: url('../img/leafsSmall.png');
-    background-repeat: no-repeat;
-    background-position: right bottom;
+    text-align: center;
+    max-width: 230px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+      height: 358px;
+      padding-bottom: 0;
+      background-image: url('../img/leafsSmall.png');
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      text-align: end;
+      margin-top: 110px;
+    }
+    @media screen and (min-width: 1400px) {
+      margin: 0 auto;
+      height: fit-content;
+    }
   }
 
   .contact-header {
     max-width: 452px;
-    margin-bottom: 38px;
-    font-size: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: calc(50 / 40);
+    line-height: calc(35 / 20);
     font-family: $inter;
     color: $black;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 26px;
+      font-size: 25px;
+      line-height: calc(35 / 25);
+    }
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 38px;
+      font-size: 40px;
+      line-height: calc(50 / 40);
+    }
 
     & span {
       color: $green;
@@ -81,13 +151,18 @@
   }
 
   .contact-btn {
-    padding: 11px 32px;
+    padding: 8px 24px 6px;
     color: $orange;
     font-weight: 700;
-    font-size: 20px;
-    line-height: calc(26 / 20);
+    font-size: 15px;
+    line-height: calc(20 / 15);
     font-family: $inika;
     border-radius: 5px;
+    @media screen and (min-width: 768px) {
+      padding: 11px 32px;
+      font-size: 20px;
+      line-height: calc(26 / 20);
+    }
 
     &:hover,
     &:focus {

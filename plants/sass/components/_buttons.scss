@@ -1,16 +1,22 @@
 .btn {
   display: inline-block;
   // padding: 10px 56px;
-
-  font-family: $inter;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: calc(20 / 16);
+  line-height: calc(20 / 15);
+  font-family: $inter;
+  border: 1px solid $orange;
   border-radius: 10px;
-  border: 2px solid $orange;
   outline: none;
   background-color: transparent;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: calc(20 / 16);
+    border: 2px solid $orange;
+  }
 
   @extend %transition;
 
