@@ -1,6 +1,6 @@
 .welcome {
   &-btn {
-    padding: 5px 16px;
+    padding: 7px 16px 5px;
     font-size: 10px;
     line-height: calc(20 / 10);
     @media screen and (min-width: 768px) {
@@ -10,14 +10,17 @@
   }
 
   &__text {
+    max-width: 315px;
     font-size: 16px;
-    line-height: calc(25 / 16);
+    line-height: 25px;
+    // line-height: calc(25 / 16);
     margin-bottom: 25px;
     @media screen and (min-width: 768px) {
       margin-bottom: 48px;
       font-size: 20px;
       font-weight: 400;
       line-height: calc(35 / 20);
+      max-width: 100%;
     }
   }
 

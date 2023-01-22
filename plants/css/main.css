@@ -179,7 +179,7 @@ body {
   }
 }
 .welcome-btn {
-  padding: 5px 16px;
+  padding: 7px 16px 5px;
   font-size: 10px;
   line-height: 2;
 }
@@ -190,8 +190,9 @@ body {
   }
 }
 .welcome__text {
+  max-width: 315px;
   font-size: 16px;
-  line-height: 1.5625;
+  line-height: 25px;
   margin-bottom: 25px;
 }
 @media screen and (min-width: 768px) {
@@ -200,6 +201,7 @@ body {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.75;
+    max-width: 100%;
   }
 }
 .welcome-container {
@@ -271,7 +273,10 @@ body {
 }
 .about__header {
   text-align: center;
+  max-width: 288px;
   margin-bottom: 13px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (min-width: 768px) {
   .about__header {
@@ -618,7 +623,12 @@ footer {
   color: #000000;
   font-weight: 400;
   font-size: 20px;
-  line-height: 2.5;
+  line-height: 1.2;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    line-height: 2.5;
+  }
 }
 footer a:hover {
   color: #e06733;
@@ -626,11 +636,21 @@ footer a:hover {
   stroke: #e06733;
 }
 footer .footer-container {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 21px;
+  padding-bottom: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-container {
+    flex-direction: row;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 0;
+  }
 }
 footer .footer__contacts, footer .footer__social {
   display: inline-flex;

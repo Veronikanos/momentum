@@ -3,7 +3,11 @@ footer {
   color: $black;
   font-weight: 400;
   font-size: 20px;
-  line-height: calc(50 / 20);
+  line-height: calc(24 / 20);
+
+  @media screen and (min-width: 768px) {
+    line-height: calc(50 / 20);
+  }
 
   a:hover {
     color: $orange;
@@ -13,11 +17,19 @@ footer {
 
   .footer {
     &-container {
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding-top: 21px;
+      padding-bottom: 7px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-direction: column;
+      gap: 15px;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        gap: 0;
+      }
     }
 
     &__contacts,
