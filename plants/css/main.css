@@ -62,14 +62,12 @@ body {
 }
 
 .container {
-  min-width: 320px;
   margin: 0 auto;
   padding-right: 25px;
   padding-left: 25px;
 }
 @media screen and (min-width: 768px) {
   .container {
-    min-width: 1440px;
     padding-right: 109px;
     padding-left: 109px;
   }
@@ -190,7 +188,6 @@ body {
   }
 }
 .welcome__text {
-  max-width: 315px;
   font-size: 16px;
   line-height: 25px;
   margin-bottom: 25px;
@@ -371,9 +368,6 @@ body {
     -moz-column-gap: 117px;
          column-gap: 117px;
   }
-}
-.service__gallery-item {
-  max-width: 279px;
 }
 @media screen and (min-width: 768px) {
   .service__gallery-item {
@@ -561,7 +555,7 @@ body {
 }
 
 .contacts-container {
-  padding-top: 25px;
+  padding: 25px 42px 0 42px;
 }
 @media screen and (min-width: 768px) {
   .contacts-container {
@@ -569,7 +563,7 @@ body {
   }
 }
 .contacts .wrapper {
-  height: 418px;
+  height: 420px;
   background-size: 100px;
   background-position: bottom;
   background-image: url("../img/contact_woman.png");
@@ -595,7 +589,6 @@ body {
   }
 }
 .contacts .select {
-  max-width: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;

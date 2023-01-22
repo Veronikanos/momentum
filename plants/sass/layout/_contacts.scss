@@ -1,13 +1,14 @@
 .contacts {
   &-container {
-    padding-top: 25px;
+    padding: 25px 42px 0 42px;
+
     @media screen and (min-width: 768px) {
       padding-top: 55px;
     }
   }
 
   & .wrapper {
-    height: 418px;
+    height: 420px;
     background-size: 100px;
     background-position: bottom;
     background-image: url('../img/contact_woman.png');
@@ -31,7 +32,7 @@
   }
 
   .select {
-    max-width: 300px;
+    // max-width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
