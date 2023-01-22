@@ -6,7 +6,10 @@
     margin-bottom: 38px;
 
     @media screen and (min-width: 768px) {
-      display: flex;
+      gap: 42px;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: 1440px) {
       flex-direction: row;
       gap: 142px;
       margin-bottom: 78px;
@@ -16,6 +19,10 @@
     padding-top: 30px;
     padding-bottom: 27px;
     @media screen and (min-width: 768px) {
+      padding-top: 60px;
+      padding-bottom: 63px;
+    }
+    @media screen and (min-width: 1440px) {
       padding-top: 38px;
       padding-bottom: 121px;
     }
@@ -40,8 +47,8 @@
   &-btn {
     padding: 6px 29px 7px;
     min-width: 121px;
-    font-size: 15px;
     font-family: $inika;
+    font-size: 15px;
     line-height: calc(20 / 15);
     border-radius: 5px;
     color: $orange;
@@ -49,6 +56,8 @@
     @media screen and (min-width: 768px) {
       min-width: 161px;
       padding: 10px 40px;
+      font-size: 20px;
+      line-height: calc(26 / 20);
     }
   }
 
@@ -59,26 +68,40 @@
     justify-content: center;
 
     @media screen and (min-width: 768px) {
+      row-gap: 38px;
+      column-gap: 107px;
+    }
+    @media screen and (min-width: 1440px) {
       row-gap: 55px;
       column-gap: 117px;
     }
 
     &-item {
-      // max-width: 279px;
-      @media screen and (min-width: 768px) {
+      max-width: 280px;
+      @media screen and (min-width: 1440px) {
         max-width: 329px;
       }
     }
     &-image {
       border-radius: 20px 20px 0 0;
+      @media screen and (max-width: 767px) {
+        margin: 0 auto;
+      }
     }
     &-text {
       padding-top: 10px;
       padding-bottom: 18px;
+      padding-left: 40px;
+      padding-right: 40px;
       text-align: center;
       border: 1px solid $border-color;
       border-radius: 0 0 20px 20px;
       @media screen and (min-width: 768px) {
+        padding-bottom: 20px;
+        padding-left: 38px;
+        padding-right: 38px;
+      }
+      @media screen and (min-width: 1440px) {
         padding-bottom: 36px;
       }
     }
@@ -92,15 +115,15 @@
       color: $orange;
 
       & + p {
-        max-width: 201px;
+        // max-width: 201px;
         margin: 0 auto;
-
-        @media screen and (min-width: 768px) {
-          max-width: 100%;
-        }
         font-size: 16px;
         font-weight: 400;
         line-height: calc(20 / 16);
+
+        @media screen and (min-width: 1440px) {
+          // max-width: 100%;
+        }
       }
     }
   }
