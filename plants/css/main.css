@@ -68,6 +68,12 @@ body {
 }
 @media screen and (min-width: 768px) {
   .container {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
     padding-right: 109px;
     padding-left: 109px;
   }
@@ -80,7 +86,7 @@ body {
   color: #499a18;
   font-weight: 400;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
   .header {
     font-size: 40px;
     line-height: 1.3;
@@ -152,6 +158,11 @@ body {
 .nav-item {
   padding: 42px 1px;
 }
+@media screen and (min-width: 768px) and (max-width: 1339px) {
+  .nav-item {
+    padding: 35px 1px;
+  }
+}
 .nav-item__link {
   line-height: 3.125;
   font-family: "Inika", serif;
@@ -185,6 +196,8 @@ body {
   .welcome-btn {
     padding: 11px 26px;
     margin-bottom: 31.4px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 }
 .welcome__text {
@@ -193,6 +206,11 @@ body {
   margin-bottom: 25px;
 }
 @media screen and (min-width: 768px) {
+  .welcome__text {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1440px) {
   .welcome__text {
     margin-bottom: 48px;
     font-size: 20px;
@@ -207,6 +225,12 @@ body {
 }
 @media screen and (min-width: 768px) {
   .welcome-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .welcome-container {
     padding-top: 62px;
     padding-bottom: 62px;
   }
@@ -215,13 +239,23 @@ body {
   .welcome__background {
     background-image: url("../img/leafs.png");
     background-repeat: no-repeat;
+    background-size: 280px;
+    background-position-x: right;
   }
 }
-.welcome__wrapper {
-  margin-left: auto;
+@media screen and (min-width: 1440px) {
+  .welcome__background {
+    background-size: 100%;
+  }
 }
 @media screen and (min-width: 768px) {
   .welcome__wrapper {
+    width: 341px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .welcome__wrapper {
+    margin-left: auto;
     width: 549px;
     padding-top: 36px;
   }
@@ -234,8 +268,14 @@ body {
 }
 @media screen and (min-width: 768px) {
   .welcome__header {
+    font-size: 35px;
+    line-height: 1.4285714286;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .welcome__header {
     font-size: 45px;
-    font-weight: 700;
     line-height: 1.1111111111;
     margin-bottom: 42px;
   }

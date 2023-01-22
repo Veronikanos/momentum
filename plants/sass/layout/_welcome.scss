@@ -6,16 +6,19 @@
     @media screen and (min-width: 768px) {
       padding: 11px 26px;
       margin-bottom: 31.4px;
+      font-size: 16px;
+      line-height: calc(20 / 16);
     }
   }
 
   &__text {
-    // max-width: 315px;
     font-size: 16px;
     line-height: 25px;
-    // line-height: calc(25 / 16);
     margin-bottom: 25px;
     @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1440px) {
       margin-bottom: 48px;
       font-size: 20px;
       font-weight: 400;
@@ -28,6 +31,10 @@
     padding-top: 24px;
     padding-bottom: 24px;
     @media screen and (min-width: 768px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media screen and (min-width: 1440px) {
       padding-top: 62px;
       padding-bottom: 62px;
     }
@@ -37,13 +44,22 @@
     @media screen and (min-width: 768px) {
       background-image: url('../img/leafs.png');
       background-repeat: no-repeat;
+
+      background-size: 280px;
+      background-position-x: right;
+    }
+    @media screen and (min-width: 1440px) {
+      background-size: 100%;
     }
   }
 
   &__wrapper {
-    margin-left: auto;
-
     @media screen and (min-width: 768px) {
+      width: 341px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-left: auto;
       width: 549px;
       padding-top: 36px;
     }
@@ -56,8 +72,12 @@
     margin-bottom: 21px;
 
     @media screen and (min-width: 768px) {
+      font-size: 35px;
+      line-height: calc(50 / 35);
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1440px) {
       font-size: 45px;
-      font-weight: 700;
       line-height: calc(50 / 45);
       margin-bottom: 42px;
     }

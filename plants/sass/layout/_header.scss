@@ -30,6 +30,10 @@
 
   &-item {
     padding: 42px 1px;
+    @media screen and (min-width: 768px) and (max-width: 1339px) {
+      padding: 35px 1px;
+    }
+
     &__link {
       line-height: calc(50 / 16);
       font-family: $inika;
