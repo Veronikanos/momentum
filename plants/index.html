@@ -28,21 +28,23 @@
     <header>
       <div class="container">
         <nav class="nav">
+					<div class="navbar__wrap">
           <a href="./index.html" class="logo">
             <img src="./img/logo.svg" alt="logo" />
             <span>Plants</span>
           </a>
-          <button class="burger-menu">
+          <button class="burger-menu" id="hamburger">
             <img
               class="burger-menu__icon"
               src="./img/burger.svg"
               alt="burger-menu" />
-
-            <!-- <svg width="40" height="24">
-              <use href="./img/burger.svg" />
-            </svg> -->
+							<span class="burger-menu__icon-close">
+							<svg width="27" height="27">
+                <use 
+                  href="./img/sprite.svg#icon-cross"></use></svg
+            ></span>
           </button>
-          <ul class="nav-list">
+          <ul class="nav-list menu" id="menu">
             <li class="nav-item">
               <a class="nav-item__link" href="#">Home</a>
             </li>
@@ -59,7 +61,9 @@
               <a class="nav-item__link" href="#contacts">Contacts</a>
             </li>
           </ul>
+				</div>
         </nav>
+				<div class="popup" id="popup"></div>
       </div>
     </header>
     <main>
@@ -366,5 +370,6 @@
       </div>
     </footer>
     <script src="./index.js"></script>
+    <script src="./mobile-menu.js"></script>
   </body>
 </html>

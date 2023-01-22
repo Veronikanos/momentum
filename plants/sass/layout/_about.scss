@@ -9,6 +9,9 @@
       padding-bottom: 95px;
     }
     @media screen and (min-width: 1440px) {
+      display: flex;
+      gap: 153px;
+      // justify-content: space-between;
       padding-top: 93px;
       padding-bottom: 94px;
     }
@@ -31,7 +34,10 @@
     margin: 0 auto;
     @media screen and (min-width: 768px) {
       width: 250px;
-      // background-position: right;
+    }
+    @media screen and (min-width: 1440px) {
+      width: 100%;
+      background-position: left;
     }
   }
 
@@ -47,7 +53,7 @@
     }
     @media screen and (min-width: 1440px) {
       margin-bottom: 39px;
-      max-width: 463px;
+      max-width: fit-content;
       text-align: start;
     }
 
