@@ -70,3 +70,7 @@ body {
 
   @extend %centered;
 }
+
+body.noscroll {
+  overflow: hidden;
+}

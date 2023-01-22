@@ -24,7 +24,7 @@
       font-size: 20px;
       font-weight: 400;
       line-height: calc(35 / 20);
-      max-width: 100%;
+      // max-width: 100%;
     }
   }
 
@@ -50,7 +50,8 @@
       background-position-x: right;
     }
     @media screen and (min-width: 1440px) {
-      background-size: 100%;
+      background-size: 449px;
+      background-position-x: left;
     }
   }
 
@@ -61,7 +62,7 @@
 
     @media screen and (min-width: 1440px) {
       margin-left: auto;
-      width: 549px;
+      min-width: 549px;
       padding-top: 36px;
     }
   }
