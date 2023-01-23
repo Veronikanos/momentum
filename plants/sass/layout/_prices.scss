@@ -6,12 +6,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 25px;
+    padding-top: 36px;
     @media screen and (min-width: 768px) {
-      padding-top: 32px;
-      padding-bottom: 86px;
-      flex-direction: row;
+      padding-top: 40px;
+      padding-bottom: 77px;
       gap: 20px;
+      flex-direction: row;
     }
     @media screen and (min-width: 1440px) {
       // justify-content: space-between;
@@ -31,6 +31,7 @@
 
     @media screen and (min-width: 768px) {
       padding: 32px 41px;
+      margin-bottom: 0;
     }
 
     &__item {
@@ -94,13 +95,18 @@
     font-family: $inter;
     color: $black;
     @media screen and (min-width: 768px) {
-      margin-bottom: 0;
+      margin-bottom: 55px;
       text-align: start;
       font-size: 38px;
       line-height: calc(48 / 38);
     }
     @media screen and (min-width: 1440px) {
-      margin-bottom: 60px;
+    }
+  }
+
+  .prices-box {
+    @media screen and (min-width: 768px) {
+      align-self: flex-start;
     }
   }
 
@@ -111,17 +117,22 @@
     padding-bottom: 40px;
     @media screen and (min-width: 768px) {
       max-width: 100%;
-      height: 358px;
+      // margin-top: 106px;
       padding-bottom: 0;
-      background-image: url('../img/leafsSmall.png');
-      background-repeat: no-repeat;
-      background-position: right bottom;
       text-align: end;
-      margin-top: 110px;
     }
     @media screen and (min-width: 1400px) {
-      margin: 0 auto;
+      margin: 0;
+      margin-left: auto;
       height: fit-content;
+    }
+
+    .prices-contact__image {
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 
@@ -138,11 +149,13 @@
       margin-bottom: 26px;
       font-size: 25px;
       line-height: calc(35 / 25);
+      padding-top: 100px;
     }
     @media screen and (min-width: 1440px) {
       margin-bottom: 38px;
       font-size: 40px;
       line-height: calc(50 / 40);
+      padding-top: 0;
     }
 
     & span {
@@ -162,6 +175,7 @@
       padding: 11px 32px;
       font-size: 20px;
       line-height: calc(26 / 20);
+      margin-bottom: 34px;
     }
 
     &:hover,

@@ -33,11 +33,12 @@ body {
   padding-left: 25px;
 
   @media screen and (min-width: 768px) {
-    // min-width: 1440px;
+    max-width: 768px;
     padding-right: 50px;
     padding-left: 50px;
   }
   @media screen and (min-width: 1440px) {
+    max-width: 1440px;
     padding-right: 109px;
     padding-left: 109px;
   }
