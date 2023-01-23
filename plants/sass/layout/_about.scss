@@ -22,7 +22,7 @@
       margin-bottom: 66px;
     }
     @media screen and (min-width: 1440px) {
-      width: 549px;
+      // width: 549px;
       padding-top: 68px;
       padding-bottom: 61px;
       margin-bottom: 0;
@@ -53,8 +53,9 @@
     }
     @media screen and (min-width: 1440px) {
       margin-bottom: 39px;
-      max-width: fit-content;
+      max-width: 549px;
       text-align: start;
+      margin-left: 0;
     }
 
     & span {

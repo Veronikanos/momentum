@@ -83,9 +83,13 @@
       }
     }
     &-image {
+      width: 280px;
       border-radius: 20px 20px 0 0;
       @media screen and (max-width: 767px) {
         margin: 0 auto;
+      }
+      @media screen and (min-width: 1440px) {
+        width: 329px;
       }
     }
     &-text {
