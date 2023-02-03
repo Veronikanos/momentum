@@ -134,10 +134,6 @@ body.noscroll {
     border: 2px solid #e06733;
   }
 }
-.btn:hover, .btn:focus {
-  background-color: #e06733;
-  color: #ffffff;
-}
 
 .logo {
   display: flex;
@@ -546,6 +542,7 @@ body.noscroll {
 }
 .service__gallery-item {
   max-width: 280px;
+  transition: filter 300ms ease-in-out;
 }
 @media screen and (min-width: 1440px) {
   .service__gallery-item {
@@ -601,6 +598,14 @@ body.noscroll {
   font-weight: 400;
   line-height: 1.25;
 }
+.service .active {
+  background-color: #e06733;
+  color: #ffffff;
+}
+.service .blur {
+  filter: blur(2px);
+}
+
 .prices {
   background-color: #ffffff;
 }
