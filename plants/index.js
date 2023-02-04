@@ -3,52 +3,60 @@
 // );
 
 const allCards = document.querySelectorAll('.service__gallery-item');
-console.log(allCards);
-
-window.onload = () => {
-  const buttons = document.querySelector('.service__buttons');
-  console.log(buttons);
-  handleButtonClick(buttons);
-};
+const buttons = document.querySelector('.service__buttons');
+let activeButtons = 0;
 
 const handleButtonClick = (buttons) => {
   buttons.addEventListener('click', (e) => {
-    if (e.target.classList.contains('service-btn')) {
-      let clickedButton = e.target;
-      // console.log('OlldfK');
-      // removeSelectedTypes();
+    if (e.target.tagName !== 'BUTTON') return;
+
+    let clickedButton = e.target;
+
+    if (!activeButtons) {
+      addBlurCardsForAll();
+      handleClickToInactiveButton(clickedButton);
+    } else if (activeButtons === 1) {
       if (clickedButton.classList.contains('active')) {
-        removeActiveButtonClass(clickedButton);
-				removeBlurCards(clickedButton.innerText.toLowerCase());
+        handleClickToInactiveButton(clickedButton);
+        removeBlurCardsForAll();
       } else {
-        addActiveButtonClass(clickedButton);
-        // console.log(clickedButton.innerText);
-        addBlurCards(clickedButton.innerText.toLowerCase());
+        handleClickToInactiveButton(clickedButton);
+      }
+    } else {
+      if (clickedButton.classList.contains('active')) {
+        handleClickToInactiveButton(clickedButton);
       }
     }
   });
 };
 
-// const removeSelectedTypes = () => {
-//   const types = document.querySelectorAll(
-//     '.service__buttons .service-btn'
-//   );
-//   types.forEach((item) => item.classList.remove('active'));
-// };
-
-const addActiveButtonClass = (btn) => {
-  // console.log(btn);
-  btn.classList.add('active');
+const handleClickToInactiveButton = (clickedButton) => {
+  clickedButton.classList.add('active');
+  removeBlurCards(clickedButton.innerText.toLowerCase());
+  activeButtons++;
 };
 
-const removeActiveButtonClass = (btn) => {
-  // console.log(btn);
-  btn.classList.remove('active');
+const handleClickToActiveButton = (clickedButton) => {
+  clickedButton.classList.remove('active');
+  addBlurCards(clickedButton.innerText.toLowerCase());
+  activeButtons--;
+};
+
+const addBlurCardsForAll = () => {
+  allCards.forEach((card) => {
+    card.classList.add('blur');
+  });
+};
+
+const removeBlurCardsForAll = () => {
+  allCards.forEach((card) => {
+    card.classList.remove('blur');
+  });
 };
 
 const addBlurCards = (group) => {
   allCards.forEach((card) => {
-    if (!card.classList.contains(group)) {
+    if (card.classList.contains(group)) {
       card.classList.add('blur');
     }
   });
@@ -56,8 +64,10 @@ const addBlurCards = (group) => {
 
 const removeBlurCards = (group) => {
   allCards.forEach((card) => {
-    if (!card.classList.contains(group)) {
+    if (card.classList.contains(group)) {
       card.classList.remove('blur');
     }
   });
 };
+
+handleButtonClick(buttons);
