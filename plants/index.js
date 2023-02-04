@@ -9,35 +9,37 @@ let activeButtons = 0;
 const handleButtonClick = (buttons) => {
   buttons.addEventListener('click', (e) => {
     if (e.target.tagName !== 'BUTTON') return;
+    // console.log(e.target);
 
     let clickedButton = e.target;
 
     if (!activeButtons) {
       addBlurCardsForAll();
+
       handleClickToInactiveButton(clickedButton);
     } else if (activeButtons === 1) {
       if (clickedButton.classList.contains('active')) {
-        handleClickToInactiveButton(clickedButton);
+        handleClickToActiveButton(clickedButton);
         removeBlurCardsForAll();
       } else {
         handleClickToInactiveButton(clickedButton);
       }
     } else {
       if (clickedButton.classList.contains('active')) {
-        handleClickToInactiveButton(clickedButton);
+        handleClickToActiveButton(clickedButton);
       }
     }
   });
 };
 
 const handleClickToInactiveButton = (clickedButton) => {
-  clickedButton.classList.add('active');
+  addActiveButtonClass(clickedButton);
   removeBlurCards(clickedButton.innerText.toLowerCase());
   activeButtons++;
 };
 
 const handleClickToActiveButton = (clickedButton) => {
-  clickedButton.classList.remove('active');
+  removeActiveButtonClass(clickedButton);
   addBlurCards(clickedButton.innerText.toLowerCase());
   activeButtons--;
 };
@@ -52,6 +54,14 @@ const removeBlurCardsForAll = () => {
   allCards.forEach((card) => {
     card.classList.remove('blur');
   });
+};
+
+const addActiveButtonClass = (btn) => {
+  btn.classList.add('active');
+};
+
+const removeActiveButtonClass = (btn) => {
+  btn.classList.remove('active');
 };
 
 const addBlurCards = (group) => {
