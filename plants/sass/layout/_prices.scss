@@ -3,7 +3,7 @@
 
   &-container {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding-top: 36px;
@@ -45,8 +45,12 @@
       justify-content: space-between;
       align-items: center;
 
+      @media screen and (min-width: 320px) {
+        min-width: 180px;
+      }
+
       @media screen and (min-width: 768px) {
-        max-width: 250px;
+        min-width: 250px;
         padding: 16px 40px 16px 40px;
       }
       @media screen and (min-width: 1440px) {
@@ -192,11 +196,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    // cursor: pointer;
   }
 
   .accordion-body {
     font-family: 'Inter';
+    margin-top: 12px;
+    display: none;
+    // transition: display 1s ease-in-out;
+  }
+
+  .accordion-item.active > .accordion-body {
+    display: block;
   }
 
   .accordion-body-text {

@@ -611,7 +611,6 @@ body.noscroll {
 }
 .prices-container {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding-top: 36px;
@@ -655,9 +654,14 @@ body.noscroll {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 320px) {
+  .prices-block__item {
+    min-width: 180px;
+  }
+}
 @media screen and (min-width: 768px) {
   .prices-block__item {
-    max-width: 250px;
+    min-width: 250px;
     padding: 16px 40px 16px 40px;
   }
 }
@@ -802,10 +806,14 @@ body.noscroll {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
 }
 .prices .accordion-body {
   font-family: "Inter";
+  margin-top: 12px;
+  display: none;
+}
+.prices .accordion-item.active > .accordion-body {
+  display: block;
 }
 .prices .accordion-body-text {
   padding-top: 6px;

@@ -268,15 +268,17 @@
         </div>
       </section>
       <section class="prices" id="prices">
-        <div class="container prices-container">
+        <div class="container">
+				
+					<h2 class="prices__header">Prices</h2>
+					<div class="prices-container">
 					<div class="prices-box">
-            <h2 class="prices__header">Prices</h2>
             <ul class="prices-block accordion">
               <li class="prices-block__item accordion-item">
 								<div class="accordion-header">
 									<span>Basics</span>
 									<button
-										class="prices-block__btn circle-btn"
+										class="prices-block__btn circle-btn accordion-open-btn"
 										type="button">
 										<svg class="prices-arrow" width="6" height="4">
 											<use href="./img/sprite.svg#icon-arrow" />
@@ -299,7 +301,7 @@
 								<div class="accordion-header">
                 <span>Standard</span>
                 <button
-                  class="prices-block__btn circle-btn"
+                  class="prices-block__btn circle-btn accordion-open-btn"
                   type="button">
                   <svg class="prices-arrow" width="6" height="4">
                     <use href="./img/sprite.svg#icon-arrow" />
@@ -317,17 +319,17 @@
 										<button class="accordion-body-button">Order</button>
 								</div>
 						</div>
-              </li>
-              <li class="prices-block__item accordion-item">
-								<div class="accordion-header">
-                <span>Pro care</span>
-                <button
-                  class="prices-block__btn circle-btn"
-                  type="button">
-                  <svg class="prices-arrow" width="6" height="4">
-                    <use href="./img/sprite.svg#icon-arrow" />
-                  </svg>
-                </button>
+            </li>
+             <li class="prices-block__item accordion-item">
+							<div class="accordion-header">
+								<span>Pro care</span>
+								<button
+									class="prices-block__btn circle-btn accordion-open-btn"
+									type="button">
+									<svg class="prices-arrow" width="6" height="4">
+										<use href="./img/sprite.svg#icon-arrow" />
+									</svg>
+								</button>
 							</div>
 							<div class="accordion-body">
 								<div class="accordion-body-content">
@@ -353,7 +355,9 @@
 							<img src="./img/leafsSmall.png" alt="leafsSmall">
 						</div>
           </div>
-        </div></div>
+					</div>
+        </div>
+			</div>
       </section>
       <section class="contacts" id="contacts">
         <div class="container contacts-container">
