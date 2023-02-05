@@ -132,7 +132,7 @@
             </ul>
           </div>
           <ul class="service__gallery">
-            <li class="service__gallery-item">
+            <li class="service__gallery-item gardens">
               <picture>
                 <source
                   srcset="./img/first.png 1x, ./img/first.png 2x"
@@ -154,7 +154,7 @@
                 <p>Lorem Ipsum has been the industry</p>
               </div>
             </li>
-            <li class="service__gallery-item">
+            <li class="service__gallery-item planting">
               <picture>
                 <source
                   srcset="./img/second.png 1x, ./img/second.png 2x"
@@ -176,7 +176,7 @@
                 <p>Lorem Ipsum has been the industry</p>
               </div>
             </li>
-            <li class="service__gallery-item">
+            <li class="service__gallery-item lawn">
               <picture>
                 <source
                   srcset="./img/third.png 1x, ./img/third.png 2x"
@@ -198,7 +198,7 @@
                 <p>Lorem Ipsum has been the industry</p>
               </div>
             </li>
-            <li class="service__gallery-item">
+            <li class="service__gallery-item planting">
               <picture>
                 <source
                   srcset="./img/fourth.png 1x, ./img/fourth.png 2x"
@@ -220,7 +220,7 @@
                 <p>Lorem Ipsum has been the industry</p>
               </div>
             </li>
-            <li class="service__gallery-item">
+            <li class="service__gallery-item gardens">
               <picture>
                 <source
                   srcset="./img/fifth.png 1x, ./img/fifth.png 2x"
@@ -242,7 +242,7 @@
                 <p>Lorem Ipsum has been the industry</p>
               </div>
             </li>
-            <li class="service__gallery-item">
+            <li class="service__gallery-item planting">
               <picture>
                 <source
                   srcset="./img/six.png 1x, ./img/six.png 2x"
@@ -269,42 +269,73 @@
       </section>
       <section class="prices" id="prices">
         <div class="container prices-container">
-		<div class="prices-box">
-            <h2 class="prices__header">Prices</h2>          
 				
-            <ul class="prices-block">
-              <li class="prices-block__item">
-                <span>Basics</span>
-                <button
-                  class="prices-block__btn circle-btn"
-                  type="button">
-                  <svg class="prices-arrow" width="6" height="4">
-                    <use href="./img/sprite.svg#icon-arrow" />
-                  </svg>
-                </button>
+					<h2 class="prices__header">Prices</h2>
+					<div class="prices-wrapper">
+					<div class="prices-box">
+            <ul class="prices-block accordion">
+              <li class="prices-block__item accordion-item">
+								<div class="accordion-header">
+									<span>Basics</span>
+									<button
+										class="prices-block__btn circle-btn accordion-open-btn"
+										type="button">
+									</button>
+								</div>
+								<div class="accordion-body">
+									<div class="accordion-body-content">
+										<div class="accordion-body-text">
+										Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+										</div>
+										<div class="accordion-body-price">
+											<span>$15</span> / per hour
+										</div>
+											<button class="accordion-body-button"><a href="#contacts">Order</a></button>
+									</div>
+							</div>
               </li>
-              <li class="prices-block__item">
+              <li class="prices-block__item accordion-item">
+								<div class="accordion-header">
                 <span>Standard</span>
                 <button
-                  class="prices-block__btn circle-btn"
+                  class="prices-block__btn circle-btn accordion-open-btn"
                   type="button">
-                  <svg class="prices-arrow" width="6" height="4">
-                    <use href="./img/sprite.svg#icon-arrow" />
-                  </svg>
                 </button>
-              </li>
-              <li class="prices-block__item">
-                <span>Pro care</span>
-                <button
-                  class="prices-block__btn circle-btn"
-                  type="button">
-                  <svg class="prices-arrow" width="6" height="4">
-                    <use href="./img/sprite.svg#icon-arrow" />
-                  </svg>
-                </button>
+							</div>
+							<div class="accordion-body">
+								<div class="accordion-body-content">
+									<div class="accordion-body-text">
+									Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+									</div>
+									<div class="accordion-body-price">
+										<span>$25</span> / per hour
+									</div>
+										<button class="accordion-body-button"><a href="#contacts">Order</a></button>
+								</div>
+						</div>
+            </li>
+             <li class="prices-block__item accordion-item">
+							<div class="accordion-header">
+								<span>Pro care</span>
+								<button
+									class="prices-block__btn circle-btn accordion-open-btn"
+									type="button">
+								</button>
+							</div>
+							<div class="accordion-body">
+								<div class="accordion-body-content">
+									<div class="accordion-body-text">
+									Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+									</div>
+									<div class="accordion-body-price">
+										<span>$35</span> / per hour
+									</div>
+										<button class="accordion-body-button"><a href="#contacts">Order</a></button>
+								</div>
+						</div>
               </li>
             </ul>
-										</div>
+				</div>
           
           <div class="contact">
             <p class="contact-header">
@@ -315,7 +346,9 @@
 							<img src="./img/leafsSmall.png" alt="leafsSmall">
 						</div>
           </div>
-        </div></div>
+					</div>
+        </div>
+			</div>
       </section>
       <section class="contacts" id="contacts">
         <div class="container contacts-container">
@@ -374,6 +407,8 @@
       </div>
     </footer>
     <script src="./index.js"></script>
+    <script src="./service-buttons.js"></script>
+    <script src="./accordion.js"></script>
     <script src="./mobile-menu.js"></script>
   </body>
 </html>

@@ -78,6 +78,9 @@
 
     &-item {
       max-width: 280px;
+      transition: filter $transition-duration
+        $transition-timing-function;
+
       @media screen and (min-width: 1440px) {
         max-width: 329px;
       }
@@ -130,5 +133,12 @@
         }
       }
     }
+  }
+  .active {
+    background-color: $orange;
+    color: $white;
+  }
+  .blur {
+    filter: blur(2px);
   }
 }
