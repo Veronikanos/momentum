@@ -9,6 +9,12 @@
       font-size: 16px;
       line-height: calc(20 / 16);
     }
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $orange;
+    }
   }
 
   &__text {

@@ -280,6 +280,7 @@
 									<button
 										class="prices-block__btn circle-btn accordion-open-btn"
 										type="button">
+										<span class="accordion-btn-icon"></span>
 									</button>
 								</div>
 								<div class="accordion-body">
@@ -290,7 +291,7 @@
 										<div class="accordion-body-price">
 											<span>$15</span> / per hour
 										</div>
-											<button class="accordion-body-button"><a href="#contacts">Order</a></button>
+											<button class="accordion-body-button" aria-label="Show or hide details for Basics"><a href="#contacts">Order</a></button>
 									</div>
 							</div>
               </li>
@@ -300,6 +301,7 @@
                 <button
                   class="prices-block__btn circle-btn accordion-open-btn"
                   type="button">
+									<span class="accordion-btn-icon"></span>
                 </button>
 							</div>
 							<div class="accordion-body">
@@ -310,7 +312,7 @@
 									<div class="accordion-body-price">
 										<span>$25</span> / per hour
 									</div>
-										<button class="accordion-body-button"><a href="#contacts">Order</a></button>
+										<button class="accordion-body-button" aria-label="Show or hide details for Standard"><a href="#contacts">Order</a></button>
 								</div>
 						</div>
             </li>
@@ -320,6 +322,7 @@
 								<button
 									class="prices-block__btn circle-btn accordion-open-btn"
 									type="button">
+									<span class="accordion-btn-icon"></span>
 								</button>
 							</div>
 							<div class="accordion-body">
@@ -330,7 +333,7 @@
 									<div class="accordion-body-price">
 										<span>$35</span> / per hour
 									</div>
-										<button class="accordion-body-button"><a href="#contacts">Order</a></button>
+										<button class="accordion-body-button" aria-label="Show or hide details for Pro Care"><a href="#contacts">Order</a></button>
 								</div>
 						</div>
               </li>
@@ -354,16 +357,63 @@
         <div class="container contacts-container">
           <div class="wrapper">
             <h2 class="header contacts__header">Contact us</h2>
-            <div class="select">
-              <span>City</span>
-              <button class="contacts__btn circle-btn" type="button">
+						<div class="right-side">
+            <div class="dropdown">
+							<button class="dropdown__button default" type="button">City</button>
+							<ul class="dropdown__list">
+								<li class="dropdown__list-item">Canandaigua, NY</li>
+								<li class="dropdown__list-item">New York City</li>
+								<li class="dropdown__list-item">Yonkers, NY</li>
+								<li class="dropdown__list-item">Sherrill, NY</li>
+							</ul>
+
+              <!-- <button class="contacts__btn circle-btn" type="button">
                 <svg class="select-arrow" width="6" height="4">
                   <use href="./img/sprite.svg#icon-arrow" />
                 </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+              </button> -->
+
+						</div>
+						<div class="address-box-wrapper">
+							<div class="address-box address-box-invisible" data-city="Yonkers">
+								<ul class="address-box-list">
+									<li class="address-box-item"><span class="item-left">City:</span><span>Yonkers, NY</span></li>
+									<li class="address-box-item"><span class="item-left">Phone:</span><span>+1	914	678 0003</span></li>
+									<li class="address-box-item"><span class="item-left">Office address:</span><span>511 Warburton Ave</span></li>
+								</ul>
+								<button type="button" class="btn contact-btn address-box-btn"><a href="tel:+19146780003">Call us</a></button>
+							</div>
+
+							<div class="address-box address-box-invisible" data-city="Sherrill">
+								<ul class="address-box-list" >
+									<li class="address-box-item"><span class="item-left">City:</span><span>Sherrill, NY</span></li>
+									<li class="address-box-item"><span class="item-left">Phone:</span><span>+1	315	908 0004</span></li>
+									<li class="address-box-item"><span class="item-left">Office address:</span><span>14 WEST Noyes BLVD</span></li>
+								</ul>
+								<button type="button" class="btn contact-btn address-box-btn"><a href="tel:+13159080004">Call us</a></button>
+							</div>
+
+							<div class="address-box address-box-invisible" data-city="Canandaigua">
+								<ul class="address-box-list">
+									<li class="address-box-item"><span class="item-left">City:</span><span>Canandaigua, NY</span></li>
+									<li class="address-box-item"><span class="item-left">Phone:</span><span>+1 585 393 0001</span></li>
+									<li class="address-box-item"><span class="item-left">Office address:</span><span>151 Charlotte Street</span></li>
+								</ul>
+								<button type="button" class="btn contact-btn address-box-btn"><a href="tel:+15853930001">Call us</a></button>
+							</div>
+
+							<div class="address-box address-box-invisible" data-city="New York">
+								<ul class="address-box-list">
+									<li class="address-box-item"><span class="item-left">City:</span><span>New York City</span></li>
+									<li class="address-box-item"><span class="item-left">Phone:</span><span>+1	212	456 0002</span></li>
+									<li class="address-box-item"><span class="item-left">Office address:</span><span>9 East 91st Street</span></li>
+								</ul>
+								<button type="button" class="btn contact-btn address-box-btn"><a href="tel:+12124560002">Call us</a></button>
+							</div>
+						</div>
+					</div>
+				 </div>
+				</div>
       </section>
     </main>
     <footer>
@@ -408,6 +458,7 @@
     </footer>
     <script src="./index.js"></script>
     <script src="./service-buttons.js"></script>
+    <script src="./dropdown-select.js"></script>
     <script src="./accordion.js"></script>
     <script src="./mobile-menu.js"></script>
   </body>

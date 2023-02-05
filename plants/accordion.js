@@ -5,7 +5,11 @@ accordionItems.forEach((item) =>
 );
 
 function toggleAccordion(e) {
-  if (e.target.nodeName !== 'BUTTON') return;
+  if (
+    e.target.nodeName !== 'BUTTON' &&
+    !e.target.classList.contains('accordion-btn-icon')
+  )
+    return;
 
   accordionItems.forEach((item) => {
     let parent = item.closest('li');
