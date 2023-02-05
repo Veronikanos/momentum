@@ -1120,6 +1120,11 @@ body.noscroll {
   text-align: center;
   color: #717171;
 }
+@media screen and (min-width: 1440px) {
+  .address-box-btn {
+    width: 122px;
+  }
+}
 
 footer {
   background-color: #fff;
