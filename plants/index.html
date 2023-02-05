@@ -357,13 +357,22 @@
         <div class="container contacts-container">
           <div class="wrapper">
             <h2 class="header contacts__header">Contact us</h2>
-            <div class="select">
-              <span>City</span>
-              <button class="contacts__btn circle-btn" type="button">
+            <div class="dropdown">
+							<button class="dropdown__button" type="button">City</button>
+							<ul class="dropdown__list">
+								<li class="dropdown__list-item">Canandaigua, NY</li>
+								<li class="dropdown__list-item">New York City</li>
+								<li class="dropdown__list-item">Yonkers, NY</li>
+								<li class="dropdown__list-item">Sherrill, NY</li>
+							</ul>
+							<input type="text" name="select-category" class="dropdown__input_hidden">
+
+
+              <!-- <button class="contacts__btn circle-btn" type="button">
                 <svg class="select-arrow" width="6" height="4">
                   <use href="./img/sprite.svg#icon-arrow" />
                 </svg>
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -411,6 +420,7 @@
     </footer>
     <script src="./index.js"></script>
     <script src="./service-buttons.js"></script>
+    <script src="./dropdown-select.js"></script>
     <script src="./accordion.js"></script>
     <script src="./mobile-menu.js"></script>
   </body>
