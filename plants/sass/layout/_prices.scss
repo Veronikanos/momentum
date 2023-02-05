@@ -2,23 +2,27 @@
   background-color: $white;
 
   &-container {
-    display: flex;
-    // flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 36px;
+    padding-top: 25px;
     @media screen and (min-width: 768px) {
       padding-top: 40px;
-      padding-bottom: 77px;
       gap: 20px;
       flex-direction: row;
     }
     @media screen and (min-width: 1440px) {
-      // justify-content: space-between;
       gap: 0;
       align-items: flex-start;
       padding-top: 40px;
-      padding-bottom: 115px;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
     }
   }
 
@@ -121,12 +125,12 @@
     padding-bottom: 40px;
     @media screen and (min-width: 768px) {
       max-width: 100%;
-      // margin-top: 106px;
-      padding-bottom: 0;
+      padding-bottom: 77px;
       text-align: end;
     }
     @media screen and (min-width: 1400px) {
       margin: 0;
+      padding-bottom: 115px;
       margin-left: auto;
       height: fit-content;
     }
@@ -153,13 +157,13 @@
       margin-bottom: 26px;
       font-size: 25px;
       line-height: calc(35 / 25);
-      padding-top: 100px;
+      // padding-top: 100px;
     }
     @media screen and (min-width: 1440px) {
       margin-bottom: 38px;
       font-size: 40px;
       line-height: calc(50 / 40);
-      padding-top: 0;
+      // padding-top: 0;
     }
 
     & span {
@@ -190,6 +194,23 @@
 
   .accordion-item {
     display: block;
+    @extend %transition;
+  }
+
+  .accordion-open-btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: center url(../img/arrow.svg) no-repeat
+      $arrow-background;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .accordion-item.active > .accordion-header > .accordion-open-btn {
+    transform: rotate(-180deg);
+    background-color: $select-arrow;
+    // color: $select-background;
   }
 
   .accordion-header {
@@ -208,6 +229,12 @@
 
   .accordion-item.active > .accordion-body {
     display: block;
+  }
+
+  .accordion-item:hover,
+  .accordion-item:focus,
+  .accordion-item.active {
+    background-color: #d6e7d2;
   }
 
   .accordion-body-text {

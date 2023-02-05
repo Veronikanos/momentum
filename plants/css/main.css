@@ -4,7 +4,7 @@ footer .footer__social a, .circle-btn {
   justify-content: center;
 }
 
-.nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn {
+.prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn {
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
@@ -610,15 +610,13 @@ body.noscroll {
   background-color: #ffffff;
 }
 .prices-container {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 36px;
+  padding-top: 25px;
 }
 @media screen and (min-width: 768px) {
   .prices-container {
     padding-top: 40px;
-    padding-bottom: 77px;
     gap: 20px;
     flex-direction: row;
   }
@@ -628,7 +626,16 @@ body.noscroll {
     gap: 0;
     align-items: flex-start;
     padding-top: 40px;
-    padding-bottom: 115px;
+  }
+}
+.prices-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .prices-wrapper {
+    flex-direction: row;
   }
 }
 .prices-block {
@@ -729,13 +736,14 @@ body.noscroll {
 @media screen and (min-width: 768px) {
   .prices .contact {
     max-width: 100%;
-    padding-bottom: 0;
+    padding-bottom: 77px;
     text-align: end;
   }
 }
 @media screen and (min-width: 1400px) {
   .prices .contact {
     margin: 0;
+    padding-bottom: 115px;
     margin-left: auto;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -765,7 +773,6 @@ body.noscroll {
     margin-bottom: 26px;
     font-size: 25px;
     line-height: 1.4;
-    padding-top: 100px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -773,7 +780,6 @@ body.noscroll {
     margin-bottom: 38px;
     font-size: 40px;
     line-height: 1.25;
-    padding-top: 0;
   }
 }
 .prices .contact-header span {
@@ -802,6 +808,18 @@ body.noscroll {
 .prices .accordion-item {
   display: block;
 }
+.prices .accordion-open-btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: center url(../img/arrow.svg) no-repeat #d9d9d9;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.prices .accordion-item.active > .accordion-header > .accordion-open-btn {
+  transform: rotate(-180deg);
+  background-color: #aea1a1;
+}
 .prices .accordion-header {
   display: flex;
   justify-content: space-between;
@@ -814,6 +832,11 @@ body.noscroll {
 }
 .prices .accordion-item.active > .accordion-body {
   display: block;
+}
+.prices .accordion-item:hover,
+.prices .accordion-item:focus,
+.prices .accordion-item.active {
+  background-color: #d6e7d2;
 }
 .prices .accordion-body-text {
   padding-top: 6px;
