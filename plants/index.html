@@ -269,20 +269,34 @@
       </section>
       <section class="prices" id="prices">
         <div class="container prices-container">
-		<div class="prices-box">
+					<div class="prices-box">
             <h2 class="prices__header">Prices</h2>
-            <ul class="prices-block">
-              <li class="prices-block__item">
-                <span>Basics</span>
-                <button
-                  class="prices-block__btn circle-btn"
-                  type="button">
-                  <svg class="prices-arrow" width="6" height="4">
-                    <use href="./img/sprite.svg#icon-arrow" />
-                  </svg>
-                </button>
+            <ul class="prices-block accordion">
+              <li class="prices-block__item accordion-item">
+								<div class="accordion-header">
+									<span>Basics</span>
+									<button
+										class="prices-block__btn circle-btn"
+										type="button">
+										<svg class="prices-arrow" width="6" height="4">
+											<use href="./img/sprite.svg#icon-arrow" />
+										</svg>
+									</button>
+								</div>
+								<div class="accordion-body">
+									<div class="accordion-body-content">
+										<div class="accordion-body-text">
+										Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+										</div>
+										<div class="accordion-body-price">
+											<span>$15</span> / per hour
+										</div>
+											<button class="accordion-body-button">Order</button>
+									</div>
+							</div>
               </li>
-              <li class="prices-block__item">
+              <li class="prices-block__item accordion-item">
+								<div class="accordion-header">
                 <span>Standard</span>
                 <button
                   class="prices-block__btn circle-btn"
@@ -291,8 +305,21 @@
                     <use href="./img/sprite.svg#icon-arrow" />
                   </svg>
                 </button>
+							</div>
+							<div class="accordion-body">
+								<div class="accordion-body-content">
+									<div class="accordion-body-text">
+									Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+									</div>
+									<div class="accordion-body-price">
+										<span>$25</span> / per hour
+									</div>
+										<button class="accordion-body-button">Order</button>
+								</div>
+						</div>
               </li>
-              <li class="prices-block__item">
+              <li class="prices-block__item accordion-item">
+								<div class="accordion-header">
                 <span>Pro care</span>
                 <button
                   class="prices-block__btn circle-btn"
@@ -301,9 +328,21 @@
                     <use href="./img/sprite.svg#icon-arrow" />
                   </svg>
                 </button>
+							</div>
+							<div class="accordion-body">
+								<div class="accordion-body-content">
+									<div class="accordion-body-text">
+									Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+									</div>
+									<div class="accordion-body-price">
+										<span>$35</span> / per hour
+									</div>
+										<button class="accordion-body-button">Order</button>
+								</div>
+						</div>
               </li>
             </ul>
-										</div>
+				</div>
           
           <div class="contact">
             <p class="contact-header">
@@ -373,6 +412,8 @@
       </div>
     </footer>
     <script src="./index.js"></script>
+    <script src="./service-buttons.js"></script>
+    <script src="./accordion.js"></script>
     <script src="./mobile-menu.js"></script>
   </body>
 </html>

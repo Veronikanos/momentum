@@ -35,7 +35,7 @@
     }
 
     &__item {
-      min-width: 180px;
+      max-width: 180px;
       padding: 15px 40px 15px 30px;
       background-color: $background-color;
       border-radius: 20px;
@@ -46,11 +46,11 @@
       align-items: center;
 
       @media screen and (min-width: 768px) {
-        min-width: 250px;
+        max-width: 250px;
         padding: 16px 40px 16px 40px;
       }
       @media screen and (min-width: 1440px) {
-        min-width: 250px;
+        max-width: 250px;
       }
     }
 
@@ -182,5 +182,58 @@
     &:focus {
       color: $white;
     }
+  }
+
+  .accordion-item {
+    display: block;
+  }
+
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .accordion-body {
+    font-family: 'Inter';
+  }
+
+  .accordion-body-text {
+    padding-top: 6px;
+    margin-bottom: 12px;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1;
+    border-top: 1px solid $grey;
+    /* or 100% */
+
+    color: $grey;
+  }
+
+  .accordion-body-price {
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(20 / 12);
+    color: $black;
+
+    & span {
+      font-weight: 700;
+      color: $orange;
+    }
+  }
+
+  .accordion-body-button {
+    padding: 3px 25px;
+    background-color: $white;
+    border-radius: 10px;
+    color: $grey;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(20 / 14);
+    border-color: $white;
+    border-style: solid;
+    cursor: pointer;
   }
 }

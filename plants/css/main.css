@@ -646,7 +646,7 @@ body.noscroll {
   }
 }
 .prices-block__item {
-  min-width: 180px;
+  max-width: 180px;
   padding: 15px 40px 15px 30px;
   background-color: #edf2ec;
   border-radius: 20px;
@@ -657,13 +657,13 @@ body.noscroll {
 }
 @media screen and (min-width: 768px) {
   .prices-block__item {
-    min-width: 250px;
+    max-width: 250px;
     padding: 16px 40px 16px 40px;
   }
 }
 @media screen and (min-width: 1440px) {
   .prices-block__item {
-    min-width: 250px;
+    max-width: 250px;
   }
 }
 .prices-block__item:not(:last-of-type) {
@@ -794,6 +794,51 @@ body.noscroll {
 }
 .prices .contact-btn:hover, .prices .contact-btn:focus {
   color: #ffffff;
+}
+.prices .accordion-item {
+  display: block;
+}
+.prices .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.prices .accordion-body {
+  font-family: "Inter";
+}
+.prices .accordion-body-text {
+  padding-top: 6px;
+  margin-bottom: 12px;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 1;
+  border-top: 1px solid #717171;
+  /* or 100% */
+  color: #717171;
+}
+.prices .accordion-body-price {
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6666666667;
+  color: #000000;
+}
+.prices .accordion-body-price span {
+  font-weight: 700;
+  color: #e06733;
+}
+.prices .accordion-body-button {
+  padding: 3px 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #717171;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4285714286;
+  border-color: #ffffff;
+  border-style: solid;
+  cursor: pointer;
 }
 
 .contacts-container {
