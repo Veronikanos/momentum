@@ -2,15 +2,23 @@ const dropdown = document.querySelector('.dropdown');
 const button = document.querySelector('.dropdown__button');
 const list = document.querySelector('.dropdown__list');
 const items = document.querySelectorAll('.dropdown__list-item');
-// const dropdownInput = document.querySelector(
-//   '.dropdown__input_hidden'
-// );
+const addressBoxes = document.querySelectorAll('.address-box');
 
 button.addEventListener('click', () => {
   list.classList.toggle('dropdown__list_visible');
   button.classList.toggle('dropdown__button_active');
   button.classList.remove('default');
 });
+
+const showAddressBox = (text) => {
+  addressBoxes.forEach((box) => {
+    box.classList.add('address-box-invisible');
+
+    if (text.includes(box.dataset.city)) {
+      box.classList.remove('address-box-invisible');
+    }
+  });
+};
 
 items.forEach((listItem) => {
   listItem.addEventListener('click', (e) => {
@@ -19,7 +27,7 @@ items.forEach((listItem) => {
     });
     e.target.classList.add('dropdown__list-item_active');
     button.innerText = listItem.innerText;
-    // dropdownInput.value = listItem.dataset.value;
+    showAddressBox(listItem.innerText);
     list.classList.remove('dropdown__list_visible');
   });
 });

@@ -1061,6 +1061,10 @@ body.noscroll {
   }
 }
 
+.address-box-invisible {
+  display: none;
+}
+
 .address-box {
   max-width: 282px;
   margin: 0 auto;
