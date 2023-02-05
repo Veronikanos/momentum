@@ -1105,7 +1105,7 @@ body.noscroll {
   color: #000000;
   /* or 125% */
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .address-box .item-left {
     width: 125px;
   }
