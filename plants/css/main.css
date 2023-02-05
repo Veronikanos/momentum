@@ -4,7 +4,7 @@ footer .footer__social a, .circle-btn {
   justify-content: center;
 }
 
-.prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn {
+.prices .accordion-btn-icon, .prices .accordion-open-btn, .prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn {
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
@@ -276,6 +276,10 @@ body.noscroll {
     font-size: 16px;
     line-height: 1.25;
   }
+}
+.welcome-btn:hover, .welcome-btn:focus {
+  color: #ffffff;
+  background-color: #e06733;
 }
 .welcome__text {
   font-size: 17px;
@@ -804,6 +808,7 @@ body.noscroll {
 }
 .prices .contact-btn:hover, .prices .contact-btn:focus {
   color: #ffffff;
+  background-color: #e06733;
 }
 .prices .accordion-item {
   display: block;
@@ -812,9 +817,24 @@ body.noscroll {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: center url(../img/arrow.svg) no-repeat #d9d9d9;
   transition: 0.3s;
   cursor: pointer;
+}
+.prices .accordion-btn-icon {
+  mask-image: url(../img/arrow.svg);
+  -webkit-mask-image: url(../img/arrow.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: #717171;
+  width: 6px;
+  height: 4px;
+}
+.prices .accordion-item.active > .accordion-header > .accordion-open-btn > .accordion-btn-icon {
+  background-color: #ffffff;
 }
 .prices .accordion-item.active > .accordion-header > .accordion-open-btn {
   transform: rotate(-180deg);

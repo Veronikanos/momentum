@@ -189,6 +189,7 @@
     &:hover,
     &:focus {
       color: $white;
+      background-color: $orange;
     }
   }
 
@@ -201,16 +202,33 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: center url(../img/arrow.svg) no-repeat
-      $arrow-background;
     transition: 0.3s;
     cursor: pointer;
+    @extend %transition;
+  }
+
+  .accordion-btn-icon {
+    mask-image: url(../img/arrow.svg);
+    -webkit-mask-image: url(../img/arrow.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: $grey;
+    width: 6px;
+    height: 4px;
+    @extend %transition;
+  }
+
+  .accordion-item.active
+    > .accordion-header
+    > .accordion-open-btn
+    > .accordion-btn-icon {
+    background-color: $white;
   }
 
   .accordion-item.active > .accordion-header > .accordion-open-btn {
     transform: rotate(-180deg);
     background-color: $select-arrow;
-    // color: $select-background;
   }
 
   .accordion-header {
