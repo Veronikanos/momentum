@@ -903,6 +903,7 @@ body.noscroll {
 @media screen and (min-width: 1440px) {
   .contacts-container {
     padding-top: 55px;
+    padding: 25px 109px 0 109px;
   }
 }
 .contacts .wrapper {
@@ -921,10 +922,12 @@ body.noscroll {
 @media screen and (min-width: 1440px) {
   .contacts .wrapper {
     height: 497px;
+    background-size: 400px;
+    background-position: left bottom;
   }
 }
 .contacts__header {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   font-weight: 700;
   text-align: center;
   font-size: 25px;
@@ -932,7 +935,7 @@ body.noscroll {
 }
 @media screen and (min-width: 768px) {
   .contacts__header {
-    margin-bottom: 100px;
+    margin-bottom: 61px;
     font-size: 40px;
     line-height: 1.3;
   }
@@ -949,22 +952,27 @@ body.noscroll {
 .dropdown {
   display: flex;
   margin: 0 auto;
-  max-width: 343px;
+  max-width: 300px;
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .dropdown {
+    max-width: 450px;
+  }
 }
 .dropdown__button {
   position: relative;
   display: flex;
   align-items: center;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 40px;
   /* identical to box height, or 200% */
+  box-shadow: none;
+  background: #c1e698;
   padding: 5px 20px 5px 20px;
   width: 100%;
-  color: #717171;
-  background: #d6e7d2;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.05em;
   border: 1px solid #d6e7d2;
   cursor: pointer;
 }
@@ -999,6 +1007,14 @@ body.noscroll {
 }
 .dropdown__button_active::after {
   transform: translateY(-50%) rotate(-180deg);
+}
+.dropdown .default {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #717171;
+  background: #d6e7d2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .dropdown__list {
   width: 100%;
@@ -1036,6 +1052,69 @@ body.noscroll {
 }
 .dropdown__input_hidden {
   display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .right-side {
+    max-width: 450px;
+    margin-left: auto;
+  }
+}
+
+.address-box {
+  max-width: 282px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 30px 36px 23px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+@media screen and (min-width: 768px) {
+  .address-box {
+    max-width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .address-box-list {
+    margin-bottom: 24px;
+  }
+}
+.address-box-item {
+  padding: 10px 0;
+  display: flex;
+  gap: 10px;
+  color: #717171;
+}
+@media screen and (min-width: 1440px) {
+  .address-box-item {
+    line-height: 40px;
+    padding: 0;
+  }
+}
+.address-box .item-left {
+  width: 65px;
+  color: #000000;
+  /* or 125% */
+}
+@media screen and (min-width: 1440px) {
+  .address-box .item-left {
+    width: 125px;
+  }
+}
+.address-box-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 7px 38px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+  color: #717171;
 }
 
 footer {

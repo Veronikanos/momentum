@@ -9,6 +9,7 @@ const items = document.querySelectorAll('.dropdown__list-item');
 button.addEventListener('click', () => {
   list.classList.toggle('dropdown__list_visible');
   button.classList.toggle('dropdown__button_active');
+  button.classList.remove('default');
 });
 
 items.forEach((listItem) => {
