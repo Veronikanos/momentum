@@ -80,13 +80,19 @@
       padding: 7px 20px 7px 20px;
     }
 
+    // mask-image: url(../img/arrow.svg);
+    // -webkit-mask-image: url(../img/arrow.svg);
+    // mask-repeat: no-repeat;
+    // mask-size: contain;
+    // mask-position: center;
+
     &::after {
       content: '';
       position: absolute;
       top: 50%;
       right: 15px;
       transform: translateY(-50%);
-      width: 15px;
+      width: 20px;
       height: 15px;
 
       mask-image: url(../img/arrow.svg);
