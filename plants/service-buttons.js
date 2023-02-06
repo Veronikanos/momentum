@@ -53,18 +53,11 @@ const removeBlurCards = (group) => {
   });
 };
 
-const setDisabledForTheLastButton = () => {
+const resetActiveButtons = () => {
   buttonsArr.forEach((btn) => {
-    if (!btn.classList.contains('active')) {
-      btn.setAttribute('disabled', '');
-    }
+    btn.classList.remove('active');
   });
-};
-
-const setDisabledForTheAllButtons = () => {
-  buttonsArr.forEach((btn) => {
-    btn.removeAttribute('disabled');
-  });
+  activeButtons = 0;
 };
 
 buttons.addEventListener('click', (e) => {
@@ -72,23 +65,21 @@ buttons.addEventListener('click', (e) => {
 
   let clickedButton = e.target;
 
-  setDisabledForTheAllButtons();
-
   if (!activeButtons) {
     addBlurCardsForAll();
-
     handleClickToInactiveButton(clickedButton);
   } else if (activeButtons === 1) {
     if (clickedButton.classList.contains('active')) {
       handleClickToActiveButton(clickedButton);
       removeBlurCardsForAll();
-    } else {
-      handleClickToInactiveButton(clickedButton);
-      setDisabledForTheLastButton();
-    }
+    } else handleClickToInactiveButton(clickedButton);
   } else {
     if (clickedButton.classList.contains('active')) {
       handleClickToActiveButton(clickedButton);
+    } else {
+      addBlurCardsForAll();
+      resetActiveButtons();
+      handleClickToInactiveButton(clickedButton);
     }
   }
 });

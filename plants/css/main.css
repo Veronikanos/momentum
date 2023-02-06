@@ -134,7 +134,7 @@ body.noscroll {
     border: 2px solid #e06733;
   }
 }
-.btn:hover:not(:disabled), .btn:focus:not(:disabled) {
+.btn:hover, .btn:focus {
   background-color: #e06733;
   color: #ffffff;
 }
@@ -617,7 +617,7 @@ body.noscroll {
   color: #ffffff;
 }
 .service .blur {
-  filter: blur(2px);
+  filter: blur(10px);
 }
 
 .prices {

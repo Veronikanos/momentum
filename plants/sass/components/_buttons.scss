@@ -20,8 +20,8 @@
 
   @extend %transition;
 
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {
+  &:hover,
+  &:focus {
     background-color: $orange;
     color: $white;
   }
