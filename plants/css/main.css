@@ -4,7 +4,7 @@ footer .footer__social a, .circle-btn {
   justify-content: center;
 }
 
-.dropdown__list-item, .dropdown__list, .prices .accordion-btn-icon, .prices .accordion-open-btn, .prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn {
+.dropdown__list-item, .dropdown__list, .prices .accordion-btn-icon, .prices .accordion-open-btn, .prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn:disabled, .btn {
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
@@ -133,6 +133,16 @@ body.noscroll {
     line-height: 1.25;
     border: 2px solid #e06733;
   }
+}
+.btn:hover:not(:disabled), .btn:focus:not(:disabled) {
+  background-color: #e06733;
+  color: #ffffff;
+}
+.btn:disabled {
+  background-color: none;
+  color: lightslategray;
+  border: 1px solid lightslategray;
+  cursor: default;
 }
 
 .logo {
