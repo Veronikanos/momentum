@@ -1,32 +1,9 @@
 const allCards = document.querySelectorAll('.service__gallery-item');
 const buttons = document.querySelector('.service__buttons');
+const buttonsArr = document.querySelectorAll('.service-btn');
 let activeButtons = 0;
 
-const handleButtonClick = (buttons) => {
-  buttons.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'BUTTON') return;
-    // console.log(e.target);
-
-    let clickedButton = e.target;
-
-    if (!activeButtons) {
-      addBlurCardsForAll();
-
-      handleClickToInactiveButton(clickedButton);
-    } else if (activeButtons === 1) {
-      if (clickedButton.classList.contains('active')) {
-        handleClickToActiveButton(clickedButton);
-        removeBlurCardsForAll();
-      } else {
-        handleClickToInactiveButton(clickedButton);
-      }
-    } else {
-      if (clickedButton.classList.contains('active')) {
-        handleClickToActiveButton(clickedButton);
-      }
-    }
-  });
-};
+console.log(buttonsArr);
 
 const handleClickToInactiveButton = (clickedButton) => {
   addActiveButtonClass(clickedButton);
@@ -76,4 +53,33 @@ const removeBlurCards = (group) => {
   });
 };
 
-handleButtonClick(buttons);
+const resetActiveButtons = () => {
+  buttonsArr.forEach((btn) => {
+    btn.classList.remove('active');
+  });
+  activeButtons = 0;
+};
+
+buttons.addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+
+  let clickedButton = e.target;
+
+  if (!activeButtons) {
+    addBlurCardsForAll();
+    handleClickToInactiveButton(clickedButton);
+  } else if (activeButtons === 1) {
+    if (clickedButton.classList.contains('active')) {
+      handleClickToActiveButton(clickedButton);
+      removeBlurCardsForAll();
+    } else handleClickToInactiveButton(clickedButton);
+  } else {
+    if (clickedButton.classList.contains('active')) {
+      handleClickToActiveButton(clickedButton);
+    } else {
+      addBlurCardsForAll();
+      resetActiveButtons();
+      handleClickToInactiveButton(clickedButton);
+    }
+  }
+});

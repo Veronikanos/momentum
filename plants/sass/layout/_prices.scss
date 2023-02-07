@@ -281,15 +281,20 @@
   }
 
   .accordion-body-button {
-    padding: 3px 25px;
+    padding: 5px 25px;
     background-color: $white;
     border-radius: 10px;
     color: $grey;
     font-weight: 700;
     font-size: 14px;
     line-height: calc(20 / 14);
-    border-color: $white;
-    border-style: solid;
     cursor: pointer;
+    @extend %transition;
+
+    &:hover,
+    &:focus {
+      background-color: $orange;
+      color: $white;
+    }
   }
 }

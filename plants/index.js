@@ -1,3 +1,4 @@
-// console.log(
-//   '1. Вёрстка валидная +10\n2. Вёрстка семантическая +20\n3. Вёрстка соответствует макету +48\n4. Требования к css +12\n5. Интерактивность, реализуемая через css +20\nИтоговая оценка: 110.'
-// );
+import './js/mobile-menu.js';
+import './js/service-buttons.js';
+import './js/dropdown-select.js';
+import './js/accordion.js';

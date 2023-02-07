@@ -56,8 +56,6 @@
   position: relative;
   @media screen and (min-width: 768px) {
     max-width: 450px;
-    // margin-left: auto;
-    // padding: 5px 35px 5px 20px;
   }
 
   &__button {
@@ -66,8 +64,7 @@
     align-items: center;
     font-weight: 400;
     font-size: 16px;
-    line-height: 40px;
-    /* identical to box height, or 200% */
+    line-height: calc(40 / 16);
     box-shadow: none;
     background: $active-select;
     padding: 5px 20px 5px 20px;
@@ -143,6 +140,8 @@
     &_visible {
       opacity: 1;
       visibility: visible;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     }
     &-item {
       margin: 0;
@@ -154,16 +153,9 @@
       letter-spacing: 0.05em;
       padding-left: 7px;
       padding-right: 7px;
-
       border-bottom: 1px solid transparent;
-
       @extend %transition;
 
-      // &_active {
-      //   // background: #f5f8fa;
-      //   color: #717171;
-      //   border-bottom: 1px solid #717171;
-      // }
       &:hover {
         color: #717171;
         border-bottom: 1px solid #717171;
@@ -185,12 +177,8 @@
   }
 }
 
-.address-box-invisible {
-  display: none;
-}
-
 .address-box {
-  max-width: 282px;
+  max-width: 300px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 30px 36px 23px;
@@ -229,7 +217,6 @@
     width: 65px;
     color: #000000;
     // line-height: 20px;
-    /* or 125% */
     @media screen and (min-width: 768px) {
       width: 125px;
     }
@@ -237,17 +224,13 @@
 
   &-btn {
     display: block;
+    max-width: fit-content;
     margin: 0 auto;
-    padding: 7px 38px;
+    padding: 8px 38px;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 13px;
     text-align: center;
-
     color: #717171;
-
-    @media screen and (min-width: 1440px) {
-      width: 122px;
-    }
   }
 }

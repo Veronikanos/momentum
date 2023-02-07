@@ -20,9 +20,17 @@
 
   @extend %transition;
 
-  // &:hover,
-  // &:focus {
-  //   background-color: $orange;
-  //   color: $white;
-  // }
+  &:hover,
+  &:focus {
+    background-color: $orange;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: none;
+    color: lightslategray;
+    border: 1px solid lightslategray;
+    cursor: default;
+    @extend %transition;
+  }
 }
