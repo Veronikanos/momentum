@@ -1,8 +1,8 @@
-const dropdown = document.querySelector('.dropdown');
+import {addresses} from '../constants/addresses.js';
+
 const button = document.querySelector('.dropdown__button');
 const list = document.querySelector('.dropdown__list');
 const items = document.querySelectorAll('.dropdown__list-item');
-const addressBoxes = document.querySelectorAll('.address-box');
 const addressBoxWrapper = document.querySelector(
   '.address-box-wrapper'
 );
@@ -14,23 +14,24 @@ button.addEventListener('click', () => {
 });
 
 const showAddressBox = (text) => {
-  // addressBoxes.forEach((box) => {
-  //   box.classList.add('address-box-invisible');
-
-  //   if (text.includes(box.dataset.city)) {
-  //     box.classList.remove('address-box-invisible');
-  //   }
-  // });
-
-  addressBoxWrapper.insertAdjacentHTML('beforeend', `<h1>HIII</h1>`);
-  // 	<div class="address-box address-box-invisible" data-city="Yonkers">
-  // 	<ul class="address-box-list">
-  // 		<li class="address-box-item"><span class="item-left">City:</span><span>Yonkers, NY</span></li>
-  // 		<li class="address-box-item"><span class="item-left">Phone:</span><span>+1	914	678 0003</span></li>
-  // 		<li class="address-box-item"><span class="item-left">Office address:</span><span>511 Warburton Ave</span></li>
-  // 	</ul>
-  // 	<button type="button" class="btn contact-btn address-box-btn"><a href="tel:+19146780003">Call us</a></button>
-  // </div>
+  const selectedCity = addresses.find((item) => text === item.city);
+  addressBoxWrapper.innerHTML = `<div class="address-box">
+  	<ul class="address-box-list">
+  		<li class="address-box-item"><span class="item-left">City:</span><span>${
+        selectedCity.city
+      }</span></li>
+  		<li class="address-box-item"><span class="item-left">Phone:</span><span>${
+        selectedCity.phone
+      }</span></li>
+  		<li class="address-box-item"><span class="item-left">Office address:</span><span>${
+        selectedCity.office
+      }</span></li>
+  	</ul>
+  	<button type="button" class="btn contact-btn address-box-btn"><a href="tel:${selectedCity.phone.replace(
+      /\s/g,
+      ''
+    )}">Call us</a></button>
+  </div>`;
 };
 
 items.forEach((listItem) => {
@@ -43,18 +44,4 @@ items.forEach((listItem) => {
     showAddressBox(listItem.innerText);
     list.classList.remove('dropdown__list_visible');
   });
-});
-
-document.addEventListener('click', (e) => {
-  if (e.target !== button) {
-    button.classList.remove('dropdown__button_active');
-    list.classList.remove('dropdown__list_visible');
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Tab' || e.key === 'Escape') {
-    button.classList.remove('dropdown__button_active');
-    list.classList.remove('dropdown__list_visible');
-  }
 });
