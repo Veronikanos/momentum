@@ -27,10 +27,10 @@ const showAddressBox = (text) => {
         selectedCity.office
       }</span></li>
   	</ul>
-  	<button type="button" class="btn contact-btn address-box-btn"><a href="tel:${selectedCity.phone.replace(
+  	<a class="btn contact-btn address-box-btn" href="tel:${selectedCity.phone.replace(
       /\s/g,
       ''
-    )}">Call us</a></button>
+    )}">Call us</a>
   </div>`;
 };
 
@@ -39,6 +39,14 @@ items.forEach((listItem) => {
     items.forEach((el) => {
       el.classList.remove('dropdown__list-item_active');
     });
+
+    //hide background image if mobile width as soon as user select city from dropdown
+    if (window.innerWidth < 768) {
+      document.querySelector(
+        '.contacts-container .wrapper'
+      ).style.backgroundImage = 'none';
+    }
+
     e.target.classList.add('dropdown__list-item_active');
     button.innerText = listItem.innerText;
     showAddressBox(listItem.innerText);

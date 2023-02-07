@@ -4,7 +4,7 @@ footer .footer__social a, .circle-btn {
   justify-content: center;
 }
 
-.dropdown__list-item, .dropdown__list, .prices .accordion-btn-icon, .prices .accordion-open-btn, .prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn:disabled, .btn {
+.dropdown__list-item, .dropdown__list, .prices .accordion-body-button, .prices .accordion-btn-icon, .prices .accordion-open-btn, .prices .accordion-item, .nav-item__link:hover, .nav-item__link:focus, .nav-item__link:active, .btn:disabled, .btn {
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
@@ -890,16 +890,18 @@ body.noscroll {
   color: #e06733;
 }
 .prices .accordion-body-button {
-  padding: 3px 25px;
+  padding: 5px 25px;
   background-color: #ffffff;
   border-radius: 10px;
   color: #717171;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.4285714286;
-  border-color: #ffffff;
-  border-style: solid;
   cursor: pointer;
+}
+.prices .accordion-body-button:hover, .prices .accordion-body-button:focus {
+  background-color: #e06733;
+  color: #ffffff;
 }
 
 .contacts-container {
@@ -976,8 +978,7 @@ body.noscroll {
   align-items: center;
   font-weight: 400;
   font-size: 16px;
-  line-height: 40px;
-  /* identical to box height, or 200% */
+  line-height: 2.5;
   box-shadow: none;
   background: #c1e698;
   padding: 5px 20px 5px 20px;
@@ -1043,6 +1044,7 @@ body.noscroll {
 .dropdown__list_visible {
   opacity: 1;
   visibility: visible;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .dropdown__list-item {
   margin: 0;
@@ -1072,7 +1074,7 @@ body.noscroll {
 }
 
 .address-box {
-  max-width: 282px;
+  max-width: 300px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 30px 36px 23px;
@@ -1109,7 +1111,6 @@ body.noscroll {
 .address-box .item-left {
   width: 65px;
   color: #000000;
-  /* or 125% */
 }
 @media screen and (min-width: 768px) {
   .address-box .item-left {
@@ -1118,18 +1119,16 @@ body.noscroll {
 }
 .address-box-btn {
   display: block;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   margin: 0 auto;
-  padding: 7px 38px;
+  padding: 8px 38px;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 13px;
   text-align: center;
   color: #717171;
-}
-@media screen and (min-width: 1440px) {
-  .address-box-btn {
-    width: 122px;
-  }
 }
 
 footer {
