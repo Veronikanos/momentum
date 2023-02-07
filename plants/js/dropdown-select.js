@@ -3,6 +3,9 @@ const button = document.querySelector('.dropdown__button');
 const list = document.querySelector('.dropdown__list');
 const items = document.querySelectorAll('.dropdown__list-item');
 const addressBoxes = document.querySelectorAll('.address-box');
+const addressBoxWrapper = document.querySelector(
+  '.address-box-wrapper'
+);
 
 button.addEventListener('click', () => {
   list.classList.toggle('dropdown__list_visible');
@@ -11,13 +14,23 @@ button.addEventListener('click', () => {
 });
 
 const showAddressBox = (text) => {
-  addressBoxes.forEach((box) => {
-    box.classList.add('address-box-invisible');
+  // addressBoxes.forEach((box) => {
+  //   box.classList.add('address-box-invisible');
 
-    if (text.includes(box.dataset.city)) {
-      box.classList.remove('address-box-invisible');
-    }
-  });
+  //   if (text.includes(box.dataset.city)) {
+  //     box.classList.remove('address-box-invisible');
+  //   }
+  // });
+
+  addressBoxWrapper.insertAdjacentHTML('beforeend', `<h1>HIII</h1>`);
+  // 	<div class="address-box address-box-invisible" data-city="Yonkers">
+  // 	<ul class="address-box-list">
+  // 		<li class="address-box-item"><span class="item-left">City:</span><span>Yonkers, NY</span></li>
+  // 		<li class="address-box-item"><span class="item-left">Phone:</span><span>+1	914	678 0003</span></li>
+  // 		<li class="address-box-item"><span class="item-left">Office address:</span><span>511 Warburton Ave</span></li>
+  // 	</ul>
+  // 	<button type="button" class="btn contact-btn address-box-btn"><a href="tel:+19146780003">Call us</a></button>
+  // </div>
 };
 
 items.forEach((listItem) => {

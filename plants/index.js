@@ -1,4 +1,4 @@
-import './service-buttons.js';
-import './dropdown-select.js';
-import './accordion.js';
-import './mobile-menu.js';
+import './js/mobile-menu.js';
+import './js/service-buttons.js';
+import './js/dropdown-select.js';
+import './js/accordion.js';
