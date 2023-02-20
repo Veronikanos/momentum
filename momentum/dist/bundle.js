@@ -18,13 +18,13 @@ const putDate = () => {
     timeZone: 'UTC',
   };
   const week = [
+    'Sunday',
     'Monday',
     'Thursday',
     'Wednesday',
     'Thirsday',
     'Friday',
     'Saturday',
-    'Sunday',
   ];
   const currentDate = date.toLocaleDateString('en-US', options);
   const currentWeekDay = date.getDay();
