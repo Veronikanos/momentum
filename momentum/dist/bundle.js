@@ -7,19 +7,23 @@
   \****************************/
 /***/ (() => {
 
-const date = new Date();
-const options = {
-  month: 'long',
-  day: 'numeric',
-  // hour: 'numeric',
-  // minute: 'numeric',
-  year: 'numeric',
-  timeZone: 'UTC',
-};
-const currentDate = date.toLocaleDateString('en-US', options);
+const putDate = () => {
+  const date = new Date();
+  const options = {
+    month: 'long',
+    day: 'numeric',
+    // hour: 'numeric',
+    // minute: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  };
+  const currentDate = date.toLocaleDateString('en-US', options);
 
-const currentDay = document.querySelector('.date');
-currentDay.innerText = currentDate;
+  const currentDay = document.querySelector('.date');
+  currentDay.innerText = currentDate;
+};
+
+putDate();
 
 
 /***/ }),
@@ -36,6 +40,9 @@ const showTime = () => {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
   time.textContent = currentTime;
+  if (currentTime === '00:00:00') {
+    putDate();
+  }
   setTimeout(showTime, 1000);
 };
 
