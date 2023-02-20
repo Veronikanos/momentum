@@ -8,10 +8,20 @@ const putDate = () => {
     year: 'numeric',
     timeZone: 'UTC',
   };
+  const week = [
+    'Monday',
+    'Thursday',
+    'Wednesday',
+    'Thirsday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
   const currentDate = date.toLocaleDateString('en-US', options);
+  const currentWeekDay = date.getDay();
 
   const currentDay = document.querySelector('.date');
-  currentDay.innerText = currentDate;
+  currentDay.innerText = `${week[currentWeekDay]}, ${currentDate}`;
 };
 
 putDate();
