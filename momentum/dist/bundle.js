@@ -5,8 +5,13 @@
 /*!****************************!*\
   !*** ./src/currentDate.js ***!
   \****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "putDate": () => (/* binding */ putDate)
+/* harmony export */ });
 const putDate = () => {
   const date = new Date();
   const options = {
@@ -26,6 +31,7 @@ const putDate = () => {
     'Friday',
     'Saturday',
   ];
+
   const currentDate = date.toLocaleDateString('en-US', options);
   const currentWeekDay = date.getDay();
 
@@ -42,21 +48,77 @@ putDate();
 /*!****************************!*\
   !*** ./src/currentTime.js ***!
   \****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_greeting__WEBPACK_IMPORTED_MODULE_1__);
+
+
 
 const time = document.querySelector('.time');
+const timeBrakepoints = [
+  '00:00:00',
+  '06:00:00',
+  '12:00:00',
+  '18:00:00',
+];
 
 const showTime = () => {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
   time.textContent = currentTime;
-  if (currentTime === '00:00:00') {
-    putDate();
+  if (currentTime === timeBrakepoints[0]) {
+    (0,_currentDate__WEBPACK_IMPORTED_MODULE_0__.putDate)();
   }
+  if (timeBrakepoints.includes(currentTime)) {
+    let day = (0,_greeting__WEBPACK_IMPORTED_MODULE_1__.getTimeOfDay)();
+    greeting.innerText = `Good ${day},`;
+  }
+
   setTimeout(showTime, 1000);
 };
 
 showTime();
+
+
+/***/ }),
+
+/***/ "./src/greeting.js":
+/*!*************************!*\
+  !*** ./src/greeting.js ***!
+  \*************************/
+/***/ (() => {
+
+const greeting = document.querySelector('.greeting');
+const input = document.querySelector('input.name');
+
+const getTimeOfDay = () => {
+  const date = new Date();
+  const hours = date.getHours();
+  const timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
+  return timeOfDay[Math.floor(hours / 6)];
+};
+
+let day = getTimeOfDay();
+greeting.innerText = `Good ${day},`;
+
+const setLocalStorage = () => {
+  if (input.value) {
+    localStorage.setItem('name', input.value);
+  }
+};
+
+const getLocalStorage = () => {
+  if (localStorage.getItem('name')) {
+    input.value = localStorage.getItem('name');
+  }
+};
+
+getLocalStorage();
+window.addEventListener('beforeunload', setLocalStorage);
 
 
 /***/ })
@@ -138,9 +200,10 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_currentTime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_currentDate__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_greeting__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 

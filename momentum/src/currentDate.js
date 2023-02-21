@@ -1,4 +1,4 @@
-const putDate = () => {
+export const putDate = () => {
   const date = new Date();
   const options = {
     month: 'long',
@@ -17,6 +17,7 @@ const putDate = () => {
     'Friday',
     'Saturday',
   ];
+
   const currentDate = date.toLocaleDateString('en-US', options);
   const currentWeekDay = date.getDay();
 
