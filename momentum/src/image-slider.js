@@ -12,7 +12,7 @@ const setBg = (imageNumber, timeOfDay) => {
 };
 
 export const setNewBackground = () => {
-  randomImageNumber = Math.floor(Math.random() * 20);
+  randomImageNumber = Math.floor(Math.random() * 20 + 1);
   const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
   currentTimeOfDay = getTimeOfDay();
   setBg(normalizeNumber, currentTimeOfDay);
