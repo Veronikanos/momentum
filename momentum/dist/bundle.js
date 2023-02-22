@@ -693,37 +693,12 @@ showTime();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
-
 
 
 const greeting = document.querySelector('.greeting');
-const input = document.querySelector('input.name');
-const inputCity = document.querySelector('.city');
 
 let day = (0,_currentTime__WEBPACK_IMPORTED_MODULE_0__.getTimeOfDay)();
 greeting.innerText = `Good ${day},`;
-
-const setLocalStorage = () => {
-  if (input.value) {
-    localStorage.setItem('name', input.value);
-  }
-  if (inputCity.value) {
-    localStorage.setItem('city', inputCity.value);
-  }
-};
-
-const getLocalStorage = () => {
-  if (localStorage.getItem('name')) {
-    input.value = localStorage.getItem('name');
-  }
-  if (localStorage.getItem('city')) {
-    (0,_weather__WEBPACK_IMPORTED_MODULE_1__.fillElementsOnWeatherBlock)(localStorage.getItem('city'));
-  }
-};
-
-getLocalStorage();
-window.addEventListener('beforeunload', setLocalStorage);
 
 
 /***/ }),
@@ -780,6 +755,44 @@ const handleNextArrowClick = () => {
 setNewBackground();
 prevArrow.addEventListener('click', handlePrevArrowClick);
 nextArrow.addEventListener('click', handleNextArrowClick);
+
+
+/***/ }),
+
+/***/ "./src/localStorage.js":
+/*!*****************************!*\
+  !*** ./src/localStorage.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
+
+
+const input = document.querySelector('input.name');
+const inputCity = document.querySelector('.city');
+
+const setLocalStorage = () => {
+  if (input.value) {
+    localStorage.setItem('name', input.value);
+  }
+  if (inputCity.value) {
+    localStorage.setItem('city', inputCity.value);
+  }
+};
+
+const getLocalStorage = () => {
+  if (localStorage.getItem('name')) {
+    input.value = localStorage.getItem('name');
+  }
+  if (localStorage.getItem('city')) {
+    (0,_weather__WEBPACK_IMPORTED_MODULE_0__.fillElementsOnWeatherBlock)(localStorage.getItem('city'));
+  }
+};
+
+getLocalStorage();
+window.addEventListener('beforeunload', setLocalStorage);
 
 
 /***/ }),
@@ -4994,11 +5007,13 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
+/* harmony import */ var _localStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./localStorage */ "./src/localStorage.js");
+/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
+/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
+
 
 
 
