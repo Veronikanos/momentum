@@ -1,5 +1,4 @@
 import {putDate} from './currentDate';
-import {getTimeOfDay} from './greeting';
 
 const time = document.querySelector('.time');
 const timeBrakepoints = [
@@ -22,6 +21,13 @@ const showTime = () => {
   }
 
   setTimeout(showTime, 1000);
+};
+
+export const getTimeOfDay = () => {
+  const date = new Date();
+  const hours = date.getHours();
+  const timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
+  return timeOfDay[Math.floor(hours / 6)];
 };
 
 showTime();

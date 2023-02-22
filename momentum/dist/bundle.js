@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/currentDate.js":
@@ -7,7 +8,6 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "putDate": () => (/* binding */ putDate)
@@ -17,8 +17,6 @@ const putDate = () => {
   const options = {
     month: 'long',
     day: 'numeric',
-    // hour: 'numeric',
-    // minute: 'numeric',
     year: 'numeric',
     timeZone: 'UTC',
   };
@@ -50,12 +48,11 @@ putDate();
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getTimeOfDay": () => (/* binding */ getTimeOfDay)
+/* harmony export */ });
 /* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
-/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_greeting__WEBPACK_IMPORTED_MODULE_1__);
-
 
 
 const time = document.querySelector('.time');
@@ -74,11 +71,18 @@ const showTime = () => {
     (0,_currentDate__WEBPACK_IMPORTED_MODULE_0__.putDate)();
   }
   if (timeBrakepoints.includes(currentTime)) {
-    let day = (0,_greeting__WEBPACK_IMPORTED_MODULE_1__.getTimeOfDay)();
+    let day = getTimeOfDay();
     greeting.innerText = `Good ${day},`;
   }
 
   setTimeout(showTime, 1000);
+};
+
+const getTimeOfDay = () => {
+  const date = new Date();
+  const hours = date.getHours();
+  const timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
+  return timeOfDay[Math.floor(hours / 6)];
 };
 
 showTime();
@@ -90,19 +94,16 @@ showTime();
 /*!*************************!*\
   !*** ./src/greeting.js ***!
   \*************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
+
 
 const greeting = document.querySelector('.greeting');
 const input = document.querySelector('input.name');
 
-const getTimeOfDay = () => {
-  const date = new Date();
-  const hours = date.getHours();
-  const timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
-  return timeOfDay[Math.floor(hours / 6)];
-};
-
-let day = getTimeOfDay();
+let day = (0,_currentTime__WEBPACK_IMPORTED_MODULE_0__.getTimeOfDay)();
 greeting.innerText = `Good ${day},`;
 
 const setLocalStorage = () => {
@@ -119,6 +120,53 @@ const getLocalStorage = () => {
 
 getLocalStorage();
 window.addEventListener('beforeunload', setLocalStorage);
+
+
+/***/ }),
+
+/***/ "./src/image-slider.js":
+/*!*****************************!*\
+  !*** ./src/image-slider.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
+
+
+const setBg = (imageNumber, timeOfDay) => {
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/Veronikanos/images-for-momentum/assets/images/${timeOfDay}/${imageNumber}.jpg`;
+  img.onload = () => {
+    document.body.style.backgroundImage = `url('https://raw.githubusercontent.com/Veronikanos/images-for-momentum/assets/images/${timeOfDay}/${imageNumber}.jpg')`;
+  };
+};
+
+const currentTimeOfDay = (0,_currentTime__WEBPACK_IMPORTED_MODULE_0__.getTimeOfDay)();
+let randomImageNumber = Math.floor(Math.random() * 20);
+const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
+
+const prevArrow = document.querySelector('.slide-prev');
+const nextArrow = document.querySelector('.slide-next');
+
+setBg(normalizeNumber, currentTimeOfDay);
+
+const handlePrevArrowClick = () => {
+  randomImageNumber =
+    randomImageNumber === 1 ? 20 : randomImageNumber - 1;
+  const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
+  setBg(normalizeNumber, currentTimeOfDay);
+};
+
+const handleNextArrowClick = () => {
+  randomImageNumber =
+    randomImageNumber === 20 ? 1 : randomImageNumber + 1;
+  const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
+  setBg(normalizeNumber, currentTimeOfDay);
+};
+
+prevArrow.addEventListener('click', handlePrevArrowClick);
+nextArrow.addEventListener('click', handleNextArrowClick);
 
 
 /***/ })
@@ -150,18 +198,6 @@ window.addEventListener('beforeunload', setLocalStorage);
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -192,9 +228,8 @@ window.addEventListener('beforeunload', setLocalStorage);
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -202,7 +237,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
 /* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
 /* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
-/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_greeting__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
+
 
 
 
