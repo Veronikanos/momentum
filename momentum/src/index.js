@@ -4,3 +4,4 @@ import './currentTime';
 import './currentDate';
 import './greeting';
 import './weather';
+import './quotes';

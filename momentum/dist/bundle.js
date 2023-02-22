@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/currentDate.js":
@@ -8,6 +7,7 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "putDate": () => (/* binding */ putDate)
@@ -48,6 +48,7 @@ putDate();
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getTimeOfDay": () => (/* binding */ getTimeOfDay)
@@ -99,6 +100,7 @@ showTime();
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
 
@@ -117,6 +119,7 @@ greeting.innerText = `Good ${day},`;
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "setNewBackground": () => (/* binding */ setNewBackground)
@@ -172,6 +175,7 @@ nextArrow.addEventListener('click', handleNextArrowClick);
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
 
@@ -203,12 +207,53 @@ window.addEventListener('beforeunload', setLocalStorage);
 
 /***/ }),
 
+/***/ "./src/quotes.js":
+/*!***********************!*\
+  !*** ./src/quotes.js ***!
+  \***********************/
+/***/ (() => {
+
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const buttonQuote = document.querySelector('.change-quote');
+
+const getQuotes = () => {
+  const quotes = '../assets/quotes.json';
+  return fetch(quotes)
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
+};
+
+const getRandomQuote = async () => {
+  try {
+    const allQuotes = await getQuotes();
+    const randomQuoteNumber = Math.floor(
+      Math.random() * allQuotes.length - 1
+    );
+    const randomQuote = allQuotes[randomQuoteNumber];
+    quote.textContent = randomQuote.text;
+    author.textContent = randomQuote.author;
+  } catch (error) {
+    alert('Can not get quotes');
+  }
+};
+
+getRandomQuote();
+
+buttonQuote.addEventListener('click', getRandomQuote);
+
+
+/***/ }),
+
 /***/ "./src/weather.js":
 /*!************************!*\
   !*** ./src/weather.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "fillElementsOnWeatherBlock": () => (/* binding */ fillElementsOnWeatherBlock)
@@ -293,6 +338,18 @@ inputCity.addEventListener('change', searchCity);
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -323,8 +380,9 @@ inputCity.addEventListener('change', searchCity);
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -335,6 +393,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
 /* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
 /* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
+/* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./quotes */ "./src/quotes.js");
+/* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_quotes__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
