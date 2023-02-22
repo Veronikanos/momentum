@@ -1,4 +1,5 @@
 import {putDate} from './currentDate';
+import {setNewBackground} from './image-slider';
 
 const time = document.querySelector('.time');
 const timeBrakepoints = [
@@ -18,6 +19,8 @@ const showTime = () => {
   if (timeBrakepoints.includes(currentTime)) {
     let day = getTimeOfDay();
     greeting.innerText = `Good ${day},`;
+    console.log('fhfhf');
+    setNewBackground();
   }
 
   setTimeout(showTime, 1000);

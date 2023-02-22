@@ -3,6 +3,8 @@ export const putDate = () => {
   const options = {
     month: 'long',
     day: 'numeric',
+    // hour: 'numeric',
+    // minute: 'numeric',
     year: 'numeric',
     timeZone: 'UTC',
   };

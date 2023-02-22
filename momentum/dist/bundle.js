@@ -17,6 +17,8 @@ const putDate = () => {
   const options = {
     month: 'long',
     day: 'numeric',
+    // hour: 'numeric',
+    // minute: 'numeric',
     year: 'numeric',
     timeZone: 'UTC',
   };
@@ -53,6 +55,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getTimeOfDay": () => (/* binding */ getTimeOfDay)
 /* harmony export */ });
 /* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
+/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
+
 
 
 const time = document.querySelector('.time');
@@ -73,6 +77,8 @@ const showTime = () => {
   if (timeBrakepoints.includes(currentTime)) {
     let day = getTimeOfDay();
     greeting.innerText = `Good ${day},`;
+    console.log('fhfhf');
+    (0,_image_slider__WEBPACK_IMPORTED_MODULE_1__.setNewBackground)();
   }
 
   setTimeout(showTime, 1000);
@@ -131,8 +137,14 @@ window.addEventListener('beforeunload', setLocalStorage);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "setNewBackground": () => (/* binding */ setNewBackground)
+/* harmony export */ });
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
 
+
+let randomImageNumber;
+let currentTimeOfDay;
 
 const setBg = (imageNumber, timeOfDay) => {
   const img = new Image();
@@ -142,14 +154,15 @@ const setBg = (imageNumber, timeOfDay) => {
   };
 };
 
-const currentTimeOfDay = (0,_currentTime__WEBPACK_IMPORTED_MODULE_0__.getTimeOfDay)();
-let randomImageNumber = Math.floor(Math.random() * 20);
-const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
+const setNewBackground = () => {
+  randomImageNumber = Math.floor(Math.random() * 20);
+  const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
+  currentTimeOfDay = (0,_currentTime__WEBPACK_IMPORTED_MODULE_0__.getTimeOfDay)();
+  setBg(normalizeNumber, currentTimeOfDay);
+};
 
 const prevArrow = document.querySelector('.slide-prev');
 const nextArrow = document.querySelector('.slide-next');
-
-setBg(normalizeNumber, currentTimeOfDay);
 
 const handlePrevArrowClick = () => {
   randomImageNumber =
@@ -165,6 +178,7 @@ const handleNextArrowClick = () => {
   setBg(normalizeNumber, currentTimeOfDay);
 };
 
+setNewBackground();
 prevArrow.addEventListener('click', handlePrevArrowClick);
 nextArrow.addEventListener('click', handleNextArrowClick);
 
@@ -234,10 +248,10 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
-/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
+/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
+/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
 
 
 
