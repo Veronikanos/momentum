@@ -8,28 +8,15 @@ const humidity = document.querySelector('.humidity');
 const inputCity = document.querySelector('.city');
 const titleWeather = document.querySelector('.title-weather');
 
-// const weatherService = axios.create({
-//   baseURL: 'https://api.openweathermap.org/data/2.5/weather',
-//   params: {
-//     q: 'Минск',
-//     lang: 'en',
-//     appid: '8ab18f9fbf76b2fee381039f2e960e34',
-//     units: 'metric',
-//   },
-// });
-
 const getWeather = async (city = 'Минск') => {
-  try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=8ab18f9fbf76b2fee381039f2e960e34&units=metric`
-    );
-    if (response.ok) {
-      let data = await response.json();
-      return data;
-    } else {
-      alert('Something went wrong');
-    }
-  } catch (error) {
+  console.log(city);
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=8ab18f9fbf76b2fee381039f2e960e34&units=metric`
+  );
+  if (response.ok) {
+    let data = await response.json();
+    return data;
+  } else {
     return error.message;
   }
 };
