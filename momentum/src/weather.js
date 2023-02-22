@@ -32,7 +32,7 @@ const getWeather = async (city = 'Минск') => {
   }
 };
 
-const fillElementsOnWeatherBlock = async (city = 'Minsk') => {
+export const fillElementsOnWeatherBlock = async (city = 'Minsk') => {
   if (city === '') {
     Notify.failure('Empty input', {
       position: 'center-top',
@@ -44,10 +44,10 @@ const fillElementsOnWeatherBlock = async (city = 'Minsk') => {
     const {weather, main, wind} = await getWeather(city);
 
     weatherIcon.classList.add(`owf-${weather[0].id}`);
-    temperature.textContent = `${main.temp}°C`;
+    temperature.textContent = `${Math.round(main.temp)}°C`;
     weatherDescription.textContent = weather[0].description;
-    humidity.textContent = ` ${main.humidity}%`;
-    windEl.textContent = ` ${wind.speed} m/sec`;
+    humidity.textContent = ` ${Math.trunc(main.humidity)}%`;
+    windEl.textContent = ` ${Math.trunc(wind.speed)} m/sec`;
     titleWeather.textContent =
       city.charAt(0).toUpperCase() + city.slice(1) ?? Minsk;
   } catch (error) {

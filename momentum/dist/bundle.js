@@ -693,10 +693,13 @@ showTime();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
+
 
 
 const greeting = document.querySelector('.greeting');
 const input = document.querySelector('input.name');
+const inputCity = document.querySelector('.city');
 
 let day = (0,_currentTime__WEBPACK_IMPORTED_MODULE_0__.getTimeOfDay)();
 greeting.innerText = `Good ${day},`;
@@ -705,11 +708,17 @@ const setLocalStorage = () => {
   if (input.value) {
     localStorage.setItem('name', input.value);
   }
+  if (inputCity.value) {
+    localStorage.setItem('city', inputCity.value);
+  }
 };
 
 const getLocalStorage = () => {
   if (localStorage.getItem('name')) {
     input.value = localStorage.getItem('name');
+  }
+  if (localStorage.getItem('city')) {
+    (0,_weather__WEBPACK_IMPORTED_MODULE_1__.fillElementsOnWeatherBlock)(localStorage.getItem('city'));
   }
 };
 
@@ -783,6 +792,9 @@ nextArrow.addEventListener('click', handleNextArrowClick);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fillElementsOnWeatherBlock": () => (/* binding */ fillElementsOnWeatherBlock)
+/* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var notiflix_build_notiflix_notify_aio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! notiflix/build/notiflix-notify-aio */ "./node_modules/notiflix/build/notiflix-notify-aio.js");
 /* harmony import */ var notiflix_build_notiflix_notify_aio__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(notiflix_build_notiflix_notify_aio__WEBPACK_IMPORTED_MODULE_0__);
@@ -832,10 +844,10 @@ const fillElementsOnWeatherBlock = async (city = 'Minsk') => {
     const {weather, main, wind} = await getWeather(city);
 
     weatherIcon.classList.add(`owf-${weather[0].id}`);
-    temperature.textContent = `${main.temp}°C`;
+    temperature.textContent = `${Math.round(main.temp)}°C`;
     weatherDescription.textContent = weather[0].description;
-    humidity.textContent = ` ${main.humidity}%`;
-    windEl.textContent = ` ${wind.speed} m/sec`;
+    humidity.textContent = ` ${Math.trunc(main.humidity)}%`;
+    windEl.textContent = ` ${Math.trunc(wind.speed)} m/sec`;
     titleWeather.textContent =
       city.charAt(0).toUpperCase() + city.slice(1) ?? Minsk;
   } catch (error) {
