@@ -7,9 +7,9 @@ const windEl = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
 const inputCity = document.querySelector('.city');
 const titleWeather = document.querySelector('.title-weather');
+const updatedInfoBox = document.querySelector('.updated-info');
 
 const getWeather = async (city = 'Минск') => {
-  console.log(city);
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=8ab18f9fbf76b2fee381039f2e960e34&units=metric`
   );
@@ -36,6 +36,7 @@ export const fillElementsOnWeatherBlock = async (city = 'Minsk') => {
     windEl.textContent = ` ${Math.trunc(wind.speed)} m/sec`;
     titleWeather.textContent =
       city.charAt(0).toUpperCase() + city.slice(1) ?? Minsk;
+    updatedInfoBox.textContent = new Date().toLocaleTimeString();
   } catch (error) {
     alert('Such city doesn`t exist, try another one');
   }
