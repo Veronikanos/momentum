@@ -40,19 +40,15 @@ const handlePlayPrevButton = () => {
     playNum = playList.length - 1;
   } else playNum--;
 
-  console.log(playNum);
   isPlay && playAudio();
   highlightActiveTrack();
 };
 
 const handlePlayNextButton = () => {
-  // playNum++;
-
   if (playNum === playList.length - 1) {
     playNum = 0;
   } else playNum++;
 
-  console.log(playNum);
   isPlay && playAudio();
   highlightActiveTrack();
 };
@@ -66,8 +62,16 @@ const showListOfTracks = () => {
 };
 
 const handleClickToTrack = (e) => {
-  // if ()
-  console.log(e.nodeName);
+  if (e.target.tagName != 'LI') return;
+
+  allTracks.forEach((item, index) => {
+    if (item === e.target) {
+      playNum = index;
+    }
+  });
+  playButton.classList.add('pause');
+  isPlay = true;
+  playAudio();
 };
 
 playListWrapper.insertAdjacentHTML(

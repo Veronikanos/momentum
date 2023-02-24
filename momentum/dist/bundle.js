@@ -52,19 +52,15 @@ const handlePlayPrevButton = () => {
     playNum = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1;
   } else playNum--;
 
-  console.log(playNum);
   isPlay && playAudio();
   highlightActiveTrack();
 };
 
 const handlePlayNextButton = () => {
-  // playNum++;
-
   if (playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
     playNum = 0;
   } else playNum++;
 
-  console.log(playNum);
   isPlay && playAudio();
   highlightActiveTrack();
 };
@@ -78,8 +74,16 @@ const showListOfTracks = () => {
 };
 
 const handleClickToTrack = (e) => {
-  // if ()
-  console.log(e.nodeName);
+  if (e.target.tagName != 'LI') return;
+
+  allTracks.forEach((item, index) => {
+    if (item === e.target) {
+      playNum = index;
+    }
+  });
+  playButton.classList.add('pause');
+  isPlay = true;
+  playAudio();
 };
 
 playListWrapper.insertAdjacentHTML(
