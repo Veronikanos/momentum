@@ -5,3 +5,4 @@ import './currentDate';
 import './greeting';
 import './weather';
 import './quotes';
+import './audioplayer';

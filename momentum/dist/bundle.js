@@ -1,6 +1,39 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/audioplayer.js":
+/*!****************************!*\
+  !*** ./src/audioplayer.js ***!
+  \****************************/
+/***/ (() => {
+
+const playButton = document.querySelector('.play');
+
+let isPlay = false;
+const audio = new Audio();
+
+const playAudio = () => {
+  audio.src = '../assets/sounds/Aqua Caelestis.mp3';
+  audio.currentTime = 0;
+  audio.play();
+  isPlay = !isPlay;
+};
+
+const pauseAudio = () => {
+  audio.pause();
+  isPlay = !isPlay;
+};
+
+const handlePlayButton = () => {
+  isPlay ? pauseAudio() : playAudio();
+  playButton.classList.toggle('pause');
+};
+
+playButton.addEventListener('click', handlePlayButton);
+
+
+/***/ }),
+
 /***/ "./src/currentDate.js":
 /*!****************************!*\
   !*** ./src/currentDate.js ***!
@@ -396,6 +429,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
 /* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./quotes */ "./src/quotes.js");
 /* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_quotes__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _audioplayer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./audioplayer */ "./src/audioplayer.js");
+/* harmony import */ var _audioplayer__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_audioplayer__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
