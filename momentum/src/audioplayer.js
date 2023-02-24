@@ -3,14 +3,13 @@ import playList from './utils/playList';
 const playButton = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
-const playListText = document.querySelector('.play-list');
+const playListWrapper = document.querySelector('.play-list');
 
 let isPlay = false;
 let playNum = 0;
 const audio = new Audio();
 
 const highlightActiveTrack = () => {
-  const allTracks = document.querySelectorAll('.play-item');
   allTracks.forEach((element, index) => {
     element.classList.remove('item-active');
     if (index === playNum) {
@@ -37,21 +36,25 @@ const handlePlayButton = () => {
 };
 
 const handlePlayPrevButton = () => {
-  playNum--;
-  console.log(playNum);
-
   if (!playNum) {
-    playNum = playList.length;
-  }
+    playNum = playList.length - 1;
+  } else playNum--;
+
+  console.log(playNum);
   isPlay && playAudio();
+  highlightActiveTrack();
 };
 
 const handlePlayNextButton = () => {
-  playNum++;
-  if (playNum === playList.length) {
+  // playNum++;
+
+  if (playNum === playList.length - 1) {
     playNum = 0;
-  }
+  } else playNum++;
+
+  console.log(playNum);
   isPlay && playAudio();
+  highlightActiveTrack();
 };
 
 const showListOfTracks = () => {
@@ -62,12 +65,19 @@ const showListOfTracks = () => {
   return arr;
 };
 
-playListText.insertAdjacentHTML(
+const handleClickToTrack = (e) => {
+  // if ()
+  console.log(e.nodeName);
+};
+
+playListWrapper.insertAdjacentHTML(
   'beforeend',
   showListOfTracks().join('')
 );
 
-// highlightActiveTrack();
+const allTracks = document.querySelectorAll('.play-item');
+
+playListWrapper.addEventListener('click', handleClickToTrack);
 
 playButton.addEventListener('click', handlePlayButton);
 playPrev.addEventListener('click', handlePlayPrevButton);
