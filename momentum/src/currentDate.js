@@ -4,7 +4,7 @@ export const putDate = () => {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
-    timeZone: 'UTC',
+    // timeZone: 'UTC',
   };
   const week = [
     'Sunday',

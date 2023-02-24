@@ -18,6 +18,7 @@ const showTime = () => {
   }
   if (timeBrakepoints.includes(currentTime)) {
     let day = getTimeOfDay();
+    const greeting = document.querySelector('.greeting');
     greeting.innerText = `Good ${day},`;
     setNewBackground();
   }

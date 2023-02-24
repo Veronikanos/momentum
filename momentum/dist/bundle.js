@@ -5,31 +5,85 @@
 /*!****************************!*\
   !*** ./src/audioplayer.js ***!
   \****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_playList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/playList */ "./src/utils/playList.js");
+
 
 const playButton = document.querySelector('.play');
+const playPrev = document.querySelector('.play-prev');
+const playNext = document.querySelector('.play-next');
+const playListText = document.querySelector('.play-list');
 
 let isPlay = false;
+let playNum = 0;
 const audio = new Audio();
 
+const highlightActiveTrack = () => {
+  const allTracks = document.querySelectorAll('.play-item');
+  allTracks.forEach((element, index) => {
+    element.classList.remove('item-active');
+    if (index === playNum) {
+      element.classList.add('item-active');
+    }
+  });
+};
+
 const playAudio = () => {
-  audio.src = '../assets/sounds/Aqua Caelestis.mp3';
+  audio.src = `${_utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src}`;
   audio.currentTime = 0;
   audio.play();
-  isPlay = !isPlay;
+  highlightActiveTrack();
 };
 
 const pauseAudio = () => {
   audio.pause();
-  isPlay = !isPlay;
 };
 
 const handlePlayButton = () => {
   isPlay ? pauseAudio() : playAudio();
   playButton.classList.toggle('pause');
+  isPlay = !isPlay;
 };
 
+const handlePlayPrevButton = () => {
+  playNum--;
+  console.log(playNum);
+
+  if (!playNum) {
+    playNum = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length;
+  }
+  isPlay && playAudio();
+};
+
+const handlePlayNextButton = () => {
+  playNum++;
+  if (playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length) {
+    playNum = 0;
+  }
+  isPlay && playAudio();
+};
+
+const showListOfTracks = () => {
+  let arr = [];
+  _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].forEach((element) => {
+    arr.push(`<li class='play-item'>${element.title}</li>`);
+  });
+  return arr;
+};
+
+playListText.insertAdjacentHTML(
+  'beforeend',
+  showListOfTracks().join('')
+);
+
+// highlightActiveTrack();
+
 playButton.addEventListener('click', handlePlayButton);
+playPrev.addEventListener('click', handlePlayPrevButton);
+playNext.addEventListener('click', handlePlayNextButton);
 
 
 /***/ }),
@@ -51,7 +105,7 @@ const putDate = () => {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
-    timeZone: 'UTC',
+    // timeZone: 'UTC',
   };
   const week = [
     'Sunday',
@@ -108,6 +162,7 @@ const showTime = () => {
   }
   if (timeBrakepoints.includes(currentTime)) {
     let day = getTimeOfDay();
+    const greeting = document.querySelector('.greeting');
     greeting.innerText = `Good ${day},`;
     (0,_image_slider__WEBPACK_IMPORTED_MODULE_1__.setNewBackground)();
   }
@@ -280,6 +335,44 @@ buttonQuote.addEventListener('click', getRandomQuote);
 
 /***/ }),
 
+/***/ "./src/utils/playList.js":
+/*!*******************************!*\
+  !*** ./src/utils/playList.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const playList = [
+  {
+    title: 'Aqua Caelestis',
+    src: '../assets/sounds/Aqua Caelestis.mp3',
+    duration: '00:58',
+  },
+  {
+    title: 'Ennio Morricone',
+    src: '../assets/sounds/Ennio Morricone.mp3',
+    // duration: '03:50',
+  },
+  {
+    title: 'River Flows In You',
+    src: '../assets/sounds/River Flows In You.mp3',
+    duration: '03:50',
+  },
+  {
+    title: 'Summer Wind',
+    src: '../assets/sounds/Summer Wind.mp3',
+    // duration: '03:50',
+  },
+];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (playList);
+
+
+/***/ }),
+
 /***/ "./src/weather.js":
 /*!************************!*\
   !*** ./src/weather.js ***!
@@ -430,7 +523,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./quotes */ "./src/quotes.js");
 /* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_quotes__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _audioplayer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./audioplayer */ "./src/audioplayer.js");
-/* harmony import */ var _audioplayer__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_audioplayer__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
