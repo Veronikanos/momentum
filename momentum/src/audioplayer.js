@@ -19,9 +19,15 @@ const highlightActiveTrack = () => {
 };
 
 const playAudio = () => {
+  console.log(audio);
   audio.src = `${playList[playNum].src}`;
   audio.currentTime = 0;
   audio.play();
+  audio.onended = function () {
+    console.log(playNum);
+    playNum = playNum === playList.length - 1 ? 0 : playNum + 1;
+    playAudio();
+  };
   highlightActiveTrack();
 };
 

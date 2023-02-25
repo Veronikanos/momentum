@@ -31,9 +31,15 @@ const highlightActiveTrack = () => {
 };
 
 const playAudio = () => {
+  console.log(audio);
   audio.src = `${_utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src}`;
   audio.currentTime = 0;
   audio.play();
+  audio.onended = function () {
+    console.log(playNum);
+    playNum = playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
+    playAudio();
+  };
   highlightActiveTrack();
 };
 
