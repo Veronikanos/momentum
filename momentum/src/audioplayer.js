@@ -10,22 +10,17 @@ let playNum = 0;
 let audioCurrentTime = 0;
 const audio = new Audio();
 
-const getTimeCode = (num) => {
-  let seconds = parseInt(num);
-  let minutes = parseInt(seconds / 60);
-  seconds -= minutes * 60;
-  const hours = parseInt(minutes / 60);
-  minutes -= hours * 60;
-
-  if (hours === 0)
-    return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-  return `${String(hours).padStart(2, 0)}:${minutes}:${String(
-    seconds % 60
-  ).padStart(2, 0)}`;
+const formateTime = (num) => {
+  let min = Math.floor(num / 60);
+  let sec = Math.floor(num - min * 60);
+  if (sec < 10) {
+    sec = `0${sec}`;
+  }
+  return `${min}:${sec}`;
 };
 
 const handleAudioLoaded = () => {
-  document.querySelector('.length').textContent = getTimeCode(
+  document.querySelector('.length').textContent = formateTime(
     audio.duration
   );
   audio.volume = 0.75;
@@ -131,7 +126,7 @@ setInterval(() => {
   const progressBar = document.querySelector('.progress');
   progressBar.style.width =
     (audio.currentTime / audio.duration) * 100 + '%';
-  document.querySelector('.current').textContent = getTimeCode(
+  document.querySelector('.current').textContent = formateTime(
     audio.currentTime
   );
 }, 500);
