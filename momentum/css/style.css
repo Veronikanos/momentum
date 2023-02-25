@@ -45,22 +45,8 @@ body {
   margin-bottom: 10px;
 }
 
-.timeline {
-  height: 5px;
-  width: 100%;
-  margin-bottom: 15px;
-  background: white;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 2px 10px 0 #0008;
-}
-
 .progress {
   width: 100%;
-  /* background: coral;
-  width: 5px;
-  height: 100%;
-  transition: 0.25s; */
 }
 
 .audio-duration {
@@ -69,6 +55,21 @@ body {
 
 .audio-duration > * {
   padding: 2px;
+}
+
+.volume-button {
+  background-color: white;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.volume_icon {
+  background-image: url('../assets/svg/audio_volume.svg');
+}
+
+.mute {
+  background-image: url('../assets/svg/audio_volume_mute.svg');
 }
 
 .player-controls {
@@ -111,7 +112,8 @@ body {
 
 .player-icon,
 .slider-icon,
-.change-quote {
+.change-quote,
+.volume_icon {
   width: 32px;
   height: 32px;
   background-size: 32px 32px;

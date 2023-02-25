@@ -17,6 +17,7 @@ const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
 const playListWrapper = document.querySelector('.play-list');
 const audioProgress = document.querySelector('.progress');
+const volumeIcon = document.querySelector('.volume_icon');
 
 let isPlay = false;
 let playNum = 0;
@@ -59,7 +60,7 @@ const playAudio = () => {
 
 const nextTrack = () => {
   playNum = playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
-  playAudio();
+  isPlay && playAudio();
   audioCurrentTime = 0;
 };
 
@@ -144,6 +145,18 @@ const setNewTrackTime = () => {
     audio.currentTime = (audioProgress.value * audio.duration) / 100;
   }
 };
+
+// const audioVolume = document.getElementById('audioVolume');
+// const audioProgress = document.getElementById('audioProgress');
+
+volumeIcon.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  if (audio.muted) {
+    volumeIcon.classList.add('mute');
+  } else {
+    volumeIcon.classList.remove('mute');
+  }
+});
 
 showTrackList();
 const allTracks = document.querySelectorAll('.play-item');
