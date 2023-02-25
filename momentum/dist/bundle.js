@@ -16,6 +16,7 @@ const playButton = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
 const playListWrapper = document.querySelector('.play-list');
+const audioProgress = document.querySelector('.progress');
 
 let isPlay = false;
 let playNum = 0;
@@ -53,12 +54,16 @@ const playAudio = () => {
   audio.src = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
   audio.play();
   audio.currentTime = audioCurrentTime;
-  audio.onended = function () {
-    playNum = playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
-    playAudio();
-  };
   highlightActiveTrack();
 };
+
+const nextTrack = () => {
+  playNum = playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
+  playAudio();
+  audioCurrentTime = 0;
+};
+
+audio.addEventListener('ended', nextTrack);
 
 const pauseAudio = () => {
   audio.pause();
@@ -81,9 +86,7 @@ const handlePlayPrevButton = () => {
 };
 
 const handlePlayNextButton = () => {
-  if (playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
-    playNum = 0;
-  } else playNum++;
+  nextTrack();
 
   isPlay && playAudio();
   highlightActiveTrack();
@@ -108,6 +111,7 @@ const handleClickToTrack = (e) => {
   });
   playButton.classList.add('pause');
   isPlay = true;
+  audioCurrentTime = 0;
   playAudio();
 };
 
@@ -124,31 +128,31 @@ const setFirstActiveTrack = () => {
   highlightActiveTrack();
 };
 
-//click on timeline to skip around
-const timeline = document.querySelector('.timeline');
-timeline.addEventListener('click', (e) => {
-  const timelineWidth = window.getComputedStyle(timeline).width;
-  const timeToSeek =
-    (e.offsetX / parseInt(timelineWidth)) * audio.duration;
-  audio.currentTime = timeToSeek;
-});
+const updateProgressValue = () => {
+  if (audio.duration) {
+    audioCurrentTime = audio.currentTime;
+    document.querySelector('.current').textContent = formateTime(
+      audio.currentTime
+    );
+    audioProgress.value = 100 * (audio.currentTime / audio.duration);
+    // audioProgress.style.background = `linear-gradient(to right, #c76000 ${audioProgress.value}%, #c4c4c4 ${audioProgress.value}%)`;
+  }
+};
 
-//check audio percentage and update time accordingly
-setInterval(() => {
-  const progressBar = document.querySelector('.progress');
-  progressBar.style.width =
-    (audio.currentTime / audio.duration) * 100 + '%';
-  document.querySelector('.current').textContent = formateTime(
-    audio.currentTime
-  );
-}, 500);
+const setNewTrackTime = () => {
+  if (audio.duration) {
+    audio.currentTime = (audioProgress.value * audio.duration) / 100;
+  }
+};
 
 showTrackList();
 const allTracks = document.querySelectorAll('.play-item');
 setFirstActiveTrack();
+audioProgress.addEventListener('input', setNewTrackTime);
 
 playListWrapper.addEventListener('click', handleClickToTrack);
 audio.addEventListener('loadeddata', handleAudioLoaded);
+audio.addEventListener('timeupdate', updateProgressValue);
 playButton.addEventListener('click', handlePlayButton);
 playPrev.addEventListener('click', handlePlayPrevButton);
 playNext.addEventListener('click', handlePlayNextButton);

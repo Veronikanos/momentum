@@ -56,10 +56,11 @@ body {
 }
 
 .progress {
-  background: coral;
+  width: 100%;
+  /* background: coral;
   width: 5px;
   height: 100%;
-  transition: 0.25s;
+  transition: 0.25s; */
 }
 
 .audio-duration {
