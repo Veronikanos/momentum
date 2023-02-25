@@ -69,7 +69,7 @@ const handlePlayPrevButton = () => {
   if (!playNum) {
     playNum = playList.length - 1;
   } else playNum--;
-
+  audioCurrentTime = 0;
   isPlay && playAudio();
   highlightActiveTrack();
 };

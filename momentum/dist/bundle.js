@@ -81,7 +81,7 @@ const handlePlayPrevButton = () => {
   if (!playNum) {
     playNum = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1;
   } else playNum--;
-
+  audioCurrentTime = 0;
   isPlay && playAudio();
   highlightActiveTrack();
 };
