@@ -33,6 +33,28 @@ body {
   padding: 20px;
 }
 
+.timeline {
+  height: 5px;
+  width: 100%;
+  background: white;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 10px 0 #0008;
+}
+.progress {
+  background: coral;
+  width: 5px;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.audio-duration {
+  display: flex;
+}
+.audio-duration > * {
+  padding: 2px;
+}
 .player-controls {
   display: flex;
   align-items: center;
