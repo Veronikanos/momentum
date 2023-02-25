@@ -19,6 +19,7 @@ const playListWrapper = document.querySelector('.play-list');
 
 let isPlay = false;
 let playNum = 0;
+let audioCurrentTime = 0;
 const audio = new Audio();
 
 const getTimeCode = (num) => {
@@ -54,9 +55,9 @@ const highlightActiveTrack = () => {
 };
 
 const playAudio = () => {
-  audio.src = `${_utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src}`;
-  // audio.currentTime = 0;
+  audio.src = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
   audio.play();
+  audio.currentTime = audioCurrentTime;
   audio.onended = function () {
     playNum = playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
     playAudio();
@@ -66,6 +67,7 @@ const playAudio = () => {
 
 const pauseAudio = () => {
   audio.pause();
+  audioCurrentTime = audio.currentTime;
 };
 
 const handlePlayButton = () => {
@@ -123,7 +125,7 @@ const showTrackList = () => {
 
 const setFirstActiveTrack = () => {
   allTracks[0].classList.add('item-active');
-  audio.src = `${_utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src}`;
+  audio.src = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
   highlightActiveTrack();
 };
 

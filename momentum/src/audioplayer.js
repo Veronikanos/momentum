@@ -7,6 +7,7 @@ const playListWrapper = document.querySelector('.play-list');
 
 let isPlay = false;
 let playNum = 0;
+let audioCurrentTime = 0;
 const audio = new Audio();
 
 const getTimeCode = (num) => {
@@ -42,9 +43,9 @@ const highlightActiveTrack = () => {
 };
 
 const playAudio = () => {
-  audio.src = `${playList[playNum].src}`;
-  // audio.currentTime = 0;
+  audio.src = playList[playNum].src;
   audio.play();
+  audio.currentTime = audioCurrentTime;
   audio.onended = function () {
     playNum = playNum === playList.length - 1 ? 0 : playNum + 1;
     playAudio();
@@ -54,6 +55,7 @@ const playAudio = () => {
 
 const pauseAudio = () => {
   audio.pause();
+  audioCurrentTime = audio.currentTime;
 };
 
 const handlePlayButton = () => {
@@ -111,7 +113,7 @@ const showTrackList = () => {
 
 const setFirstActiveTrack = () => {
   allTracks[0].classList.add('item-active');
-  audio.src = `${playList[playNum].src}`;
+  audio.src = playList[playNum].src;
   highlightActiveTrack();
 };
 
