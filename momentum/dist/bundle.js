@@ -123,7 +123,8 @@ const showTrackList = () => {
 
 const setFirstActiveTrack = () => {
   allTracks[0].classList.add('item-active');
-  // handleAudioLoaded();
+  audio.src = `${_utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src}`;
+  highlightActiveTrack();
 };
 
 //click on timeline to skip around
@@ -148,7 +149,6 @@ setInterval(() => {
 showTrackList();
 const allTracks = document.querySelectorAll('.play-item');
 setFirstActiveTrack();
-highlightActiveTrack();
 
 playListWrapper.addEventListener('click', handleClickToTrack);
 audio.addEventListener('loadeddata', handleAudioLoaded);
