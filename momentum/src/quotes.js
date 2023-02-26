@@ -1,14 +1,17 @@
+import data from './utils/quotes';
+
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const buttonQuote = document.querySelector('.change-quote');
 
 const getQuotes = () => {
-  const quotes = '../assets/quotes.json';
-  return fetch(quotes)
-    .then((res) => res.json())
-    .then((data) => {
-      return data;
-    });
+  // const quotes = data;
+  // return fetch(quotes)
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     return data;
+  //   });
+  return data;
 };
 
 const getRandomQuote = async () => {

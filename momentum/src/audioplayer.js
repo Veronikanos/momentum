@@ -1,4 +1,4 @@
-import playList from './utils/playList';
+import playList from './playList';
 
 const playButton = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
