@@ -35,7 +35,11 @@ module.exports = {
       filename: 'bundle.[contenthash].css',
     }),
     new CopyWebpackPlugin({
-      patterns: [{from: 'src/sounds', to: 'sounds'}],
+      patterns: [
+        {from: 'src/sounds', to: 'sounds'},
+        {from: 'src/utils', to: 'utils'},
+      ],
+      // patterns: [{from: 'src/utils', to: 'utils'}],
     }),
   ],
 

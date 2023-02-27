@@ -2,6 +2,7 @@ import langObject from './languageObj';
 import {putDate} from './currentDate';
 import {getTimeOfDay} from './currentTime';
 import {fillElementsOnWeatherBlock} from './weather';
+import {putQuoteToMarkup} from './quotes';
 
 const radioGroup = document.getElementsByName('radio');
 
@@ -12,6 +13,7 @@ const translateText = async () => {
 
   greeting.innerText = `${langObject[lang][day]},`;
   putDate();
+  putQuoteToMarkup(localStorage.getItem('randomQuoteNumber'));
   await fillElementsOnWeatherBlock();
 
   const weatherIn = document.querySelector('.weatherIn');
