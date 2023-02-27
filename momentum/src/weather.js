@@ -25,6 +25,7 @@ export const getWeather = async (city = 'Minsk') => {
 
 export const fillElementsOnWeatherBlock = async (city) => {
   const lang = localStorage.getItem('lang');
+  // const weatherIn = document.querySelector('.weatherIn')
 
   const cityQuery = city ? city : langObject[lang].defaultCity;
   console.log(cityQuery);

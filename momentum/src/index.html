@@ -51,16 +51,28 @@
       </div>
       <div class="weather">
         <input type="text" class="city" placeholder="[enter city]" />
-        <p>Weather in <span class="title-weather"></span></p>
+        <div class="weather-title-wrapper">
+          <span class="weatherIn"> Weather in </span
+          ><span class="title-weather"> </span>
+        </div>
         <i class="weather-icon owf"></i>
         <div class="weather-error"></div>
         <div class="description-container">
           <span class="temperature"></span>
           <span class="weather-description"></span>
         </div>
-        <div>Wind:<span class="wind"></span></div>
-        <div>Humidity:<span class="humidity"></span></div>
-        <p>Last updated: <span class="updated-info"></span></p>
+        <div>
+          <span class="wind-text">Wind:</span
+          ><span class="wind"></span>
+        </div>
+        <div>
+          <span class="humidity-text"> Humidity:</span>
+          <span class="humidity"></span>
+        </div>
+        <p>
+          <span class="last-updated-text">Last updated:</span>
+          <span class="updated-info"></span>
+        </p>
       </div>
     </header>
     <main class="main">
