@@ -24,6 +24,7 @@ const langObject = {
     night: 'Good night',
     locale: 'en-EN',
     addBtn: 'Add',
+    errorNoCity: 'Such city doesn`t exist, try another one',
   },
   ru: {
     langEn: 'Английский',
@@ -50,6 +51,28 @@ const langObject = {
     night: 'Доброй ночи',
     locale: 'ru-RU',
     addBtn: 'Добавить',
+    errorNoCity: 'Такого города не найдено, попробуйте другой',
+  },
+};
+
+export const week = {
+  en: {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Thursday',
+    3: 'Wednesday',
+    4: 'Thirsday',
+    5: 'Friday',
+    6: 'Saturday',
+  },
+  ru: {
+    0: 'Воскресенье',
+    1: 'Понедельник',
+    2: 'Вторник',
+    3: 'Среда',
+    4: 'Четверг',
+    5: 'Пятница',
+    6: 'Суббота',
   },
 };
 

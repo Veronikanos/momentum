@@ -1,3 +1,5 @@
+import langObject from './languageObj';
+
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector(
@@ -9,32 +11,42 @@ const inputCity = document.querySelector('.city');
 const titleWeather = document.querySelector('.title-weather');
 const updatedInfoBox = document.querySelector('.updated-info');
 
-const getWeather = async (city) => {
+export const getWeather = async (city = 'Minsk') => {
+  const lang = localStorage.getItem('lang');
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=8ab18f9fbf76b2fee381039f2e960e34&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=8ab18f9fbf76b2fee381039f2e960e34&units=metric`
   );
   if (response.ok) {
     let data = await response.json();
     return data;
-  } else {
-    return error.message;
   }
+  return error.message;
 };
 
 export const fillElementsOnWeatherBlock = async (city) => {
+  const lang = localStorage.getItem('lang');
+
+  const cityQuery = city ? city : langObject[lang].defaultCity;
+  console.log(cityQuery);
+
   try {
-    const {weather, main, wind} = await getWeather(city || 'Minsk');
+    const {weather, main, wind} = await getWeather(cityQuery);
+    if (inputCity.value) {
+      localStorage.setItem('city', inputCity.value);
+    }
 
     weatherIcon.classList.add(`owf-${weather[0].id}`);
     temperature.textContent = `${Math.round(main.temp)}°C`;
     weatherDescription.textContent = weather[0].description;
     humidity.textContent = ` ${Math.trunc(main.humidity)}%`;
-    windEl.textContent = ` ${Math.trunc(wind.speed)} m/sec`;
+    windEl.textContent = ` ${Math.trunc(wind.speed)} ${
+      langObject[lang].windSpeed
+    }`;
     titleWeather.textContent =
-      city.charAt(0).toUpperCase() + city.slice(1) ?? Minsk;
+      cityQuery.charAt(0).toUpperCase() + cityQuery.slice(1) ?? Minsk;
     updatedInfoBox.textContent = new Date().toLocaleTimeString();
   } catch (error) {
-    alert('Such city doesn`t exist, try another one');
+    alert(`${langObject[lang].errorNoCity}`);
   }
 };
 
@@ -46,5 +58,5 @@ const searchCity = () => {
   fillElementsOnWeatherBlock(inputCity.value.toLowerCase().trim());
 };
 
-fillElementsOnWeatherBlock(localStorage.getItem('city') || 'Minsk');
+fillElementsOnWeatherBlock(localStorage.getItem('city') ?? 'Minsk');
 inputCity.addEventListener('change', searchCity);

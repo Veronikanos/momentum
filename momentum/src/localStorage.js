@@ -7,9 +7,9 @@ const setLocalStorage = () => {
   if (input.value) {
     localStorage.setItem('name', input.value);
   }
-  if (inputCity.value) {
-    localStorage.setItem('city', inputCity.value);
-  }
+  // if (inputCity.value) {
+  //   localStorage.setItem('city', inputCity.value);
+  // }
 };
 
 const getLocalStorage = () => {
