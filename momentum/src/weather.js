@@ -50,7 +50,7 @@ export const fillElementsOnWeatherBlock = async (city) => {
 
 const searchCity = () => {
   if (!inputCity.value.toLowerCase().trim()) {
-    alert('Empty input');
+    alert(`${langObject[lang].errorEmptyInput}`);
     return;
   }
   fillElementsOnWeatherBlock(inputCity.value.toLowerCase().trim());

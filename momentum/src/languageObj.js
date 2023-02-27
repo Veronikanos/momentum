@@ -25,6 +25,7 @@ const langObject = {
     locale: 'en-EN',
     addBtn: 'Add',
     errorNoCity: 'Such city doesn`t exist, try another one',
+    errorEmptyInput: 'Empty input. Type a city and try again',
     lastUpdatedText: 'Last updated:',
   },
   ru: {
@@ -53,6 +54,8 @@ const langObject = {
     locale: 'ru-RU',
     addBtn: 'Добавить',
     errorNoCity: 'Такого города не найдено, попробуйте другой',
+    errorEmptyInput:
+      'Пустая строка. Введите город и попробуйте снова',
     lastUpdatedText: 'Последнее обновление:',
   },
 };
