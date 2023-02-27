@@ -39,10 +39,6 @@ body {
   padding: 20px;
 }
 
-.player {
-  /* width: 240px; */
-}
-
 .wrap-container {
   display: flex;
   justify-content: space-between;
