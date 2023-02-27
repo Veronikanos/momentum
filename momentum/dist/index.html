@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/a15c5ab5f07331570576.css" />
     <link rel="stylesheet" href="assets/57011448dc08b9372b5e.css" />
     <title>momentum</title>
-  <script defer src="bundle.0bcfa2c0cadcdaa54367.js"></script></head>
+  <script defer src="bundle.fa7bcd91d16bb18f5958.js"></script></head>
   <body>
     <header class="header">
       <div class="player">
@@ -33,18 +33,18 @@
             max="100"
             value="0" />
         </div>
-
-        <div class="player-controls">
-          <button class="play-prev player-icon"></button>
-          <button class="play player-icon"></button>
-          <button class="play-next player-icon"></button>
-        </div>
-
-        <div class="volume-container">
-          <div class="volume-button">
-            <div class="volume_icon"></div>
+        <div class="wrap-container">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
           </div>
 
+          <div class="volume-container">
+            <div class="volume-button">
+              <div class="volume_icon volume_icon-size"></div>
+            </div>
+          </div>
           <div class="volume-slider">
             <div class="volume-percentage"></div>
           </div>
@@ -77,22 +77,23 @@
         <input type="text" class="name" placeholder="[Enter name]" />
       </div>
     </main>
-    <footer class="footer">
+
+    <div class="quotes-container">
       <button class="change-quote"></button>
       <div>
         <div class="quote"></div>
         <div class="author"></div>
       </div>
-    </footer>
-    <div class="container">
-      <div class="radio_container">
-        <input type="radio" name="radio" id="one" checked />
-        <label for="one">one</label>
-        <input type="radio" name="radio" id="two" />
-        <label for="two">two</label>
-        <input type="radio" name="radio" id="three" />
-        <label for="three">three</label>
-      </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="radio_container">
+          <input type="radio" name="radio" id="en" checked />
+          <label for="en">English</label>
+          <input type="radio" name="radio" id="ru" />
+          <label for="ru">Русский</label>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
