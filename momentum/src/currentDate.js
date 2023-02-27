@@ -6,7 +6,7 @@ export const putDate = () => {
     year: 'numeric',
     // timeZone: 'UTC',
   };
-  const week = [
+  const weekEn = [
     'Sunday',
     'Monday',
     'Thursday',
@@ -16,11 +16,26 @@ export const putDate = () => {
     'Saturday',
   ];
 
-  const currentDate = date.toLocaleDateString('en-US', options);
-  const currentWeekDay = date.getDay();
+  const weekRu = [
+    'Воскресенье',
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница',
+    'Суббота',
+  ];
 
   const currentDay = document.querySelector('.date');
-  currentDay.innerText = `${week[currentWeekDay]}, ${currentDate}`;
+  const currentWeekDay = date.getDay();
+  let currentDate = '';
+  if (localStorage.getItem('lang') === 'ru') {
+    currentDate = date.toLocaleDateString('ru-RU', options);
+    currentDay.innerText = `${weekRu[currentWeekDay]}, ${currentDate}`;
+  } else {
+    currentDate = date.toLocaleDateString('en-US', options);
+    currentDay.innerText = `${weekEn[currentWeekDay]}, ${currentDate}`;
+  }
 };
 
 putDate();

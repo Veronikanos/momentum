@@ -1,4 +1,4 @@
-import data from './utils/quotes';
+import data from './utils/quotesEN';
 
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');

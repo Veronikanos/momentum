@@ -12,3 +12,4 @@ import './weather';
 import './quotes';
 // import './utils/playList';
 import './audioplayer';
+import './translation';
