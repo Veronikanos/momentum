@@ -302,9 +302,9 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   /* align-items: center; */
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .radio_container {
@@ -361,6 +361,29 @@ input[type='radio']:checked + label {
   /* height: 30vh; */
   /* min-height: 160px; */
   padding: 20px;
+}
+
+.footer-contacts {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.logo {
+  width: 70px;
+  height: 35px;
+}
+.gh-logo {
+  width: 30px;
+}
+
+.github-link {
+  text-decoration: none;
+  color: white;
+}
+.github-link:hover {
+  transform: scaleX(1.1);
 }
 
 .change-quote {
