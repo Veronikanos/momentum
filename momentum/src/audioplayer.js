@@ -48,8 +48,8 @@ const playAudio = () => {
 
 const nextTrack = () => {
   playNum = playNum === playList.length - 1 ? 0 : playNum + 1;
-  isPlay && playAudio();
   audioCurrentTime = 0;
+  isPlay && playAudio();
 };
 
 audio.addEventListener('ended', nextTrack);
