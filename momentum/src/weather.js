@@ -8,7 +8,7 @@ const weatherDescription = document.querySelector(
 const windEl = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
 const inputCity = document.querySelector('.city');
-const titleWeather = document.querySelector('.title-weather');
+// const titleWeather = document.querySelector('.title-weather');
 const updatedInfoBox = document.querySelector('.updated-info');
 
 export const getWeather = async (city = 'Minsk') => {
@@ -40,7 +40,8 @@ export const fillElementsOnWeatherBlock = async (city) => {
     windEl.textContent = ` ${Math.trunc(wind.speed)} ${
       langObject[lang].windSpeed
     }`;
-    titleWeather.textContent =
+    inputCity.value =
+      // titleWeather.textContent =
       cityQuery.charAt(0).toUpperCase() + cityQuery.slice(1) ?? Minsk;
     updatedInfoBox.textContent = new Date().toLocaleTimeString();
   } catch (error) {
