@@ -1,16 +1,15 @@
 import langObject from './languageObj';
-import {week} from './languageObj';
 
 export const putDate = () => {
   const date = new Date();
   const options = {
+    weekday: 'long',
     month: 'long',
     day: 'numeric',
     year: 'numeric',
   };
 
   const currentDay = document.querySelector('.date');
-  const currentWeekDay = date.getDay();
   let currentDate = '';
 
   const lang = localStorage.getItem('lang')
@@ -22,7 +21,7 @@ export const putDate = () => {
     options
   );
 
-  currentDay.innerText = `${week[lang][currentWeekDay]}, ${currentDate}`;
+  currentDay.innerText = `${currentDate}`;
 };
 
 putDate();

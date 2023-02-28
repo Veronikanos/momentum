@@ -60,25 +60,4 @@ const langObject = {
   },
 };
 
-export const week = {
-  en: {
-    0: 'Sunday',
-    1: 'Monday',
-    2: 'Thursday',
-    3: 'Wednesday',
-    4: 'Thirsday',
-    5: 'Friday',
-    6: 'Saturday',
-  },
-  ru: {
-    0: 'Воскресенье',
-    1: 'Понедельник',
-    2: 'Вторник',
-    3: 'Среда',
-    4: 'Четверг',
-    5: 'Пятница',
-    6: 'Суббота',
-  },
-};
-
 export default langObject;

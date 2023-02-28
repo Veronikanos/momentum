@@ -6,73 +6,80 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <link href="../assets/favicon.ico" rel="shortcut icon" />
-    <link rel="stylesheet" href="../css/owfont-regular.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+
     <title>momentum</title>
   </head>
   <body>
     <header class="header">
       <div class="player">
-        <div class="progress-time-wrapper">
-          <div class="track-name"></div>
-          <div class="audio-duration">
-            <div class="current">0:00</div>
-            <div class="divider">/</div>
-            <div class="length"></div>
+        <div class="player-nav">
+          <div class="progress-time-wrapper">
+            <div class="track-name"></div>
+            <div class="audio-duration">
+              <div class="current">0:00</div>
+              <div class="divider">/</div>
+              <div class="length"></div>
+            </div>
           </div>
-        </div>
-        <!-- <div class="timeline"> -->
+          <div class="progress_container">
+            <input
+              class="progress"
+              type="range"
+              name="audio_progress"
+              id="audioProgress"
+              min="0"
+              max="100"
+              value="0" />
+          </div>
+          <div class="wrap-container">
+            <div class="player-controls">
+              <button class="play-prev player-icon"></button>
+              <button class="play player-icon"></button>
+              <button class="play-next player-icon"></button>
+            </div>
 
-        <div class="progress_container">
-          <input
-            class="progress"
-            type="range"
-            name="audio_progress"
-            id="audioProgress"
-            min="0"
-            max="100"
-            value="0" />
-        </div>
-        <div class="wrap-container">
-          <div class="player-controls">
-            <button class="play-prev player-icon"></button>
-            <button class="play player-icon"></button>
-            <button class="play-next player-icon"></button>
-          </div>
-
-          <div class="volume-container">
-            <div class="volume_icon volume_icon-size"></div>
-          </div>
-          <!-- <div class="volume-slider">
+            <div class="volume-container">
+              <div class="volume_icon volume_icon-size"></div>
+            </div>
+            <!-- <div class="volume-slider">
             <div class="volume-percentage"></div>
           </div> -->
+          </div>
         </div>
+
         <ul class="play-list"></ul>
       </div>
       <div class="weather">
-        <input type="text" class="city" placeholder="[enter city]" />
-        <div class="weather-title-wrapper">
-          <span class="weatherIn"> Weather in </span
-          ><span class="title-weather"> </span>
+        <div class="left-side-weather">
+          <input
+            type="text"
+            class="city"
+            placeholder="[enter city]" />
+          <div class="weather-title-wrapper">
+            <span class="weatherIn"> Weather in </span
+            ><span class="title-weather"> </span>
+          </div>
+          <div>
+            <span class="last-updated-text">Last updated:</span>
+            <span class="updated-info"></span>
+          </div>
         </div>
-        <i class="weather-icon owf"></i>
-        <div class="weather-error"></div>
-        <div class="description-container">
-          <span class="temperature"></span>
-          <span class="weather-description"></span>
+        <div class="right-side-weather">
+          <!-- <div class="weather-error"></div> -->
+          <div class="description-container">
+            <i class="weather-icon owf"></i>
+            <span class="temperature"></span>
+            <span class="weather-description"></span>
+          </div>
+          <div>
+            <span class="wind-text">Wind:</span
+            ><span class="wind"></span>
+          </div>
+          <div>
+            <span class="humidity-text"> Humidity:</span>
+            <span class="humidity"></span>
+          </div>
         </div>
-        <div>
-          <span class="wind-text">Wind:</span
-          ><span class="wind"></span>
-        </div>
-        <div>
-          <span class="humidity-text"> Humidity:</span>
-          <span class="humidity"></span>
-        </div>
-        <p>
-          <span class="last-updated-text">Last updated:</span>
-          <span class="updated-info"></span>
-        </p>
       </div>
     </header>
     <main class="main">
@@ -103,9 +110,9 @@
       <div class="container">
         <div class="radio_container">
           <input type="radio" name="radio" id="en" checked />
-          <label for="en">English</label>
+          <label for="en">Eng</label>
           <input type="radio" name="radio" id="ru" />
-          <label for="ru">Русский</label>
+          <label for="ru">Рус</label>
         </div>
 
         <div class="footer__contacts-container">
