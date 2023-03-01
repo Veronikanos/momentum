@@ -87,7 +87,9 @@ body {
 }
 
 .play-item {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   padding: 5px;
   padding-left: 20px;
   list-style: none;
@@ -100,12 +102,16 @@ body {
   opacity: 1;
 }
 
-.play-item::before {
-  content: '\2713';
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-weight: 900;
+.play.play-track {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+.play-track.pause {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
 }
 
 .item-active {

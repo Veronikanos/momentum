@@ -30,6 +30,8 @@ const handleAudioLoaded = () => {
 
 const highlightActiveTrack = () => {
   const trackName = document.querySelector('.track-name');
+  const trackIconElement = document.querySelector('.item-active');
+
   allTracks.forEach((element, index) => {
     element.classList.remove('item-active');
     if (index === playNum) {
@@ -40,6 +42,7 @@ const highlightActiveTrack = () => {
 };
 
 const playAudio = () => {
+  isPlay = true;
   audio.src = playList[playNum].src;
   audio.play();
   audio.currentTime = audioCurrentTime;
@@ -52,9 +55,8 @@ const nextTrack = () => {
   isPlay && playAudio();
 };
 
-audio.addEventListener('ended', nextTrack);
-
 const pauseAudio = () => {
+  isPlay = false;
   audio.pause();
   audioCurrentTime = audio.currentTime;
 };
@@ -62,7 +64,9 @@ const pauseAudio = () => {
 const handlePlayButton = () => {
   isPlay ? pauseAudio() : playAudio();
   playButton.classList.toggle('pause');
-  isPlay = !isPlay;
+  document
+    .querySelector('.item-active')
+    .firstChild.classList.toggle('pause');
 };
 
 const handlePlayPrevButton = () => {
@@ -84,24 +88,30 @@ const handlePlayNextButton = () => {
 const showListOfTracks = () => {
   let arr = [];
   playList.forEach((element) => {
-    arr.push(`<li class='play-item'>${element.title}</li>`);
+    arr.push(
+      `<li class='play-item'><button class="play play-track player-icon"></button><span>${element.title}</span></li>`
+    );
   });
 
   return arr;
 };
 
 const handleClickToTrack = (e) => {
-  if (e.target.tagName != 'LI') return;
-
+  // if click to active track, check if needs to play or stop
+  if (e.target.closest('li').classList.contains('item-active')) {
+    handlePlayButton();
+    return;
+  }
   allTracks.forEach((item, index) => {
-    if (item === e.target) {
+    item.firstChild.classList.remove('pause');
+    if (item === e.target.closest('li')) {
       playNum = index;
+      playButton.classList.add('pause');
+      item.firstChild.classList.add('pause');
+      audioCurrentTime = 0;
+      playAudio();
     }
   });
-  playButton.classList.add('pause');
-  isPlay = true;
-  audioCurrentTime = 0;
-  playAudio();
 };
 
 const showTrackList = () => {
@@ -124,7 +134,6 @@ const updateProgressValue = () => {
       audio.currentTime
     );
     audioProgress.value = 100 * (audio.currentTime / audio.duration);
-    // audioProgress.style.background = `linear-gradient(to right, #c76000 ${audioProgress.value}%, #c4c4c4 ${audioProgress.value}%)`;
   }
 };
 
@@ -150,10 +159,10 @@ showTrackList();
 const allTracks = document.querySelectorAll('.play-item');
 setFirstActiveTrack();
 audioProgress.addEventListener('input', setNewTrackTime);
-
 playListWrapper.addEventListener('click', handleClickToTrack);
 audio.addEventListener('loadeddata', handleAudioLoaded);
 audio.addEventListener('timeupdate', updateProgressValue);
+audio.addEventListener('ended', nextTrack);
 playButton.addEventListener('click', handlePlayButton);
 playPrev.addEventListener('click', handlePlayPrevButton);
 playNext.addEventListener('click', handlePlayNextButton);
