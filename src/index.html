@@ -48,38 +48,33 @@
         </div>
         <ul class="play-list"></ul>
       </div>
-      <div class="weather">
-        <div class="left-side-weather">
+
+      <ul class="weather">
+        <li>
           <input
             type="text"
             class="city"
             placeholder="[enter city]" />
-          <!-- <div class="weather-title-wrapper">
-            <span class="weatherIn"> Weather in </span
-            ><span class="title-weather"> </span>
-          </div> -->
-          <div>
-            <span class="last-updated-text">Last updated:</span>
-            <span class="updated-info"></span>
-          </div>
-        </div>
-        <div class="right-side-weather">
-          <!-- <div class="weather-error"></div> -->
-          <div class="description-container">
-            <i class="weather-icon owf"></i>
-            <span class="temperature"></span>
-            <span class="weather-description"></span>
-          </div>
-          <div>
-            <span class="wind-text">Wind:</span
-            ><span class="wind"></span>
-          </div>
-          <div>
-            <span class="humidity-text"> Humidity:</span>
-            <span class="humidity"></span>
-          </div>
-        </div>
-      </div>
+        </li>
+        <li>
+          <span class="last-updated-text">Last updated:</span>
+          <span class="updated-info"></span>
+        </li>
+        <!-- <div class="weather-error"></div> -->
+        <li class="description-container">
+          <i class="weather-icon owf"></i>
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </li>
+        <li>
+          <span class="wind-text">Wind:</span
+          ><span class="wind"></span>
+        </li>
+        <li>
+          <span class="humidity-text"> Humidity:</span>
+          <span class="humidity"></span>
+        </li>
+      </ul>
     </header>
     <main class="main">
       <div class="slider-icons">
@@ -116,7 +111,6 @@
 
         <div class="footer__contacts-container">
           <ul class="footer-contacts">
-            <li>&copy; 2023</li>
             <li>
               <a
                 class="github-link"
@@ -127,14 +121,7 @@
                   alt="gh-logo" />
               </a>
             </li>
-            <li>
-              <a class="logo-wrapper" href="https://rs.school/js/">
-                <img
-                  class="logo"
-                  src="../assets/svg/rs_school_logo.svg"
-                  alt="rss-logo" />
-              </a>
-            </li>
+            <li>&copy; 2023</li>
           </ul>
         </div>
       </div>

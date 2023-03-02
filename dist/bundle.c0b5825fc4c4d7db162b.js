@@ -2,14 +2,14 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/audioplayer.js":
-/*!****************************!*\
-  !*** ./src/audioplayer.js ***!
-  \****************************/
+/***/ "./src/js/audioplayer.js":
+/*!*******************************!*\
+  !*** ./src/js/audioplayer.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _playList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./playList */ "./src/playList.js");
+/* harmony import */ var _playList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./playList */ "./src/js/playList.js");
 
 const playButton = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
@@ -149,17 +149,17 @@ playNext.addEventListener('click', handlePlayNextButton);
 
 /***/ }),
 
-/***/ "./src/currentDate.js":
-/*!****************************!*\
-  !*** ./src/currentDate.js ***!
-  \****************************/
+/***/ "./src/js/currentDate.js":
+/*!*******************************!*\
+  !*** ./src/js/currentDate.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "putDate": () => (/* binding */ putDate)
 /* harmony export */ });
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/languageObj.js");
+/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
 
 const putDate = () => {
   const date = new Date();
@@ -179,18 +179,18 @@ putDate();
 
 /***/ }),
 
-/***/ "./src/currentTime.js":
-/*!****************************!*\
-  !*** ./src/currentTime.js ***!
-  \****************************/
+/***/ "./src/js/currentTime.js":
+/*!*******************************!*\
+  !*** ./src/js/currentTime.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getTimeOfDay": () => (/* binding */ getTimeOfDay)
 /* harmony export */ });
-/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
+/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentDate */ "./src/js/currentDate.js");
+/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-slider */ "./src/js/image-slider.js");
 
 
 const time = document.querySelector('.time');
@@ -220,15 +220,15 @@ showTime();
 
 /***/ }),
 
-/***/ "./src/greeting.js":
-/*!*************************!*\
-  !*** ./src/greeting.js ***!
-  \*************************/
+/***/ "./src/js/greeting.js":
+/*!****************************!*\
+  !*** ./src/js/greeting.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./languageObj */ "./src/languageObj.js");
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/js/currentTime.js");
+/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
 
 
 const greeting = document.querySelector('.greeting');
@@ -243,17 +243,17 @@ greeting.innerText = `${_languageObj__WEBPACK_IMPORTED_MODULE_1__["default"].en[
 
 /***/ }),
 
-/***/ "./src/image-slider.js":
-/*!*****************************!*\
-  !*** ./src/image-slider.js ***!
-  \*****************************/
+/***/ "./src/js/image-slider.js":
+/*!********************************!*\
+  !*** ./src/js/image-slider.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "setNewBackground": () => (/* binding */ setNewBackground)
 /* harmony export */ });
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/js/currentTime.js");
 
 let randomImageNumber;
 let currentTimeOfDay;
@@ -288,10 +288,10 @@ nextArrow.addEventListener('click', handleNextArrowClick);
 
 /***/ }),
 
-/***/ "./src/languageObj.js":
-/*!****************************!*\
-  !*** ./src/languageObj.js ***!
-  \****************************/
+/***/ "./src/js/languageObj.js":
+/*!*******************************!*\
+  !*** ./src/js/languageObj.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -362,14 +362,14 @@ const langObject = {
 
 /***/ }),
 
-/***/ "./src/localStorage.js":
-/*!*****************************!*\
-  !*** ./src/localStorage.js ***!
-  \*****************************/
+/***/ "./src/js/localStorage.js":
+/*!********************************!*\
+  !*** ./src/js/localStorage.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ "./src/js/weather.js");
 
 const input = document.querySelector('input.name');
 const inputCity = document.querySelector('.city');
@@ -391,10 +391,10 @@ window.addEventListener('beforeunload', setLocalStorage);
 
 /***/ }),
 
-/***/ "./src/playList.js":
-/*!*************************!*\
-  !*** ./src/playList.js ***!
-  \*************************/
+/***/ "./src/js/playList.js":
+/*!****************************!*\
+  !*** ./src/js/playList.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -403,38 +403,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const playList = [{
   title: 'Aqua Caelestis',
-  src: './sounds/Aqua Caelestis.mp3',
-  duration: '00:58'
+  src: './sounds/Aqua Caelestis.mp3'
 }, {
   title: 'Ennio Morricone',
   src: './sounds/Ennio Morricone.mp3'
-  // duration: '03:50',
 }, {
   title: 'River Flows In You',
-  src: './sounds/River Flows In You.mp3',
-  duration: '03:50'
+  src: './sounds/River Flows In You.mp3'
 }, {
   title: 'Summer Wind',
   src: './sounds/Summer Wind.mp3'
-  // duration: '03:50',
 }];
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (playList);
 
 /***/ }),
 
-/***/ "./src/quotes.js":
-/*!***********************!*\
-  !*** ./src/quotes.js ***!
-  \***********************/
+/***/ "./src/js/quotes.js":
+/*!**************************!*\
+  !*** ./src/js/quotes.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "putQuoteToMarkup": () => (/* binding */ putQuoteToMarkup)
 /* harmony export */ });
-/* harmony import */ var _utils_quotesEN__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/quotesEN */ "./src/utils/quotesEN.json");
-/* harmony import */ var _utils_quotesRU__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/quotesRU */ "./src/utils/quotesRU.json");
+/* harmony import */ var _utils_quotesEN__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/quotesEN */ "./src/utils/quotesEN.json");
+/* harmony import */ var _utils_quotesRU__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/quotesRU */ "./src/utils/quotesRU.json");
 
 
 const quote = document.querySelector('.quote');
@@ -457,18 +452,18 @@ buttonQuote.addEventListener('click', getRandomQuote);
 
 /***/ }),
 
-/***/ "./src/translation.js":
-/*!****************************!*\
-  !*** ./src/translation.js ***!
-  \****************************/
+/***/ "./src/js/translation.js":
+/*!*******************************!*\
+  !*** ./src/js/translation.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/languageObj.js");
-/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
-/* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./quotes */ "./src/quotes.js");
+/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
+/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentDate */ "./src/js/currentDate.js");
+/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentTime */ "./src/js/currentTime.js");
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather */ "./src/js/weather.js");
+/* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./quotes */ "./src/js/quotes.js");
 
 
 
@@ -522,10 +517,10 @@ getTranslationState();
 
 /***/ }),
 
-/***/ "./src/weather.js":
-/*!************************!*\
-  !*** ./src/weather.js ***!
-  \************************/
+/***/ "./src/js/weather.js":
+/*!***************************!*\
+  !*** ./src/js/weather.js ***!
+  \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -533,7 +528,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "fillElementsOnWeatherBlock": () => (/* binding */ fillElementsOnWeatherBlock),
 /* harmony export */   "getWeather": () => (/* binding */ getWeather)
 /* harmony export */ });
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/languageObj.js");
+/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
 
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
@@ -894,559 +889,6 @@ module.exports = function (url, options) {
 
 /***/ }),
 
-/***/ "./node_modules/path-browserify/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/path-browserify/index.js ***!
-  \***********************************************/
-/***/ ((module) => {
-
-// 'path' module extracted from Node.js v8.11.1 (only the posix part)
-// transplited with Babel
-
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
-function assertPath(path) {
-  if (typeof path !== 'string') {
-    throw new TypeError('Path must be a string. Received ' + JSON.stringify(path));
-  }
-}
-
-// Resolves . and .. elements in a path with directory names
-function normalizeStringPosix(path, allowAboveRoot) {
-  var res = '';
-  var lastSegmentLength = 0;
-  var lastSlash = -1;
-  var dots = 0;
-  var code;
-  for (var i = 0; i <= path.length; ++i) {
-    if (i < path.length)
-      code = path.charCodeAt(i);
-    else if (code === 47 /*/*/)
-      break;
-    else
-      code = 47 /*/*/;
-    if (code === 47 /*/*/) {
-      if (lastSlash === i - 1 || dots === 1) {
-        // NOOP
-      } else if (lastSlash !== i - 1 && dots === 2) {
-        if (res.length < 2 || lastSegmentLength !== 2 || res.charCodeAt(res.length - 1) !== 46 /*.*/ || res.charCodeAt(res.length - 2) !== 46 /*.*/) {
-          if (res.length > 2) {
-            var lastSlashIndex = res.lastIndexOf('/');
-            if (lastSlashIndex !== res.length - 1) {
-              if (lastSlashIndex === -1) {
-                res = '';
-                lastSegmentLength = 0;
-              } else {
-                res = res.slice(0, lastSlashIndex);
-                lastSegmentLength = res.length - 1 - res.lastIndexOf('/');
-              }
-              lastSlash = i;
-              dots = 0;
-              continue;
-            }
-          } else if (res.length === 2 || res.length === 1) {
-            res = '';
-            lastSegmentLength = 0;
-            lastSlash = i;
-            dots = 0;
-            continue;
-          }
-        }
-        if (allowAboveRoot) {
-          if (res.length > 0)
-            res += '/..';
-          else
-            res = '..';
-          lastSegmentLength = 2;
-        }
-      } else {
-        if (res.length > 0)
-          res += '/' + path.slice(lastSlash + 1, i);
-        else
-          res = path.slice(lastSlash + 1, i);
-        lastSegmentLength = i - lastSlash - 1;
-      }
-      lastSlash = i;
-      dots = 0;
-    } else if (code === 46 /*.*/ && dots !== -1) {
-      ++dots;
-    } else {
-      dots = -1;
-    }
-  }
-  return res;
-}
-
-function _format(sep, pathObject) {
-  var dir = pathObject.dir || pathObject.root;
-  var base = pathObject.base || (pathObject.name || '') + (pathObject.ext || '');
-  if (!dir) {
-    return base;
-  }
-  if (dir === pathObject.root) {
-    return dir + base;
-  }
-  return dir + sep + base;
-}
-
-var posix = {
-  // path.resolve([from ...], to)
-  resolve: function resolve() {
-    var resolvedPath = '';
-    var resolvedAbsolute = false;
-    var cwd;
-
-    for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-      var path;
-      if (i >= 0)
-        path = arguments[i];
-      else {
-        if (cwd === undefined)
-          cwd = process.cwd();
-        path = cwd;
-      }
-
-      assertPath(path);
-
-      // Skip empty entries
-      if (path.length === 0) {
-        continue;
-      }
-
-      resolvedPath = path + '/' + resolvedPath;
-      resolvedAbsolute = path.charCodeAt(0) === 47 /*/*/;
-    }
-
-    // At this point the path should be resolved to a full absolute path, but
-    // handle relative paths to be safe (might happen when process.cwd() fails)
-
-    // Normalize the path
-    resolvedPath = normalizeStringPosix(resolvedPath, !resolvedAbsolute);
-
-    if (resolvedAbsolute) {
-      if (resolvedPath.length > 0)
-        return '/' + resolvedPath;
-      else
-        return '/';
-    } else if (resolvedPath.length > 0) {
-      return resolvedPath;
-    } else {
-      return '.';
-    }
-  },
-
-  normalize: function normalize(path) {
-    assertPath(path);
-
-    if (path.length === 0) return '.';
-
-    var isAbsolute = path.charCodeAt(0) === 47 /*/*/;
-    var trailingSeparator = path.charCodeAt(path.length - 1) === 47 /*/*/;
-
-    // Normalize the path
-    path = normalizeStringPosix(path, !isAbsolute);
-
-    if (path.length === 0 && !isAbsolute) path = '.';
-    if (path.length > 0 && trailingSeparator) path += '/';
-
-    if (isAbsolute) return '/' + path;
-    return path;
-  },
-
-  isAbsolute: function isAbsolute(path) {
-    assertPath(path);
-    return path.length > 0 && path.charCodeAt(0) === 47 /*/*/;
-  },
-
-  join: function join() {
-    if (arguments.length === 0)
-      return '.';
-    var joined;
-    for (var i = 0; i < arguments.length; ++i) {
-      var arg = arguments[i];
-      assertPath(arg);
-      if (arg.length > 0) {
-        if (joined === undefined)
-          joined = arg;
-        else
-          joined += '/' + arg;
-      }
-    }
-    if (joined === undefined)
-      return '.';
-    return posix.normalize(joined);
-  },
-
-  relative: function relative(from, to) {
-    assertPath(from);
-    assertPath(to);
-
-    if (from === to) return '';
-
-    from = posix.resolve(from);
-    to = posix.resolve(to);
-
-    if (from === to) return '';
-
-    // Trim any leading backslashes
-    var fromStart = 1;
-    for (; fromStart < from.length; ++fromStart) {
-      if (from.charCodeAt(fromStart) !== 47 /*/*/)
-        break;
-    }
-    var fromEnd = from.length;
-    var fromLen = fromEnd - fromStart;
-
-    // Trim any leading backslashes
-    var toStart = 1;
-    for (; toStart < to.length; ++toStart) {
-      if (to.charCodeAt(toStart) !== 47 /*/*/)
-        break;
-    }
-    var toEnd = to.length;
-    var toLen = toEnd - toStart;
-
-    // Compare paths to find the longest common path from root
-    var length = fromLen < toLen ? fromLen : toLen;
-    var lastCommonSep = -1;
-    var i = 0;
-    for (; i <= length; ++i) {
-      if (i === length) {
-        if (toLen > length) {
-          if (to.charCodeAt(toStart + i) === 47 /*/*/) {
-            // We get here if `from` is the exact base path for `to`.
-            // For example: from='/foo/bar'; to='/foo/bar/baz'
-            return to.slice(toStart + i + 1);
-          } else if (i === 0) {
-            // We get here if `from` is the root
-            // For example: from='/'; to='/foo'
-            return to.slice(toStart + i);
-          }
-        } else if (fromLen > length) {
-          if (from.charCodeAt(fromStart + i) === 47 /*/*/) {
-            // We get here if `to` is the exact base path for `from`.
-            // For example: from='/foo/bar/baz'; to='/foo/bar'
-            lastCommonSep = i;
-          } else if (i === 0) {
-            // We get here if `to` is the root.
-            // For example: from='/foo'; to='/'
-            lastCommonSep = 0;
-          }
-        }
-        break;
-      }
-      var fromCode = from.charCodeAt(fromStart + i);
-      var toCode = to.charCodeAt(toStart + i);
-      if (fromCode !== toCode)
-        break;
-      else if (fromCode === 47 /*/*/)
-        lastCommonSep = i;
-    }
-
-    var out = '';
-    // Generate the relative path based on the path difference between `to`
-    // and `from`
-    for (i = fromStart + lastCommonSep + 1; i <= fromEnd; ++i) {
-      if (i === fromEnd || from.charCodeAt(i) === 47 /*/*/) {
-        if (out.length === 0)
-          out += '..';
-        else
-          out += '/..';
-      }
-    }
-
-    // Lastly, append the rest of the destination (`to`) path that comes after
-    // the common path parts
-    if (out.length > 0)
-      return out + to.slice(toStart + lastCommonSep);
-    else {
-      toStart += lastCommonSep;
-      if (to.charCodeAt(toStart) === 47 /*/*/)
-        ++toStart;
-      return to.slice(toStart);
-    }
-  },
-
-  _makeLong: function _makeLong(path) {
-    return path;
-  },
-
-  dirname: function dirname(path) {
-    assertPath(path);
-    if (path.length === 0) return '.';
-    var code = path.charCodeAt(0);
-    var hasRoot = code === 47 /*/*/;
-    var end = -1;
-    var matchedSlash = true;
-    for (var i = path.length - 1; i >= 1; --i) {
-      code = path.charCodeAt(i);
-      if (code === 47 /*/*/) {
-          if (!matchedSlash) {
-            end = i;
-            break;
-          }
-        } else {
-        // We saw the first non-path separator
-        matchedSlash = false;
-      }
-    }
-
-    if (end === -1) return hasRoot ? '/' : '.';
-    if (hasRoot && end === 1) return '//';
-    return path.slice(0, end);
-  },
-
-  basename: function basename(path, ext) {
-    if (ext !== undefined && typeof ext !== 'string') throw new TypeError('"ext" argument must be a string');
-    assertPath(path);
-
-    var start = 0;
-    var end = -1;
-    var matchedSlash = true;
-    var i;
-
-    if (ext !== undefined && ext.length > 0 && ext.length <= path.length) {
-      if (ext.length === path.length && ext === path) return '';
-      var extIdx = ext.length - 1;
-      var firstNonSlashEnd = -1;
-      for (i = path.length - 1; i >= 0; --i) {
-        var code = path.charCodeAt(i);
-        if (code === 47 /*/*/) {
-            // If we reached a path separator that was not part of a set of path
-            // separators at the end of the string, stop now
-            if (!matchedSlash) {
-              start = i + 1;
-              break;
-            }
-          } else {
-          if (firstNonSlashEnd === -1) {
-            // We saw the first non-path separator, remember this index in case
-            // we need it if the extension ends up not matching
-            matchedSlash = false;
-            firstNonSlashEnd = i + 1;
-          }
-          if (extIdx >= 0) {
-            // Try to match the explicit extension
-            if (code === ext.charCodeAt(extIdx)) {
-              if (--extIdx === -1) {
-                // We matched the extension, so mark this as the end of our path
-                // component
-                end = i;
-              }
-            } else {
-              // Extension does not match, so our result is the entire path
-              // component
-              extIdx = -1;
-              end = firstNonSlashEnd;
-            }
-          }
-        }
-      }
-
-      if (start === end) end = firstNonSlashEnd;else if (end === -1) end = path.length;
-      return path.slice(start, end);
-    } else {
-      for (i = path.length - 1; i >= 0; --i) {
-        if (path.charCodeAt(i) === 47 /*/*/) {
-            // If we reached a path separator that was not part of a set of path
-            // separators at the end of the string, stop now
-            if (!matchedSlash) {
-              start = i + 1;
-              break;
-            }
-          } else if (end === -1) {
-          // We saw the first non-path separator, mark this as the end of our
-          // path component
-          matchedSlash = false;
-          end = i + 1;
-        }
-      }
-
-      if (end === -1) return '';
-      return path.slice(start, end);
-    }
-  },
-
-  extname: function extname(path) {
-    assertPath(path);
-    var startDot = -1;
-    var startPart = 0;
-    var end = -1;
-    var matchedSlash = true;
-    // Track the state of characters (if any) we see before our first dot and
-    // after any path separator we find
-    var preDotState = 0;
-    for (var i = path.length - 1; i >= 0; --i) {
-      var code = path.charCodeAt(i);
-      if (code === 47 /*/*/) {
-          // If we reached a path separator that was not part of a set of path
-          // separators at the end of the string, stop now
-          if (!matchedSlash) {
-            startPart = i + 1;
-            break;
-          }
-          continue;
-        }
-      if (end === -1) {
-        // We saw the first non-path separator, mark this as the end of our
-        // extension
-        matchedSlash = false;
-        end = i + 1;
-      }
-      if (code === 46 /*.*/) {
-          // If this is our first dot, mark it as the start of our extension
-          if (startDot === -1)
-            startDot = i;
-          else if (preDotState !== 1)
-            preDotState = 1;
-      } else if (startDot !== -1) {
-        // We saw a non-dot and non-path separator before our dot, so we should
-        // have a good chance at having a non-empty extension
-        preDotState = -1;
-      }
-    }
-
-    if (startDot === -1 || end === -1 ||
-        // We saw a non-dot character immediately before the dot
-        preDotState === 0 ||
-        // The (right-most) trimmed path component is exactly '..'
-        preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
-      return '';
-    }
-    return path.slice(startDot, end);
-  },
-
-  format: function format(pathObject) {
-    if (pathObject === null || typeof pathObject !== 'object') {
-      throw new TypeError('The "pathObject" argument must be of type Object. Received type ' + typeof pathObject);
-    }
-    return _format('/', pathObject);
-  },
-
-  parse: function parse(path) {
-    assertPath(path);
-
-    var ret = { root: '', dir: '', base: '', ext: '', name: '' };
-    if (path.length === 0) return ret;
-    var code = path.charCodeAt(0);
-    var isAbsolute = code === 47 /*/*/;
-    var start;
-    if (isAbsolute) {
-      ret.root = '/';
-      start = 1;
-    } else {
-      start = 0;
-    }
-    var startDot = -1;
-    var startPart = 0;
-    var end = -1;
-    var matchedSlash = true;
-    var i = path.length - 1;
-
-    // Track the state of characters (if any) we see before our first dot and
-    // after any path separator we find
-    var preDotState = 0;
-
-    // Get non-dir info
-    for (; i >= start; --i) {
-      code = path.charCodeAt(i);
-      if (code === 47 /*/*/) {
-          // If we reached a path separator that was not part of a set of path
-          // separators at the end of the string, stop now
-          if (!matchedSlash) {
-            startPart = i + 1;
-            break;
-          }
-          continue;
-        }
-      if (end === -1) {
-        // We saw the first non-path separator, mark this as the end of our
-        // extension
-        matchedSlash = false;
-        end = i + 1;
-      }
-      if (code === 46 /*.*/) {
-          // If this is our first dot, mark it as the start of our extension
-          if (startDot === -1) startDot = i;else if (preDotState !== 1) preDotState = 1;
-        } else if (startDot !== -1) {
-        // We saw a non-dot and non-path separator before our dot, so we should
-        // have a good chance at having a non-empty extension
-        preDotState = -1;
-      }
-    }
-
-    if (startDot === -1 || end === -1 ||
-    // We saw a non-dot character immediately before the dot
-    preDotState === 0 ||
-    // The (right-most) trimmed path component is exactly '..'
-    preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
-      if (end !== -1) {
-        if (startPart === 0 && isAbsolute) ret.base = ret.name = path.slice(1, end);else ret.base = ret.name = path.slice(startPart, end);
-      }
-    } else {
-      if (startPart === 0 && isAbsolute) {
-        ret.name = path.slice(1, startDot);
-        ret.base = path.slice(1, end);
-      } else {
-        ret.name = path.slice(startPart, startDot);
-        ret.base = path.slice(startPart, end);
-      }
-      ret.ext = path.slice(startDot, end);
-    }
-
-    if (startPart > 0) ret.dir = path.slice(0, startPart - 1);else if (isAbsolute) ret.dir = '/';
-
-    return ret;
-  },
-
-  sep: '/',
-  delimiter: ':',
-  win32: null,
-  posix: null
-};
-
-posix.posix = posix;
-
-module.exports = posix;
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/cjs.js":
-/*!***********************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js ***!
-  \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-
-
-const loader = __webpack_require__(/*! ./index */ "./node_modules/style-loader/dist/index.js");
-
-module.exports = loader.default;
-
-/***/ }),
-
 /***/ "./css/owfont-regular.css":
 /*!********************************!*\
   !*** ./css/owfont-regular.css ***!
@@ -1552,166 +994,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/index.js":
-/*!*************************************************!*\
-  !*** ./node_modules/style-loader/dist/index.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _path = _interopRequireDefault(__webpack_require__(/*! path */ "./node_modules/path-browserify/index.js"));
-
-var _utils = __webpack_require__(/*! ./utils */ "./node_modules/style-loader/dist/utils.js");
-
-var _options = _interopRequireDefault(__webpack_require__(/*! ./options.json */ "./node_modules/style-loader/dist/options.json"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const loaderAPI = () => {};
-
-loaderAPI.pitch = function loader(request) {
-  const options = this.getOptions(_options.default);
-  const injectType = options.injectType || "styleTag";
-  const esModule = typeof options.esModule !== "undefined" ? options.esModule : true;
-  const runtimeOptions = {};
-
-  if (options.attributes) {
-    runtimeOptions.attributes = options.attributes;
-  }
-
-  if (options.base) {
-    runtimeOptions.base = options.base;
-  }
-
-  const insertType = typeof options.insert === "function" ? "function" : options.insert && _path.default.isAbsolute(options.insert) ? "module-path" : "selector";
-  const styleTagTransformType = typeof options.styleTagTransform === "function" ? "function" : options.styleTagTransform && _path.default.isAbsolute(options.styleTagTransform) ? "module-path" : "default";
-
-  switch (injectType) {
-    case "linkTag":
-      {
-        const hmrCode = this.hot ? (0, _utils.getLinkHmrCode)(esModule, this, request) : "";
-        return `
-      ${(0, _utils.getImportLinkAPICode)(esModule, this)}
-      ${(0, _utils.getImportInsertBySelectorCode)(esModule, this, insertType, options)}
-      ${(0, _utils.getImportLinkContentCode)(esModule, this, request)}
-      ${esModule ? "" : `content = content.__esModule ? content.default : content;`}
-
-var options = ${JSON.stringify(runtimeOptions)};
-
-${(0, _utils.getInsertOptionCode)(insertType, options)}
-
-var update = API(content, options);
-
-${hmrCode}
-
-${esModule ? "export default {}" : ""}`;
-      }
-
-    case "lazyStyleTag":
-    case "lazyAutoStyleTag":
-    case "lazySingletonStyleTag":
-      {
-        const isSingleton = injectType === "lazySingletonStyleTag";
-        const isAuto = injectType === "lazyAutoStyleTag";
-        const hmrCode = this.hot ? (0, _utils.getStyleHmrCode)(esModule, this, request, true) : "";
-        return `
-      var exported = {};
-
-      ${(0, _utils.getImportStyleAPICode)(esModule, this)}
-      ${(0, _utils.getImportStyleDomAPICode)(esModule, this, isSingleton, isAuto)}
-      ${(0, _utils.getImportInsertBySelectorCode)(esModule, this, insertType, options)}
-      ${(0, _utils.getSetAttributesCode)(esModule, this, options)}
-      ${(0, _utils.getImportInsertStyleElementCode)(esModule, this)}
-      ${(0, _utils.getStyleTagTransformFnCode)(esModule, this, options, isSingleton, styleTagTransformType)}
-      ${(0, _utils.getImportStyleContentCode)(esModule, this, request)}
-      ${isAuto ? (0, _utils.getImportIsOldIECode)(esModule, this) : ""}
-      ${esModule ? `if (content && content.locals) {
-              exported.locals = content.locals;
-            }
-            ` : `content = content.__esModule ? content.default : content;
-
-            exported.locals = content.locals || {};`}
-
-var refs = 0;
-var update;
-var options = ${JSON.stringify(runtimeOptions)};
-
-${(0, _utils.getStyleTagTransformFn)(options, isSingleton)};
-options.setAttributes = setAttributes;
-${(0, _utils.getInsertOptionCode)(insertType, options)}
-options.domAPI = ${(0, _utils.getdomAPI)(isAuto)};
-options.insertStyleElement = insertStyleElement;
-
-exported.use = function(insertOptions) {
-  options.options = insertOptions || {};
-
-  if (!(refs++)) {
-    update = API(content, options);
-  }
-
-  return exported;
-};
-exported.unuse = function() {
-  if (refs > 0 && !--refs) {
-    update();
-    update = null;
-  }
-};
-
-${hmrCode}
-
-${(0, _utils.getExportLazyStyleCode)(esModule, this, request)}
-`;
-      }
-
-    case "styleTag":
-    case "autoStyleTag":
-    case "singletonStyleTag":
-    default:
-      {
-        const isSingleton = injectType === "singletonStyleTag";
-        const isAuto = injectType === "autoStyleTag";
-        const hmrCode = this.hot ? (0, _utils.getStyleHmrCode)(esModule, this, request, false) : "";
-        return `
-      ${(0, _utils.getImportStyleAPICode)(esModule, this)}
-      ${(0, _utils.getImportStyleDomAPICode)(esModule, this, isSingleton, isAuto)}
-      ${(0, _utils.getImportInsertBySelectorCode)(esModule, this, insertType, options)}
-      ${(0, _utils.getSetAttributesCode)(esModule, this, options)}
-      ${(0, _utils.getImportInsertStyleElementCode)(esModule, this)}
-      ${(0, _utils.getStyleTagTransformFnCode)(esModule, this, options, isSingleton, styleTagTransformType)}
-      ${(0, _utils.getImportStyleContentCode)(esModule, this, request)}
-      ${isAuto ? (0, _utils.getImportIsOldIECode)(esModule, this) : ""}
-      ${esModule ? "" : `content = content.__esModule ? content.default : content;`}
-
-var options = ${JSON.stringify(runtimeOptions)};
-
-${(0, _utils.getStyleTagTransformFn)(options, isSingleton)};
-options.setAttributes = setAttributes;
-${(0, _utils.getInsertOptionCode)(insertType, options)}
-options.domAPI = ${(0, _utils.getdomAPI)(isAuto)};
-options.insertStyleElement = insertStyleElement;
-
-var update = API(content, options);
-
-${hmrCode}
-
-${(0, _utils.getExportStyleCode)(esModule, this, request)}
-`;
-      }
-  }
-};
-
-var _default = loaderAPI;
-exports["default"] = _default;
 
 /***/ }),
 
@@ -1896,50 +1178,6 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/runtime/isEqualLocals.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/isEqualLocals.js ***!
-  \*****************************************************************/
-/***/ ((module) => {
-
-
-
-function isEqualLocals(a, b, isNamedExport) {
-  if (!a && b || a && !b) {
-    return false;
-  }
-
-  var p;
-
-  for (p in a) {
-    if (isNamedExport && p === "default") {
-      // eslint-disable-next-line no-continue
-      continue;
-    }
-
-    if (a[p] !== b[p]) {
-      return false;
-    }
-  }
-
-  for (p in b) {
-    if (isNamedExport && p === "default") {
-      // eslint-disable-next-line no-continue
-      continue;
-    }
-
-    if (!a[p]) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-module.exports = isEqualLocals;
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
@@ -2062,292 +1300,6 @@ function styleTagTransform(css, styleElement) {
 }
 
 module.exports = styleTagTransform;
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/utils.js":
-/*!*************************************************!*\
-  !*** ./node_modules/style-loader/dist/utils.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-var __dirname = "/";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.getExportLazyStyleCode = getExportLazyStyleCode;
-exports.getExportStyleCode = getExportStyleCode;
-exports.getImportInsertBySelectorCode = getImportInsertBySelectorCode;
-exports.getImportInsertStyleElementCode = getImportInsertStyleElementCode;
-exports.getImportIsOldIECode = getImportIsOldIECode;
-exports.getImportLinkAPICode = getImportLinkAPICode;
-exports.getImportLinkContentCode = getImportLinkContentCode;
-exports.getImportStyleAPICode = getImportStyleAPICode;
-exports.getImportStyleContentCode = getImportStyleContentCode;
-exports.getImportStyleDomAPICode = getImportStyleDomAPICode;
-exports.getInsertOptionCode = getInsertOptionCode;
-exports.getLinkHmrCode = getLinkHmrCode;
-exports.getSetAttributesCode = getSetAttributesCode;
-exports.getStyleHmrCode = getStyleHmrCode;
-exports.getStyleTagTransformFn = getStyleTagTransformFn;
-exports.getStyleTagTransformFnCode = getStyleTagTransformFnCode;
-exports.getdomAPI = getdomAPI;
-exports.stringifyRequest = stringifyRequest;
-
-var _path = _interopRequireDefault(__webpack_require__(/*! path */ "./node_modules/path-browserify/index.js"));
-
-var _isEqualLocals = _interopRequireDefault(__webpack_require__(/*! ./runtime/isEqualLocals */ "./node_modules/style-loader/dist/runtime/isEqualLocals.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const matchRelativePath = /^\.\.?[/\\]/;
-
-function isAbsolutePath(str) {
-  return _path.default.posix.isAbsolute(str) || _path.default.win32.isAbsolute(str);
-}
-
-function isRelativePath(str) {
-  return matchRelativePath.test(str);
-} // TODO simplify for the next major release
-
-
-function stringifyRequest(loaderContext, request) {
-  if (typeof loaderContext.utils !== "undefined" && typeof loaderContext.utils.contextify === "function") {
-    return JSON.stringify(loaderContext.utils.contextify(loaderContext.context, request));
-  }
-
-  const splitted = request.split("!");
-  const {
-    context
-  } = loaderContext;
-  return JSON.stringify(splitted.map(part => {
-    // First, separate singlePath from query, because the query might contain paths again
-    const splittedPart = part.match(/^(.*?)(\?.*)/);
-    const query = splittedPart ? splittedPart[2] : "";
-    let singlePath = splittedPart ? splittedPart[1] : part;
-
-    if (isAbsolutePath(singlePath) && context) {
-      singlePath = _path.default.relative(context, singlePath);
-
-      if (isAbsolutePath(singlePath)) {
-        // If singlePath still matches an absolute path, singlePath was on a different drive than context.
-        // In this case, we leave the path platform-specific without replacing any separators.
-        // @see https://github.com/webpack/loader-utils/pull/14
-        return singlePath + query;
-      }
-
-      if (isRelativePath(singlePath) === false) {
-        // Ensure that the relative path starts at least with ./ otherwise it would be a request into the modules directory (like node_modules).
-        singlePath = `./${singlePath}`;
-      }
-    }
-
-    return singlePath.replace(/\\/g, "/") + query;
-  }).join("!"));
-}
-
-function getImportLinkAPICode(esModule, loaderContext) {
-  const modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/injectStylesIntoLinkTag.js")}`);
-  return esModule ? `import API from ${modulePath};` : `var API = require(${modulePath});`;
-}
-
-function getImportLinkContentCode(esModule, loaderContext, request) {
-  const modulePath = stringifyRequest(loaderContext, `!!${request}`);
-  return esModule ? `import content from ${modulePath};` : `var content = require(${modulePath});`;
-}
-
-function getImportStyleAPICode(esModule, loaderContext) {
-  const modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/injectStylesIntoStyleTag.js")}`);
-  return esModule ? `import API from ${modulePath};` : `var API = require(${modulePath});`;
-}
-
-function getImportStyleDomAPICode(esModule, loaderContext, isSingleton, isAuto) {
-  const styleAPI = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/styleDomAPI.js")}`);
-  const singletonAPI = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/singletonStyleDomAPI.js")}`);
-
-  if (isAuto) {
-    return esModule ? `import domAPI from ${styleAPI};
-        import domAPISingleton from ${singletonAPI};` : `var domAPI = require(${styleAPI});
-        var domAPISingleton = require(${singletonAPI});`;
-  }
-
-  return esModule ? `import domAPI from ${isSingleton ? singletonAPI : styleAPI};` : `var domAPI = require(${isSingleton ? singletonAPI : styleAPI});`;
-}
-
-function getImportStyleContentCode(esModule, loaderContext, request) {
-  const modulePath = stringifyRequest(loaderContext, `!!${request}`);
-  return esModule ? `import content, * as namedExport from ${modulePath};` : `var content = require(${modulePath});`;
-}
-
-function getImportInsertBySelectorCode(esModule, loaderContext, insertType, options) {
-  if (insertType === "selector") {
-    const modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/insertBySelector.js")}`);
-    return esModule ? `import insertFn from ${modulePath};` : `var insertFn = require(${modulePath});`;
-  }
-
-  if (insertType === "module-path") {
-    const modulePath = stringifyRequest(loaderContext, `${options.insert}`);
-    loaderContext.addBuildDependency(options.insert);
-    return esModule ? `import insertFn from ${modulePath};` : `var insertFn = require(${modulePath});`;
-  }
-
-  return "";
-}
-
-function getInsertOptionCode(insertType, options) {
-  if (insertType === "selector") {
-    const insert = options.insert ? JSON.stringify(options.insert) : '"head"';
-    return `
-      options.insert = insertFn.bind(null, ${insert});
-    `;
-  }
-
-  if (insertType === "module-path") {
-    return `options.insert = insertFn;`;
-  } // Todo remove "function" type for insert option in next major release, because code duplication occurs. Leave require.resolve()
-
-
-  return `options.insert = ${options.insert.toString()};`;
-}
-
-function getImportInsertStyleElementCode(esModule, loaderContext) {
-  const modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/insertStyleElement.js")}`);
-  return esModule ? `import insertStyleElement from ${modulePath};` : `var insertStyleElement = require(${modulePath});`;
-}
-
-function getStyleHmrCode(esModule, loaderContext, request, lazy) {
-  const modulePath = stringifyRequest(loaderContext, `!!${request}`);
-  return `
-if (module.hot) {
-  if (!content.locals || module.hot.invalidate) {
-    var isEqualLocals = ${_isEqualLocals.default.toString()};
-    var isNamedExport = ${esModule ? "!content.locals" : false};
-    var oldLocals = isNamedExport ? namedExport : content.locals;
-
-    module.hot.accept(
-      ${modulePath},
-      function () {
-        ${esModule ? `if (!isEqualLocals(oldLocals, isNamedExport ? namedExport : content.locals, isNamedExport)) {
-                module.hot.invalidate();
-
-                return;
-              }
-
-              oldLocals = isNamedExport ? namedExport : content.locals;
-
-              ${lazy ? `if (update && refs > 0) {
-                      update(content);
-                    }` : `update(content);`}` : `content = require(${modulePath});
-
-              content = content.__esModule ? content.default : content;
-
-              ${lazy ? "" : `if (typeof content === 'string') {
-                      content = [[module.id, content, '']];
-                    }`}
-
-              if (!isEqualLocals(oldLocals, content.locals)) {
-                module.hot.invalidate();
-
-                return;
-              }
-
-              oldLocals = content.locals;
-
-              ${lazy ? `if (update && refs > 0) {
-                        update(content);
-                      }` : `update(content);`}`}
-      }
-    )
-  }
-
-  module.hot.dispose(function() {
-    ${lazy ? `if (update) {
-            update();
-          }` : `update();`}
-  });
-}
-`;
-}
-
-function getLinkHmrCode(esModule, loaderContext, request) {
-  const modulePath = stringifyRequest(loaderContext, `!!${request}`);
-  return `
-if (module.hot) {
-  module.hot.accept(
-    ${modulePath},
-    function() {
-     ${esModule ? "update(content);" : `content = require(${modulePath});
-
-           content = content.__esModule ? content.default : content;
-
-           update(content);`}
-    }
-  );
-
-  module.hot.dispose(function() {
-    update();
-  });
-}`;
-}
-
-function getdomAPI(isAuto) {
-  return isAuto ? "isOldIE() ? domAPISingleton : domAPI" : "domAPI";
-}
-
-function getImportIsOldIECode(esModule, loaderContext) {
-  const modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/isOldIE.js")}`);
-  return esModule ? `import isOldIE from ${modulePath};` : `var isOldIE = require(${modulePath});`;
-}
-
-function getStyleTagTransformFnCode(esModule, loaderContext, options, isSingleton, styleTagTransformType) {
-  if (isSingleton) {
-    return "";
-  }
-
-  if (styleTagTransformType === "default") {
-    const modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/styleTagTransform.js")}`);
-    return esModule ? `import styleTagTransformFn from ${modulePath};` : `var styleTagTransformFn = require(${modulePath});`;
-  }
-
-  if (styleTagTransformType === "module-path") {
-    const modulePath = stringifyRequest(loaderContext, `${options.styleTagTransform}`);
-    loaderContext.addBuildDependency(options.styleTagTransform);
-    return esModule ? `import styleTagTransformFn from ${modulePath};` : `var styleTagTransformFn = require(${modulePath});`;
-  }
-
-  return "";
-}
-
-function getStyleTagTransformFn(options, isSingleton) {
-  // Todo remove "function" type for styleTagTransform option in next major release, because code duplication occurs. Leave require.resolve()
-  return isSingleton ? "" : typeof options.styleTagTransform === "function" ? `options.styleTagTransform = ${options.styleTagTransform.toString()}` : `options.styleTagTransform = styleTagTransformFn`;
-}
-
-function getExportStyleCode(esModule, loaderContext, request) {
-  const modulePath = stringifyRequest(loaderContext, `!!${request}`);
-  return esModule ? `export * from ${modulePath};
-       export default content && content.locals ? content.locals : undefined;` : "module.exports = content && content.locals || {};";
-}
-
-function getExportLazyStyleCode(esModule, loaderContext, request) {
-  const modulePath = stringifyRequest(loaderContext, `!!${request}`);
-  return esModule ? `export * from ${modulePath};
-       export default exported;` : "module.exports = exported;";
-}
-
-function getSetAttributesCode(esModule, loaderContext, options) {
-  let modulePath;
-
-  if (typeof options.attributes !== "undefined") {
-    modulePath = options.attributes.nonce !== "undefined" ? stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/setAttributesWithAttributesAndNonce.js")}`) : stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/setAttributesWithAttributes.js")}`);
-  } else {
-    modulePath = stringifyRequest(loaderContext, `!${_path.default.join(__dirname, "runtime/setAttributesWithoutAttributes.js")}`);
-  }
-
-  return esModule ? `import setAttributes from ${modulePath};` : `var setAttributes = require(${modulePath});`;
-} // eslint-disable-next-line import/prefer-default-export
 
 /***/ }),
 
@@ -2531,16 +1483,6 @@ module.exports = __webpack_require__.p + "assets/997f38354e38ffc0bb6a.svg";
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/options.json":
-/*!*****************************************************!*\
-  !*** ./node_modules/style-loader/dist/options.json ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-module.exports = JSON.parse('{"title":"Style Loader options","type":"object","properties":{"injectType":{"description":"Allows to setup how styles will be injected into DOM.","link":"https://github.com/webpack-contrib/style-loader#injecttype","enum":["styleTag","singletonStyleTag","autoStyleTag","lazyStyleTag","lazySingletonStyleTag","lazyAutoStyleTag","linkTag"]},"attributes":{"description":"Adds custom attributes to tag.","link":"https://github.com/webpack-contrib/style-loader#attributes","type":"object"},"insert":{"description":"Inserts `<style>`/`<link>` at the given position.","link":"https://github.com/webpack-contrib/style-loader#insert","anyOf":[{"type":"string"},{"instanceof":"Function"}]},"base":{"description":"Sets module ID base for DLLPlugin.","link":"https://github.com/webpack-contrib/style-loader#base","type":"number"},"esModule":{"description":"Use the ES modules syntax.","link":"https://github.com/webpack-contrib/css-loader#esmodule","type":"boolean"},"styleTagTransform":{"description":"Transform tag and css when insert \'style\' tag into the DOM","link":"https://github.com/webpack-contrib/style-loader#styleTagTransform","anyOf":[{"type":"string"},{"instanceof":"Function"}]}},"additionalProperties":false}');
-
-/***/ }),
-
 /***/ "./src/utils/quotesEN.json":
 /*!*********************************!*\
   !*** ./src/utils/quotesEN.json ***!
@@ -2703,19 +1645,19 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
-/* harmony import */ var style_loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! style-loader */ "./node_modules/style-loader/dist/cjs.js");
-/* harmony import */ var style_loader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(style_loader__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
-/* harmony import */ var _css_owfont_regular_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/owfont-regular.css */ "./css/owfont-regular.css");
-/* harmony import */ var _localStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./localStorage */ "./src/localStorage.js");
-/* harmony import */ var _image_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./image-slider */ "./src/image-slider.js");
-/* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./currentTime */ "./src/currentTime.js");
-/* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./currentDate */ "./src/currentDate.js");
-/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./greeting */ "./src/greeting.js");
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./weather */ "./src/weather.js");
-/* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./quotes */ "./src/quotes.js");
-/* harmony import */ var _audioplayer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./audioplayer */ "./src/audioplayer.js");
-/* harmony import */ var _translation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./translation */ "./src/translation.js");
+/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
+/* harmony import */ var _css_owfont_regular_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/owfont-regular.css */ "./css/owfont-regular.css");
+/* harmony import */ var _js_localStorage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/localStorage */ "./src/js/localStorage.js");
+/* harmony import */ var _js_image_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/image-slider */ "./src/js/image-slider.js");
+/* harmony import */ var _js_currentTime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/currentTime */ "./src/js/currentTime.js");
+/* harmony import */ var _js_currentDate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/currentDate */ "./src/js/currentDate.js");
+/* harmony import */ var _js_greeting__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/greeting */ "./src/js/greeting.js");
+/* harmony import */ var _js_weather__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/weather */ "./src/js/weather.js");
+/* harmony import */ var _js_quotes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/quotes */ "./src/js/quotes.js");
+/* harmony import */ var _js_audioplayer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/audioplayer */ "./src/js/audioplayer.js");
+/* harmony import */ var _js_translation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/translation */ "./src/js/translation.js");
+
+// import 'style-loader';
 
 
 
@@ -2725,13 +1667,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-// import './utils/playList';
 
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.e7db5c15e23f08c0490a.js.map
+//# sourceMappingURL=bundle.c0b5825fc4c4d7db162b.js.map

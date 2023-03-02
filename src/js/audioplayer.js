@@ -30,7 +30,6 @@ const handleAudioLoaded = () => {
 
 const highlightActiveTrack = () => {
   const trackName = document.querySelector('.track-name');
-  const trackIconElement = document.querySelector('.item-active');
 
   allTracks.forEach((element, index) => {
     element.classList.remove('item-active');
@@ -47,29 +46,43 @@ const playAudio = () => {
   audio.play();
   audio.currentTime = audioCurrentTime;
   highlightActiveTrack();
-};
 
-const nextTrack = () => {
-  playNum = playNum === playList.length - 1 ? 0 : playNum + 1;
-  audioCurrentTime = 0;
-  isPlay && playAudio();
+  playButton.classList.add('pause');
+  document
+    .querySelector('.item-active')
+    .firstChild.classList.add('pause');
 };
 
 const pauseAudio = () => {
-  isPlay = false;
   audio.pause();
   audioCurrentTime = audio.currentTime;
+
+  playButton.classList.remove('pause');
+  document
+    .querySelector('.item-active')
+    .firstChild.classList.remove('pause');
 };
 
 const handlePlayButton = () => {
-  isPlay ? pauseAudio() : playAudio();
-  playButton.classList.toggle('pause');
-  document
-    .querySelector('.item-active')
-    .firstChild.classList.toggle('pause');
+  isPlay = !isPlay;
+  isPlay ? playAudio() : pauseAudio();
+};
+
+const toggleIconNextToTrackInList = () => {
+  if (
+    document
+      .querySelector('.item-active')
+      .firstChild.classList.contains('pause')
+  ) {
+    document
+      .querySelector('.item-active')
+      .firstChild.classList.remove('pause');
+  }
 };
 
 const handlePlayPrevButton = () => {
+  toggleIconNextToTrackInList();
+
   if (!playNum) {
     playNum = playList.length - 1;
   } else playNum--;
@@ -79,8 +92,10 @@ const handlePlayPrevButton = () => {
 };
 
 const handlePlayNextButton = () => {
-  nextTrack();
+  toggleIconNextToTrackInList();
 
+  playNum = playNum === playList.length - 1 ? 0 : playNum + 1;
+  audioCurrentTime = 0;
   isPlay && playAudio();
   highlightActiveTrack();
 };
@@ -162,7 +177,7 @@ audioProgress.addEventListener('input', setNewTrackTime);
 playListWrapper.addEventListener('click', handleClickToTrack);
 audio.addEventListener('loadeddata', handleAudioLoaded);
 audio.addEventListener('timeupdate', updateProgressValue);
-audio.addEventListener('ended', nextTrack);
+audio.addEventListener('ended', handlePlayNextButton);
 playButton.addEventListener('click', handlePlayButton);
 playPrev.addEventListener('click', handlePlayPrevButton);
 playNext.addEventListener('click', handlePlayNextButton);
