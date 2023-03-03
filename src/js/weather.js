@@ -58,13 +58,18 @@ export const fillElementsOnWeatherBlock = async (cityQuery) => {
 
 const searchCity = () => {
   const lang = localStorage.getItem('lang') ?? 'en';
-  let searchedCity;
-  if (!inputCity.value.toLowerCase().trim()) {
+
+  if (
+    !inputCity.value.toLowerCase().trim() &&
+    localStorage.getItem('city')
+  ) {
     weatherBlock.innerHTML = `<div class="weather-error">${langObject[lang].errorEmptyInput}</div>`;
+    inputCity.value = '';
     return;
   }
 
   //show default city weather if first visit
+  let searchedCity;
   searchedCity = !localStorage.getItem('city')
     ? langObject[lang].defaultCity
     : inputCity.value.toLowerCase().trim();

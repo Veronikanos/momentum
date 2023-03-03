@@ -1,5 +1,5 @@
 import quotesEn from '../utils/quotesEN';
-import quotesRu from '../utils/quotesRU';
+import quotesRu from '../utils/quotesUA';
 
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
