@@ -1,6 +1,6 @@
 import langObject from './languageObj';
 
-const weatherWrapper = document.querySelector('.weather-wrapper');
+// const weatherWrapper = document.querySelector('.weather-wrapper');
 const weatherBlock = document.querySelector('.weather');
 const inputCity = document.querySelector('.city');
 // const lang = localStorage.getItem('lang') ?? 'en';
@@ -27,7 +27,7 @@ export const fillElementsOnWeatherBlock = async (cityQuery) => {
 
     inputCity.value = name;
     weatherBlock.innerHTML = `
-		<ul>
+		<ul class="weatherInfoList">
     	<li>
     		<span class="last-updated-text">${
           langObject[lang].lastUpdatedText

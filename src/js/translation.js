@@ -14,7 +14,14 @@ const translateText = async () => {
   greeting.innerText = `${langObject[lang][day]},`;
   putDate();
   putQuoteToMarkup(localStorage.getItem('randomQuoteNumber'));
+
+  // if (
+  //   document
+  //     .querySelector('.weather')
+  //     .querySelector('.weatherInfoList')
+  // ) {
   await fillElementsOnWeatherBlock(localStorage.getItem('city'));
+  // }
 };
 
 for (let i = 0; i < radioGroup.length; i++) {
