@@ -1,5 +1,5 @@
 import {getTimeOfDay} from './currentTime';
-import langObject from './languageObj';
+import langObject from '../utils/languageObj';
 
 const greeting = document.querySelector('.greeting');
 

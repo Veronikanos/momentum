@@ -1,4 +1,4 @@
-import langObject from './languageObj';
+import langObject from '../utils/languageObj';
 
 export const putDate = () => {
   const date = new Date();

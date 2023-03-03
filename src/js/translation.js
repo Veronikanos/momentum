@@ -1,4 +1,4 @@
-import langObject from './languageObj';
+import langObject from '../utils/languageObj';
 import {putDate} from './currentDate';
 import {getTimeOfDay} from './currentTime';
 import {fillElementsOnWeatherBlock} from './weather';

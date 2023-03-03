@@ -1,4 +1,4 @@
-import langObject from './languageObj';
+import langObject from '../utils/languageObj';
 
 // const weatherWrapper = document.querySelector('.weather-wrapper');
 const weatherBlock = document.querySelector('.weather');
@@ -12,6 +12,7 @@ export const getWeather = async (city) => {
   );
   if (response.ok) {
     let data = await response.json();
+    console.log(data);
     return data;
   }
   return error.message;
@@ -27,29 +28,25 @@ export const fillElementsOnWeatherBlock = async (cityQuery) => {
 
     inputCity.value = name;
     weatherBlock.innerHTML = `
-		<ul class="weatherInfoList">
-    	<li>
-    		<span class="last-updated-text">${
-          langObject[lang].lastUpdatedText
-        }:</span>
-    		<span class="updated-info">${new Date().toLocaleTimeString()}</span>
-    	</li>
-
+		<ul class="weather-info-list">
     	<li class="description-container">
     		<i class="weather-icon owf owf-${weather[0].id}"></i>
     		<span class="temperature">${Math.round(main.temp)}°C</span>
     		<span class="weather-description">${weather[0].description}</span>
     	</li>
-    	<li>
-    		<span class="wind-text">${langObject[lang].wind}: </span
-    		><span class="wind">${Math.trunc(wind.speed)} ${
-      langObject[lang].windSpeed
-    }</span>
+    	<li>${langObject[lang].wind}: <span class="wind">${Math.trunc(
+      wind.speed
+    )} ${langObject[lang].windSpeed}</span>
     	</li>
-    	<li>
-    		<span class="humidity-text">${langObject[lang].humidity}:</span>
+    	<li>${langObject[lang].humidity}:
     		<span class="humidity">${Math.trunc(main.humidity)}%</span>
-    	</li></ul>
+    	</li>
+			<li class="last-updated-text">${langObject[lang].lastUpdatedText}:
+			<span class="updated-info">${new Date()
+        .toLocaleTimeString()
+        .slice(0, 5)}</span>
+		</li>
+			</ul>
     `;
   } catch (error) {
     weatherBlock.innerHTML = `<div class="weather-error">${langObject[lang].errorNoCity}</div>`;
