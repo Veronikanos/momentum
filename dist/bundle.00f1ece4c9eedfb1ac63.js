@@ -9,7 +9,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _playList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./playList */ "./src/js/playList.js");
+/* harmony import */ var _utils_playList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/playList */ "./src/utils/playList.js");
 
 const playButton = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
@@ -45,7 +45,7 @@ const highlightActiveTrack = () => {
 };
 const playAudio = () => {
   isPlay = true;
-  audio.src = _playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
+  audio.src = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
   audio.play();
   audio.currentTime = audioCurrentTime;
   highlightActiveTrack();
@@ -70,7 +70,7 @@ const toggleIconNextToTrackInList = () => {
 const handlePlayPrevButton = () => {
   toggleIconNextToTrackInList();
   if (!playNum) {
-    playNum = _playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1;
+    playNum = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1;
   } else playNum--;
   audioCurrentTime = 0;
   isPlay && playAudio();
@@ -78,14 +78,14 @@ const handlePlayPrevButton = () => {
 };
 const handlePlayNextButton = () => {
   toggleIconNextToTrackInList();
-  playNum = playNum === _playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
+  playNum = playNum === _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1 ? 0 : playNum + 1;
   audioCurrentTime = 0;
   isPlay && playAudio();
   highlightActiveTrack();
 };
 const showListOfTracks = () => {
   let arr = [];
-  _playList__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(element => {
+  _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(element => {
     arr.push(`<li class='play-item'><button class="play play-track player-icon"></button><span>${element.title}</span></li>`);
   });
   return arr;
@@ -112,7 +112,7 @@ const showTrackList = () => {
 };
 const setFirstActiveTrack = () => {
   allTracks[0].classList.add('item-active');
-  audio.src = _playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
+  audio.src = _utils_playList__WEBPACK_IMPORTED_MODULE_0__["default"][playNum].src;
   highlightActiveTrack();
 };
 const updateProgressValue = () => {
@@ -163,7 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "putDate": () => (/* binding */ putDate)
 /* harmony export */ });
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
+/* harmony import */ var _utils_languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/languageObj */ "./src/utils/languageObj.js");
 
 const putDate = () => {
   const date = new Date();
@@ -176,7 +176,7 @@ const putDate = () => {
   const currentDay = document.querySelector('.date');
   let currentDate = '';
   const lang = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
-  currentDate = date.toLocaleDateString(_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].locale, options);
+  currentDate = date.toLocaleDateString(_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].locale, options);
   currentDay.innerText = `${currentDate}`;
 };
 putDate();
@@ -232,7 +232,7 @@ showTime();
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentTime */ "./src/js/currentTime.js");
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
+/* harmony import */ var _utils_languageObj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/languageObj */ "./src/utils/languageObj.js");
 
 
 const greeting = document.querySelector('.greeting');
@@ -242,7 +242,7 @@ console.log(day);
 // if (localStorage.getItem('lang') === 'ru') {
 //   greeting.innerText = `${langObject.ru[day]},`;
 // } else {
-greeting.innerText = `${_languageObj__WEBPACK_IMPORTED_MODULE_1__["default"].en[day]},`;
+greeting.innerText = `${_utils_languageObj__WEBPACK_IMPORTED_MODULE_1__["default"].en[day]},`;
 // }
 
 /***/ }),
@@ -292,80 +292,6 @@ nextArrow.addEventListener('click', handleNextArrowClick);
 
 /***/ }),
 
-/***/ "./src/js/languageObj.js":
-/*!*******************************!*\
-  !*** ./src/js/languageObj.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const langObject = {
-  en: {
-    // langEn: 'English',
-    // langRu: 'Russian',
-    // changeLang: 'Language',
-    // widget: 'Widgets',
-    // time: 'Time',
-    // date: 'Date',
-    // weather: 'Weather in ',
-    // greeting: 'Greeting',
-    quote: 'js/quotesEN.json',
-    quoteTitle: 'Quote',
-    audioPlayer: 'Audio Player',
-    gallery: 'Background image',
-    wind: 'Wind speed',
-    windSpeed: 'm/s',
-    humidity: 'Humidity',
-    placeholder: '[Enter your name]',
-    placeholderCity: '[Enter city]',
-    defaultCity: 'Minsk',
-    morning: 'Good morning',
-    afternoon: 'Good afternoon',
-    evening: 'Good evening',
-    night: 'Good night',
-    locale: 'en-EN',
-    addBtn: 'Add',
-    errorNoCity: 'Such city doesn`t exist, try another one',
-    errorEmptyInput: 'Empty input. Type a city and try again',
-    lastUpdatedText: 'Last updated'
-  },
-  ua: {
-    // langEn: 'Английский',
-    // langRu: 'Русский',
-    // changeLang: 'Язык',
-    // widget: 'Виджеты',
-    // time: 'Время',
-    // date: 'Дата',
-    // weather: 'Погода в городе ',
-    // greeting: 'Приветствие',
-    quote: 'js/quotesUA.json',
-    quoteTitle: 'Цитата',
-    audioPlayer: 'Аудиоплеер',
-    gallery: 'Фоновое изображение',
-    wind: 'Скорость ветра',
-    windSpeed: 'м/с',
-    humidity: 'Влажность воздуха',
-    placeholder: '[Введите ваше имя]',
-    placeholderCity: '[Введите город]',
-    defaultCity: 'Минск',
-    morning: 'Доброе утро',
-    afternoon: 'Добрый день',
-    evening: 'Добрый вечер',
-    night: 'Доброй ночи',
-    locale: 'ru-RU',
-    addBtn: 'Добавить',
-    errorNoCity: 'Такого города не найдено, попробуйте другой',
-    errorEmptyInput: 'Пустая строка. Введите город и попробуйте снова',
-    lastUpdatedText: 'Последнее обновление'
-  }
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (langObject);
-
-/***/ }),
-
 /***/ "./src/js/localStorage.js":
 /*!********************************!*\
   !*** ./src/js/localStorage.js ***!
@@ -392,33 +318,6 @@ const getLocalStorage = () => {
 };
 getLocalStorage();
 window.addEventListener('beforeunload', setLocalStorage);
-
-/***/ }),
-
-/***/ "./src/js/playList.js":
-/*!****************************!*\
-  !*** ./src/js/playList.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const playList = [{
-  title: 'Aqua Caelestis',
-  src: './sounds/Aqua Caelestis.mp3'
-}, {
-  title: 'Ennio Morricone',
-  src: './sounds/Ennio Morricone.mp3'
-}, {
-  title: 'River Flows In You',
-  src: './sounds/River Flows In You.mp3'
-}, {
-  title: 'Summer Wind',
-  src: './sounds/Summer Wind.mp3'
-}];
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (playList);
 
 /***/ }),
 
@@ -463,7 +362,7 @@ buttonQuote.addEventListener('click', getRandomQuote);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
+/* harmony import */ var _utils_languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/languageObj */ "./src/utils/languageObj.js");
 /* harmony import */ var _currentDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./currentDate */ "./src/js/currentDate.js");
 /* harmony import */ var _currentTime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentTime */ "./src/js/currentTime.js");
 /* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather */ "./src/js/weather.js");
@@ -478,7 +377,7 @@ const translateText = async () => {
   const lang = localStorage.getItem('lang');
   const greeting = document.querySelector('.greeting');
   const day = (0,_currentTime__WEBPACK_IMPORTED_MODULE_2__.getTimeOfDay)();
-  greeting.innerText = `${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang][day]},`;
+  greeting.innerText = `${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang][day]},`;
   (0,_currentDate__WEBPACK_IMPORTED_MODULE_1__.putDate)();
   (0,_quotes__WEBPACK_IMPORTED_MODULE_4__.putQuoteToMarkup)(localStorage.getItem('randomQuoteNumber'));
 
@@ -526,7 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "fillElementsOnWeatherBlock": () => (/* binding */ fillElementsOnWeatherBlock),
 /* harmony export */   "getWeather": () => (/* binding */ getWeather)
 /* harmony export */ });
-/* harmony import */ var _languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./languageObj */ "./src/js/languageObj.js");
+/* harmony import */ var _utils_languageObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/languageObj */ "./src/utils/languageObj.js");
 
 
 // const weatherWrapper = document.querySelector('.weather-wrapper');
@@ -557,44 +456,144 @@ const fillElementsOnWeatherBlock = async cityQuery => {
     localStorage.setItem('city', name);
     inputCity.value = name;
     weatherBlock.innerHTML = `
-		<ul class="weatherInfoList">
-    	<li>
-    		<span class="last-updated-text">${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].lastUpdatedText}:</span>
-    		<span class="updated-info">${new Date().toLocaleTimeString()}</span>
-    	</li>
-
+		<ul class="weather-info-list">
     	<li class="description-container">
     		<i class="weather-icon owf owf-${weather[0].id}"></i>
     		<span class="temperature">${Math.round(main.temp)}°C</span>
     		<span class="weather-description">${weather[0].description}</span>
     	</li>
-    	<li>
-    		<span class="wind-text">${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].wind}: </span
-    		><span class="wind">${Math.trunc(wind.speed)} ${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].windSpeed}</span>
+    	<li>${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].wind}: <span class="wind">${Math.trunc(wind.speed)} ${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].windSpeed}</span>
     	</li>
-    	<li>
-    		<span class="humidity-text">${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].humidity}:</span>
+    	<li>${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].humidity}:
     		<span class="humidity">${Math.trunc(main.humidity)}%</span>
-    	</li></ul>
+    	</li>
+			<li class="last-updated-text">${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].lastUpdatedText}:
+			<span class="updated-info">${new Date().toLocaleTimeString().slice(0, 5)}</span>
+		</li>
+			</ul>
     `;
   } catch (error) {
-    weatherBlock.innerHTML = `<div class="weather-error">${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].errorNoCity}</div>`;
+    weatherBlock.innerHTML = `<div class="weather-error">${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].errorNoCity}</div>`;
   }
 };
 const searchCity = () => {
   const lang = localStorage.getItem('lang') ?? 'en';
-  let searchedCity;
-  if (!inputCity.value.toLowerCase().trim()) {
-    weatherBlock.innerHTML = `<div class="weather-error">${_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].errorEmptyInput}</div>`;
+  if (!inputCity.value.toLowerCase().trim() && localStorage.getItem('city')) {
+    weatherBlock.innerHTML = `<div class="weather-error">${_utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].errorEmptyInput}</div>`;
+    inputCity.value = '';
     return;
   }
 
   //show default city weather if first visit
-  searchedCity = !localStorage.getItem('city') ? _languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].defaultCity : inputCity.value.toLowerCase().trim();
+  let searchedCity;
+  searchedCity = !localStorage.getItem('city') ? _utils_languageObj__WEBPACK_IMPORTED_MODULE_0__["default"][lang].defaultCity : inputCity.value.toLowerCase().trim();
   fillElementsOnWeatherBlock(searchedCity);
 };
 searchCity();
 inputCity.addEventListener('change', searchCity);
+
+/***/ }),
+
+/***/ "./src/utils/languageObj.js":
+/*!**********************************!*\
+  !*** ./src/utils/languageObj.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const langObject = {
+  en: {
+    quote: 'js/quotesEN.json',
+    wind: 'Wind speed',
+    windSpeed: 'm/s',
+    humidity: 'Humidity',
+    placeholder: '[Enter your name]',
+    placeholderCity: '[Enter city]',
+    defaultCity: 'Kyiv',
+    morning: 'Good morning',
+    afternoon: 'Good afternoon',
+    evening: 'Good evening',
+    night: 'Good night',
+    locale: 'en-EN',
+    errorNoCity: 'Such city doesn`t exist, try another one',
+    errorEmptyInput: 'Empty input. Type a city and try again',
+    lastUpdatedText: 'Last updated'
+    // langEn: 'English',
+    // langRu: 'Russian',
+    // changeLang: 'Language',
+    // widget: 'Widgets',
+    // time: 'Time',
+    // date: 'Date',
+    // weather: 'Weather in ',
+    // greeting: 'Greeting',
+    // quoteTitle: 'Quote',
+    // audioPlayer: 'Audio Player',
+    // gallery: 'Background image',
+    // addBtn: 'Add',
+  },
+
+  ua: {
+    quote: 'js/quotesUA.json',
+    wind: 'Швидкість вітру',
+    windSpeed: 'м/с',
+    humidity: 'Вологість повітря',
+    placeholder: '[Введіть ваше ім`я]',
+    placeholderCity: '[Введіть місто]',
+    defaultCity: 'Київ',
+    morning: 'Доброго ранку',
+    afternoon: 'Доброго дня',
+    evening: 'Доброго вечора',
+    night: 'Доброї ночі',
+    locale: 'uk-UA',
+    errorNoCity: 'Таке місто не знайдено, спробуйте ще.',
+    errorEmptyInput: 'Пустий рядок. Введіть місто.',
+    lastUpdatedText: 'Останнє оновлення'
+    // langEn: 'Английский',
+    // langRu: 'Русский',
+    // changeLang: 'Язык',
+    // widget: 'Виджеты',
+    // time: 'Время',
+    // date: 'Дата',
+    // weather: 'Погода в городе ',
+    // greeting: 'Приветствие',
+    // quoteTitle: 'Цитата',
+    // audioPlayer: 'Аудиоплеер',
+    // gallery: 'Фоновое изображение',
+    // addBtn: 'Добавить',
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (langObject);
+
+/***/ }),
+
+/***/ "./src/utils/playList.js":
+/*!*******************************!*\
+  !*** ./src/utils/playList.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const playList = [{
+  title: 'Aqua Caelestis',
+  src: './sounds/Aqua Caelestis.mp3'
+}, {
+  title: 'Ennio Morricone',
+  src: './sounds/Ennio Morricone.mp3'
+}, {
+  title: 'River Flows In You',
+  src: './sounds/River Flows In You.mp3'
+}, {
+  title: 'Summer Wind',
+  src: './sounds/Summer Wind.mp3'
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (playList);
 
 /***/ }),
 
@@ -679,7 +678,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_7___ = _node_modules_css_loader_dist_runtime_g
 var ___CSS_LOADER_URL_REPLACEMENT_8___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_8___);
 var ___CSS_LOADER_URL_REPLACEMENT_9___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_9___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n  font-family: 'Arial-MT';\r\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  /* min-width: 480px; */\r\n  min-height: 100vh;\r\n  font-family: 'Arial', sans-serif;\r\n  font-size: 16px;\r\n  color: #fff;\r\n  text-align: center;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  background-blend-mode: multiply;\r\n  transition: background-image 1s ease-in-out;\r\n  @media screen and (min-width: 520px) {\r\n    min-width: 520px;\r\n  }\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  width: 100%;\r\n  /* height: 30vh; */\r\n  /* min-height: 220px; */\r\n  padding: 20px;\r\n}\r\n\r\n.wrap-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress-time-wrapper {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 10px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress {\r\n  width: 100%;\r\n}\r\n\r\n.audio-duration {\r\n  display: flex;\r\n}\r\n\r\n.audio-duration > * {\r\n  padding: 2px;\r\n}\r\n\r\n.volume_icon {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n}\r\n\r\n.mute {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n}\r\n\r\n.player-controls {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 15px;\r\n  /* margin-bottom: 20px; */\r\n}\r\n\r\n.play-list {\r\n  text-align: left;\r\n}\r\n\r\n.play-item {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 5px;\r\n  padding: 5px;\r\n  padding-left: 20px;\r\n  list-style: none;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n}\r\n\r\n.play-item:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.play.play-track {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.play-track.pause {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.item-active {\r\n  font-weight: 700;\r\n}\r\n\r\n.item-active::before {\r\n  color: #1e90ff;\r\n}\r\n\r\n.blur-box {\r\n  min-height: 140px;\r\n  -webkit-backdrop-filter: blur(3px);\r\n  backdrop-filter: blur(3px);\r\n  background-color: hsl(0, 0%, 100%, 0.15);\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n\tbox-shadow:\r\n\tinset 0 0 0.5em rgba(0,0,0,0.1),\r\n\t0.2em 0.2em 0.5em rgba(0,0,0,0.2);\r\n}\r\n\r\n.player {\r\n  display: flex;\r\n  gap: 20px;\r\n}\r\n\r\n.player-nav {\r\n  width: 250px;\r\n}\r\n\r\n.player-icon,\r\n.slider-icon,\r\n.change-quote,\r\n.volume_icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  background-size: 32px 32px;\r\n  background-position: center center;\r\n  background-repeat: no-repeat;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n}\r\n\r\n.volume_icon-size {\r\n  width: 24px;\r\n  height: 24px;\r\n  background-size: 24px 24px;\r\n}\r\n\r\n.player-icon:hover,\r\n.slider-icon:hover,\r\n.change-quote:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.player-icon:active,\r\n.slider-icon:active,\r\n.change-quote:active {\r\n  border: 0;\r\n  outline: 0;\r\n  transform: scale(1.1);\r\n}\r\n\r\n.play {\r\n  width: 40px;\r\n  height: 40px;\r\n  background-size: 40px 40px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\r\n}\r\n\r\n.pause {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\r\n}\r\n\r\n.play-prev {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\r\n}\r\n\r\n.play-next {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ");\r\n}\r\n\r\n.weather-wrapper {\r\n  display: block;\r\n  width: 250px;\r\n}\r\n\r\n.weather {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  text-align: left;\r\n}\r\n\r\n.weather ul {\r\n  list-style: none;\r\n}\r\n\r\n.weather-error {\r\n  margin-top: 10px;\r\n  color: rgb(252, 179, 179);\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  column-gap: 12px;\r\n}\r\n\r\n.weather-icon {\r\n  font-size: 44px;\r\n}\r\n\r\n.city {\r\n  width: 170px;\r\n  height: 34px;\r\n  margin-bottom: 10px;\r\n  font-size: 20px;\r\n  line-height: 24px;\r\n  color: #fff;\r\n  border: 0;\r\n  outline: 0;\r\n  border-bottom: 1px solid #fff;\r\n  background-color: transparent;\r\n}\r\n\r\n.city::placeholder {\r\n  font-size: 20px;\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.main {\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 40vh;\r\n  min-height: 260px; */\r\n  padding: 20px;\r\n}\r\n\r\n.slider-icon {\r\n  position: absolute;\r\n  top: 50%;\r\n  margin-top: -16px;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-prev {\r\n  left: 20px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ");\r\n}\r\n\r\n.slide-next {\r\n  right: 20px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\r\n}\r\n\r\n.time {\r\n  min-height: 124px;\r\n  margin-bottom: 10px;\r\n  font-family: 'Arial-MT';\r\n  font-size: 100px;\r\n  letter-spacing: -4px;\r\n}\r\n\r\n.date {\r\n  min-height: 28px;\r\n  font-size: 24px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.greeting-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: stretch;\r\n  align-items: center;\r\n  min-height: 48px;\r\n  width: 100vw;\r\n  font-size: 40px;\r\n}\r\n\r\n.greeting {\r\n  flex: 1;\r\n  padding: 10px;\r\n  text-align: right;\r\n}\r\n\r\n.name {\r\n  flex: 1;\r\n  max-width: 50%;\r\n  padding: 10px;\r\n  font-size: 40px;\r\n  text-align: left;\r\n  color: #fff;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n}\r\n\r\n.name::placeholder {\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.container {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  /* align-items: center; */\r\n  /* flex-direction: column; */\r\n}\r\n\r\n.radio_container {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  gap: 10px;\r\n  align-items: center;\r\n  background-color: #cecece;\r\n  width: fit-content;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n  height: 40px;\r\n  border-radius: 9999px;\r\n  box-shadow: inset 0.5px 0.5px 2px 0 rgba(0, 0, 0, 0.15);\r\n}\r\n\r\ninput.city {\r\n  display: block;\r\n}\r\n\r\ninput[type='radio'] {\r\n  appearance: none;\r\n  display: none;\r\n  cursor: pointer;\r\n}\r\n\r\nlabel {\r\n  font-family: 'Open Sans', sans-serif;\r\n  font-size: 16px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background-color: inherit;\r\n  width: 80px;\r\n  height: 30px;\r\n  text-align: center;\r\n  border-radius: 9999px;\r\n  overflow: hidden;\r\n  transition: linear 0.3s;\r\n  color: #6e6e6edd;\r\n  cursor: pointer;\r\n}\r\n\r\ninput[type='radio']:checked + label {\r\n  background-color: #1e90ff;\r\n  color: #f1f3f5;\r\n  font-weight: 700;\r\n  transition: 0.3s;\r\n}\r\n\r\n.footer,\r\n.quotes-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 30vh; */\r\n  /* min-height: 160px; */\r\n  padding-bottom: 20px;\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.footer-contacts {\r\n  display: flex;\r\n  gap: 10px;\r\n  align-items: center;\r\n  list-style-type: none;\r\n}\r\n\r\n.logo {\r\n  width: 70px;\r\n  height: 35px;\r\n}\r\n.gh-logo {\r\n  width: 30px;\r\n}\r\n\r\n.github-link {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n.github-link:hover {\r\n  transform: scaleX(1.1);\r\n}\r\n\r\n.change-quote {\r\n  margin-bottom: 30px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ");\r\n}\r\n\r\n.quote {\r\n  min-height: 32px;\r\n}\r\n\r\n.author {\r\n  min-height: 20px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .time {\r\n    min-height: 80px;\r\n    font-size: 72px;\r\n  }\r\n\r\n  .greeting-container {\r\n    min-height: 40px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: inherit;\r\n    padding: 5px;\r\n  }\r\n}\r\n\r\n@media (max-width: 480px) {\r\n  .time {\r\n    min-height: 10px;\r\n    font-size: 62px;\r\n  }\r\n\r\n  .date {\r\n    font-size: 20px;\r\n  }\r\n\r\n  .greeting-container {\r\n    font-size: 28px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: 32px;\r\n    padding: 5px;\r\n  }\r\n  .player {\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: space-between;\r\n  }\r\n  .play-item {\r\n    padding-bottom: 3px;\r\n    padding-top: 3px;\r\n  }\r\n  .header {\r\n    flex-direction: column;\r\n    gap: 15px;\r\n  }\r\n  .weather {\r\n    width: 100%;\r\n    gap: 20px;\r\n    flex-direction: row;\r\n    align-items: flex-end;\r\n  }\r\n  .weather-title-wrapper {\r\n    display: block;\r\n  }\r\n  .radio_container {\r\n    /* width: 50%; */\r\n    height: 38px;\r\n  }\r\n  label {\r\n    width: 52px;\r\n  }\r\n  .change-quote {\r\n    margin-bottom: 20px;\r\n  }\r\n  .city {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n@media (max-width: 420px) {\r\n  .quotes-container {\r\n    padding-top: 0;\r\n    padding-bottom: 0;\r\n  }\r\n  .player {\r\n    flex-direction: column;\r\n  }\r\n  .player-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 25px;\r\n    height: 25px;\r\n    background-size: 25px 25px;\r\n  }\r\n  .wrap-container {\r\n    margin-bottom: 5px;\r\n  }\r\n  .body {\r\n    font-size: 14px;\r\n  }\r\n  .name,\r\n  .greeting-container {\r\n    font-size: 20px;\r\n  }\r\n  .date {\r\n    font-size: 18px;\r\n    margin-bottom: 5px;\r\n  }\r\n  .time {\r\n    font-size: 52px;\r\n  }\r\n}\r\n", "",{"version":3,"sources":["webpack://./css/style.css"],"names":[],"mappings":"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B,YAAY;EACd;AACF;;AAEA;EACE;IACE,gBAAgB;IAChB,eAAe;EACjB;;EAEA;IACE,eAAe;EACjB;;EAEA;IACE,eAAe;EACjB;;EAEA;IACE,YAAY;EACd;;EAEA;IACE,eAAe;IACf,YAAY;EACd;EACA;IACE,WAAW;IACX,aAAa;IACb,8BAA8B;EAChC;EACA;IACE,mBAAmB;IACnB,gBAAgB;EAClB;EACA;IACE,sBAAsB;IACtB,SAAS;EACX;EACA;IACE,WAAW;IACX,SAAS;IACT,mBAAmB;IACnB,qBAAqB;EACvB;EACA;IACE,cAAc;EAChB;EACA;IACE,gBAAgB;IAChB,YAAY;EACd;EACA;IACE,WAAW;EACb;EACA;IACE,mBAAmB;EACrB;EACA;IACE,WAAW;EACb;AACF;;AAEA;EACE;IACE,cAAc;IACd,iBAAiB;EACnB;EACA;IACE,sBAAsB;EACxB;EACA;;;IAGE,WAAW;IACX,YAAY;IACZ,0BAA0B;EAC5B;EACA;IACE,kBAAkB;EACpB;EACA;IACE,eAAe;EACjB;EACA;;IAEE,eAAe;EACjB;EACA;IACE,eAAe;IACf,kBAAkB;EACpB;EACA;IACE,eAAe;EACjB;AACF","sourcesContent":["@font-face {\r\n  font-family: 'Arial-MT';\r\n  src: url('../assets/fonts/Arial-MT.woff');\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  /* min-width: 480px; */\r\n  min-height: 100vh;\r\n  font-family: 'Arial', sans-serif;\r\n  font-size: 16px;\r\n  color: #fff;\r\n  text-align: center;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  background-blend-mode: multiply;\r\n  transition: background-image 1s ease-in-out;\r\n  @media screen and (min-width: 520px) {\r\n    min-width: 520px;\r\n  }\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  width: 100%;\r\n  /* height: 30vh; */\r\n  /* min-height: 220px; */\r\n  padding: 20px;\r\n}\r\n\r\n.wrap-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress-time-wrapper {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 10px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress {\r\n  width: 100%;\r\n}\r\n\r\n.audio-duration {\r\n  display: flex;\r\n}\r\n\r\n.audio-duration > * {\r\n  padding: 2px;\r\n}\r\n\r\n.volume_icon {\r\n  background-image: url('../assets/svg/audio_volume.svg');\r\n}\r\n\r\n.mute {\r\n  background-image: url('../assets/svg/audio_volume_mute.svg');\r\n}\r\n\r\n.player-controls {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 15px;\r\n  /* margin-bottom: 20px; */\r\n}\r\n\r\n.play-list {\r\n  text-align: left;\r\n}\r\n\r\n.play-item {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 5px;\r\n  padding: 5px;\r\n  padding-left: 20px;\r\n  list-style: none;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n}\r\n\r\n.play-item:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.play.play-track {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.play-track.pause {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.item-active {\r\n  font-weight: 700;\r\n}\r\n\r\n.item-active::before {\r\n  color: #1e90ff;\r\n}\r\n\r\n.blur-box {\r\n  min-height: 140px;\r\n  -webkit-backdrop-filter: blur(3px);\r\n  backdrop-filter: blur(3px);\r\n  background-color: hsl(0, 0%, 100%, 0.15);\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n\tbox-shadow:\r\n\tinset 0 0 0.5em rgba(0,0,0,0.1),\r\n\t0.2em 0.2em 0.5em rgba(0,0,0,0.2);\r\n}\r\n\r\n.player {\r\n  display: flex;\r\n  gap: 20px;\r\n}\r\n\r\n.player-nav {\r\n  width: 250px;\r\n}\r\n\r\n.player-icon,\r\n.slider-icon,\r\n.change-quote,\r\n.volume_icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  background-size: 32px 32px;\r\n  background-position: center center;\r\n  background-repeat: no-repeat;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n}\r\n\r\n.volume_icon-size {\r\n  width: 24px;\r\n  height: 24px;\r\n  background-size: 24px 24px;\r\n}\r\n\r\n.player-icon:hover,\r\n.slider-icon:hover,\r\n.change-quote:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.player-icon:active,\r\n.slider-icon:active,\r\n.change-quote:active {\r\n  border: 0;\r\n  outline: 0;\r\n  transform: scale(1.1);\r\n}\r\n\r\n.play {\r\n  width: 40px;\r\n  height: 40px;\r\n  background-size: 40px 40px;\r\n  background-image: url('../assets/svg/play.svg');\r\n}\r\n\r\n.pause {\r\n  background-image: url('../assets/svg/pause.svg');\r\n}\r\n\r\n.play-prev {\r\n  background-image: url('../assets/svg/play-prev.svg');\r\n}\r\n\r\n.play-next {\r\n  background-image: url('../assets/svg/play-next.svg');\r\n}\r\n\r\n.weather-wrapper {\r\n  display: block;\r\n  width: 250px;\r\n}\r\n\r\n.weather {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  text-align: left;\r\n}\r\n\r\n.weather ul {\r\n  list-style: none;\r\n}\r\n\r\n.weather-error {\r\n  margin-top: 10px;\r\n  color: rgb(252, 179, 179);\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  column-gap: 12px;\r\n}\r\n\r\n.weather-icon {\r\n  font-size: 44px;\r\n}\r\n\r\n.city {\r\n  width: 170px;\r\n  height: 34px;\r\n  margin-bottom: 10px;\r\n  font-size: 20px;\r\n  line-height: 24px;\r\n  color: #fff;\r\n  border: 0;\r\n  outline: 0;\r\n  border-bottom: 1px solid #fff;\r\n  background-color: transparent;\r\n}\r\n\r\n.city::placeholder {\r\n  font-size: 20px;\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.main {\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 40vh;\r\n  min-height: 260px; */\r\n  padding: 20px;\r\n}\r\n\r\n.slider-icon {\r\n  position: absolute;\r\n  top: 50%;\r\n  margin-top: -16px;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-prev {\r\n  left: 20px;\r\n  background-image: url('../assets/svg/slider-prev.svg');\r\n}\r\n\r\n.slide-next {\r\n  right: 20px;\r\n  background-image: url('../assets/svg/slider-next.svg');\r\n}\r\n\r\n.time {\r\n  min-height: 124px;\r\n  margin-bottom: 10px;\r\n  font-family: 'Arial-MT';\r\n  font-size: 100px;\r\n  letter-spacing: -4px;\r\n}\r\n\r\n.date {\r\n  min-height: 28px;\r\n  font-size: 24px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.greeting-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: stretch;\r\n  align-items: center;\r\n  min-height: 48px;\r\n  width: 100vw;\r\n  font-size: 40px;\r\n}\r\n\r\n.greeting {\r\n  flex: 1;\r\n  padding: 10px;\r\n  text-align: right;\r\n}\r\n\r\n.name {\r\n  flex: 1;\r\n  max-width: 50%;\r\n  padding: 10px;\r\n  font-size: 40px;\r\n  text-align: left;\r\n  color: #fff;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n}\r\n\r\n.name::placeholder {\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.container {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  /* align-items: center; */\r\n  /* flex-direction: column; */\r\n}\r\n\r\n.radio_container {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  gap: 10px;\r\n  align-items: center;\r\n  background-color: #cecece;\r\n  width: fit-content;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n  height: 40px;\r\n  border-radius: 9999px;\r\n  box-shadow: inset 0.5px 0.5px 2px 0 rgba(0, 0, 0, 0.15);\r\n}\r\n\r\ninput.city {\r\n  display: block;\r\n}\r\n\r\ninput[type='radio'] {\r\n  appearance: none;\r\n  display: none;\r\n  cursor: pointer;\r\n}\r\n\r\nlabel {\r\n  font-family: 'Open Sans', sans-serif;\r\n  font-size: 16px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background-color: inherit;\r\n  width: 80px;\r\n  height: 30px;\r\n  text-align: center;\r\n  border-radius: 9999px;\r\n  overflow: hidden;\r\n  transition: linear 0.3s;\r\n  color: #6e6e6edd;\r\n  cursor: pointer;\r\n}\r\n\r\ninput[type='radio']:checked + label {\r\n  background-color: #1e90ff;\r\n  color: #f1f3f5;\r\n  font-weight: 700;\r\n  transition: 0.3s;\r\n}\r\n\r\n.footer,\r\n.quotes-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 30vh; */\r\n  /* min-height: 160px; */\r\n  padding-bottom: 20px;\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.footer-contacts {\r\n  display: flex;\r\n  gap: 10px;\r\n  align-items: center;\r\n  list-style-type: none;\r\n}\r\n\r\n.logo {\r\n  width: 70px;\r\n  height: 35px;\r\n}\r\n.gh-logo {\r\n  width: 30px;\r\n}\r\n\r\n.github-link {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n.github-link:hover {\r\n  transform: scaleX(1.1);\r\n}\r\n\r\n.change-quote {\r\n  margin-bottom: 30px;\r\n  background-image: url('../assets/svg/reload.svg');\r\n}\r\n\r\n.quote {\r\n  min-height: 32px;\r\n}\r\n\r\n.author {\r\n  min-height: 20px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .time {\r\n    min-height: 80px;\r\n    font-size: 72px;\r\n  }\r\n\r\n  .greeting-container {\r\n    min-height: 40px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: inherit;\r\n    padding: 5px;\r\n  }\r\n}\r\n\r\n@media (max-width: 480px) {\r\n  .time {\r\n    min-height: 10px;\r\n    font-size: 62px;\r\n  }\r\n\r\n  .date {\r\n    font-size: 20px;\r\n  }\r\n\r\n  .greeting-container {\r\n    font-size: 28px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: 32px;\r\n    padding: 5px;\r\n  }\r\n  .player {\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: space-between;\r\n  }\r\n  .play-item {\r\n    padding-bottom: 3px;\r\n    padding-top: 3px;\r\n  }\r\n  .header {\r\n    flex-direction: column;\r\n    gap: 15px;\r\n  }\r\n  .weather {\r\n    width: 100%;\r\n    gap: 20px;\r\n    flex-direction: row;\r\n    align-items: flex-end;\r\n  }\r\n  .weather-title-wrapper {\r\n    display: block;\r\n  }\r\n  .radio_container {\r\n    /* width: 50%; */\r\n    height: 38px;\r\n  }\r\n  label {\r\n    width: 52px;\r\n  }\r\n  .change-quote {\r\n    margin-bottom: 20px;\r\n  }\r\n  .city {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n@media (max-width: 420px) {\r\n  .quotes-container {\r\n    padding-top: 0;\r\n    padding-bottom: 0;\r\n  }\r\n  .player {\r\n    flex-direction: column;\r\n  }\r\n  .player-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 25px;\r\n    height: 25px;\r\n    background-size: 25px 25px;\r\n  }\r\n  .wrap-container {\r\n    margin-bottom: 5px;\r\n  }\r\n  .body {\r\n    font-size: 14px;\r\n  }\r\n  .name,\r\n  .greeting-container {\r\n    font-size: 20px;\r\n  }\r\n  .date {\r\n    font-size: 18px;\r\n    margin-bottom: 5px;\r\n  }\r\n  .time {\r\n    font-size: 52px;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n  font-family: 'Arial-MT';\r\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  /* min-width: 480px; */\r\n  min-height: 100vh;\r\n  font-family: 'Arial', sans-serif;\r\n  font-size: 16px;\r\n  color: #fff;\r\n  text-align: center;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  background-blend-mode: multiply;\r\n  transition: background-image 1s ease-in-out;\r\n  @media screen and (min-width: 520px) {\r\n    min-width: 520px;\r\n  }\r\n}\r\n\r\n.header {\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  gap: 5px;\r\n  flex-wrap: wrap;\r\n  /* height: 30vh; */\r\n  /* min-height: 220px; */\r\n  padding: 20px;\r\n}\r\n\r\n.wrap-container {\r\n  display: flex;\r\n  /* justify-content: space-between;*/\r\n  gap: 20px;\r\n  align-items: center;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress-time-wrapper {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 10px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress {\r\n  width: 100%;\r\n}\r\n\r\n.progress_container {\r\n  margin-bottom: 10px;\r\n}\r\n\r\ninput.progress:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n.audio-duration {\r\n  display: flex;\r\n}\r\n\r\n.audio-duration > * {\r\n  padding: 2px;\r\n}\r\n\r\n.volume_icon {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n}\r\n\r\n.mute {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n}\r\n\r\n.player-controls {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 15px;\r\n  /* margin-bottom: 20px; */\r\n}\r\n\r\n.play-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n}\r\n\r\n.play-item {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 5px;\r\n  /* padding: 5px; */\r\n  /* padding-left: 20px; */\r\n  list-style: none;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n\r\n  overflow: hidden; /* hide any overflow */\r\n  text-overflow: ellipsis; /* add ellipsis to the end of the text */\r\n  white-space: nowrap;\r\n}\r\n\r\n.play-item:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.play.play-track {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.play-track.pause {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.item-active {\r\n  font-weight: 700;\r\n}\r\n\r\n.item-active::before {\r\n  color: #1e90ff;\r\n}\r\n\r\n.blur-box {\r\n  min-height: 150px;\r\n  -webkit-backdrop-filter: blur(3px);\r\n  backdrop-filter: blur(3px);\r\n  background-color: hsl(0, 0%, 100%, 0.15);\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n  box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.1),\r\n    0.2em 0.2em 0.5em rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.player {\r\n  display: flex;\r\n  gap: 20px;\r\n  /* @media screen and (max-width: 767px) {\r\n    flex-direction: column;\r\n  } */\r\n}\r\n\r\n.player-nav {\r\n  /* width: 250px; */\r\n}\r\n\r\n.player-icon,\r\n.slider-icon,\r\n.change-quote,\r\n.volume_icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  background-size: 32px 32px;\r\n  background-position: center center;\r\n  background-repeat: no-repeat;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n}\r\n\r\n.volume_icon-size {\r\n  width: 24px;\r\n  height: 24px;\r\n  background-size: 24px 24px;\r\n}\r\n\r\n.player-icon:hover,\r\n.slider-icon:hover,\r\n.change-quote:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.player-icon:active,\r\n.slider-icon:active,\r\n.change-quote:active {\r\n  border: 0;\r\n  outline: 0;\r\n  transform: scale(1.1);\r\n}\r\n\r\n.play {\r\n  width: 40px;\r\n  height: 40px;\r\n  background-size: 40px 40px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\r\n}\r\n\r\n.pause {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\r\n}\r\n\r\n.play-prev {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\r\n}\r\n\r\n.play-next {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ");\r\n}\r\n\r\n.weather-wrapper {\r\n  display: block;\r\n  /* width: 250px; */\r\n  min-width: 210px;\r\n}\r\n\r\n.weather {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  text-align: left;\r\n}\r\n\r\n.weather ul {\r\n  width: 100%;\r\n  list-style: none;\r\n}\r\n\r\n.weather-info-list > li {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.last-updated-text {\r\n  margin-top: 10px;\r\n  color: #d3d3d3;\r\n  font-size: 14px;\r\n  border-top: 1px #d3d3d3 solid;\r\n}\r\n\r\n.weather-error {\r\n  margin-top: 10px;\r\n  color: rgb(252, 179, 179);\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  column-gap: 12px;\r\n}\r\n\r\n.weather-icon {\r\n  font-size: 44px;\r\n}\r\n\r\n.city {\r\n  width: 100%;\r\n  height: 30px;\r\n  margin-bottom: 5px;\r\n  font-size: 20px;\r\n  line-height: 24px;\r\n  color: #fff;\r\n  border: 0;\r\n  outline: 0;\r\n  border-bottom: 1px solid #fff;\r\n  background-color: transparent;\r\n}\r\n\r\n.city::placeholder {\r\n  font-size: 20px;\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.main {\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 40vh;\r\n  min-height: 260px; */\r\n  padding: 20px;\r\n}\r\n\r\n.slider-icon {\r\n  position: absolute;\r\n  top: 50%;\r\n  margin-top: -16px;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-prev {\r\n  left: 20px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ");\r\n}\r\n\r\n.slide-next {\r\n  right: 20px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\r\n}\r\n\r\n.time {\r\n  min-height: 124px;\r\n  margin-bottom: 10px;\r\n  font-family: 'Arial-MT';\r\n  font-size: 100px;\r\n  letter-spacing: -4px;\r\n}\r\n\r\n.date {\r\n  /* min-height: 28px; */\r\n  font-size: 24px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.greeting-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: stretch;\r\n  align-items: center;\r\n  min-height: 48px;\r\n  width: 100vw;\r\n  font-size: 40px;\r\n}\r\n\r\n.greeting {\r\n  flex: 1;\r\n  padding: 10px;\r\n  text-align: right;\r\n}\r\n\r\n.name {\r\n  flex: 1;\r\n  max-width: 50%;\r\n  padding: 10px;\r\n  font-size: 40px;\r\n  text-align: left;\r\n  color: #fff;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n}\r\n\r\n.name::placeholder {\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.container {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  /* align-items: center; */\r\n  /* flex-direction: column; */\r\n}\r\n\r\n.radio_container {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  gap: 10px;\r\n  align-items: center;\r\n  background-color: #cecece;\r\n  width: fit-content;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n  height: 40px;\r\n  border-radius: 9999px;\r\n  box-shadow: inset 0.5px 0.5px 2px 0 rgba(0, 0, 0, 0.15);\r\n}\r\n\r\ninput.city {\r\n  display: block;\r\n}\r\n\r\ninput[type='radio'] {\r\n  appearance: none;\r\n  display: none;\r\n  cursor: pointer;\r\n}\r\n\r\nlabel {\r\n  font-family: 'Open Sans', sans-serif;\r\n  font-size: 16px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background-color: inherit;\r\n  width: 80px;\r\n  height: 30px;\r\n  text-align: center;\r\n  border-radius: 9999px;\r\n  overflow: hidden;\r\n  transition: linear 0.3s;\r\n  color: #6e6e6edd;\r\n  cursor: pointer;\r\n}\r\n\r\ninput[type='radio']:checked + label {\r\n  background-color: #1e90ff;\r\n  color: #f1f3f5;\r\n  font-weight: 700;\r\n  transition: 0.3s;\r\n}\r\n\r\n.footer,\r\n.quotes-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 30vh; */\r\n  /* min-height: 160px; */\r\n  padding-bottom: 20px;\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.footer-contacts {\r\n  display: flex;\r\n  gap: 10px;\r\n  align-items: center;\r\n  list-style-type: none;\r\n}\r\n\r\n.logo {\r\n  width: 70px;\r\n  height: 35px;\r\n}\r\n.gh-logo {\r\n  width: 30px;\r\n}\r\n\r\n.github-link {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n.github-link:hover {\r\n  transform: scaleX(1.1);\r\n}\r\n\r\n.change-quote {\r\n  margin-bottom: 30px;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ");\r\n}\r\n\r\n.quote {\r\n  min-height: 32px;\r\n}\r\n\r\n.author {\r\n  min-height: 20px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .header {\r\n    align-items: center;\r\n  }\r\n\r\n  .player {\r\n    width: 250px;\r\n    flex-direction: column;\r\n    gap: 0;\r\n  }\r\n\r\n  .play-list {\r\n    gap: 5px;\r\n  }\r\n\r\n  .weather-wrapper {\r\n    width: 250px;\r\n  }\r\n\r\n  .time {\r\n    min-height: 80px;\r\n    font-size: 72px;\r\n  }\r\n\r\n  .greeting-container {\r\n    min-height: 40px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: inherit;\r\n    padding: 5px;\r\n  }\r\n\r\n  .player-icon,\r\n  .slider-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 26px;\r\n    height: 26px;\r\n    background-size: 26px 26px;\r\n  }\r\n}\r\n\r\n@media (max-width: 580px) {\r\n  .blur-box {\r\n    height: fit-content;\r\n  }\r\n\r\n  .time {\r\n    min-height: 10px;\r\n    font-size: 62px;\r\n  }\r\n\r\n  .date {\r\n    font-size: 20px;\r\n  }\r\n\r\n  .greeting-container {\r\n    font-size: 28px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: 32px;\r\n    padding: 5px;\r\n  }\r\n\r\n  .header {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .weather {\r\n    width: 100%;\r\n    gap: 20px;\r\n    flex-direction: row;\r\n    align-items: flex-end;\r\n  }\r\n\r\n  .weather-title-wrapper {\r\n    display: block;\r\n  }\r\n\r\n  .radio_container {\r\n    height: 38px;\r\n  }\r\n\r\n  label {\r\n    width: 52px;\r\n  }\r\n\r\n  .change-quote {\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .city {\r\n    width: 100%;\r\n  }\r\n}\r\n@media (max-width: 420px) {\r\n  .quotes-container {\r\n    padding-top: 0;\r\n    padding-bottom: 0;\r\n  }\r\n\r\n  .player {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .player-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 25px;\r\n    height: 25px;\r\n    background-size: 25px 25px;\r\n  }\r\n\r\n  .body {\r\n    font-size: 14px;\r\n  }\r\n\r\n  .name,\r\n  .greeting-container {\r\n    font-size: 20px;\r\n  }\r\n\r\n  .date {\r\n    font-size: 18px;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .time {\r\n    font-size: 52px;\r\n  }\r\n\r\n  .player-icon,\r\n  .slider-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 20px;\r\n    height: 20px;\r\n    background-size: 20px 20px;\r\n  }\r\n}\r\n\r\n/*********************************************\r\nFloating Menu:\r\n**********************************************/\r\n\r\nul.fmenu {\r\n  color: #fff;\r\n  display: inline-block;\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  white-space: nowrap;\r\n}\r\n\r\nul.fmenu > li.fmenu-item {\r\n  display: inline-block;\r\n  margin-right: 1rem;\r\n  position: relative;\r\n}\r\n\r\n.trigger-menu {\r\n  display: flex;\r\n  align-content: center;\r\n  align-items: center;\r\n  box-sizing: border-box;\r\n  min-width: 3rem;\r\n  max-width: 3rem;\r\n  height: 3rem;\r\n  border: (3rem * 0.3 / 2) solid transparent;\r\n  border-radius: 3rem;\r\n  overflow: hidden;\r\n  text-align: center;\r\n  background-color: #505050;\r\n  cursor: pointer;\r\n  transition: max-width ease 0.4s;\r\n}\r\n\r\n.trigger-menu i {\r\n  display: block;\r\n  margin: 0 3rem * 0.195 / 2;\r\n  color: white;\r\n  font-size: 3rem * 0.5;\r\n  transition: color ease 0.3s;\r\n}\r\n\r\n.trigger-menu span {\r\n  display: block;\r\n  font-size: 1rem;\r\n  padding: 0 1ch;\r\n}\r\n\r\n.trigger-menu.expanded {\r\n  max-width: unset !important;\r\n}\r\n\r\n.trigger-menu.open i {\r\n  color: #ffd53e;\r\n}\r\n\r\n.trigger-menu:hover:not(.expanded) i {\r\n  color: #ffd53e;\r\n}\r\n\r\n.floating-menu {\r\n  display: block;\r\n  position: absolute;\r\n  /* bottom: 3rem * 1.25; */\r\n  /* top: 3rem * 1.25; */\r\n  bottom: calc(3rem * 1.25);\r\n  min-width: 100%;\r\n  max-width: 250px;\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  background-color: #505050;\r\n  border-radius: 0.75rem;\r\n  overflow: hidden;\r\n  max-height: 0px;\r\n  z-index: 100;\r\n  opacity: 0;\r\n  transition: max-height ease 0.6s, opacity ease 0.3s;\r\n}\r\n.floating-menu > li {\r\n  padding: 0 0.5rem;\r\n}\r\n\r\n.floating-menu > li a {\r\n  color: #fff;\r\n  font-size: 0.85rem;\r\n  text-decoration: none;\r\n  display: block;\r\n  padding: 0.75rem 0.5rem;\r\n}\r\n\r\n.floating-menu > li a i {\r\n  margin-right: 1ch;\r\n}\r\n\r\n.floating-menu > li a:hover {\r\n  color: #ffd53e;\r\n}\r\n\r\n.floating-menu > li:not(:last-child) a {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.15);\r\n}\r\n", "",{"version":3,"sources":["webpack://./css/style.css"],"names":[],"mappings":"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","sourcesContent":["@font-face {\r\n  font-family: 'Arial-MT';\r\n  src: url('../assets/fonts/Arial-MT.woff');\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  /* min-width: 480px; */\r\n  min-height: 100vh;\r\n  font-family: 'Arial', sans-serif;\r\n  font-size: 16px;\r\n  color: #fff;\r\n  text-align: center;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  background-blend-mode: multiply;\r\n  transition: background-image 1s ease-in-out;\r\n  @media screen and (min-width: 520px) {\r\n    min-width: 520px;\r\n  }\r\n}\r\n\r\n.header {\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  gap: 5px;\r\n  flex-wrap: wrap;\r\n  /* height: 30vh; */\r\n  /* min-height: 220px; */\r\n  padding: 20px;\r\n}\r\n\r\n.wrap-container {\r\n  display: flex;\r\n  /* justify-content: space-between;*/\r\n  gap: 20px;\r\n  align-items: center;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress-time-wrapper {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 10px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.progress {\r\n  width: 100%;\r\n}\r\n\r\n.progress_container {\r\n  margin-bottom: 10px;\r\n}\r\n\r\ninput.progress:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n.audio-duration {\r\n  display: flex;\r\n}\r\n\r\n.audio-duration > * {\r\n  padding: 2px;\r\n}\r\n\r\n.volume_icon {\r\n  background-image: url('../assets/svg/audio_volume.svg');\r\n}\r\n\r\n.mute {\r\n  background-image: url('../assets/svg/audio_volume_mute.svg');\r\n}\r\n\r\n.player-controls {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 15px;\r\n  /* margin-bottom: 20px; */\r\n}\r\n\r\n.play-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n}\r\n\r\n.play-item {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 5px;\r\n  /* padding: 5px; */\r\n  /* padding-left: 20px; */\r\n  list-style: none;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n\r\n  overflow: hidden; /* hide any overflow */\r\n  text-overflow: ellipsis; /* add ellipsis to the end of the text */\r\n  white-space: nowrap;\r\n}\r\n\r\n.play-item:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.play.play-track {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.play-track.pause {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-size: 20px 20px;\r\n}\r\n\r\n.item-active {\r\n  font-weight: 700;\r\n}\r\n\r\n.item-active::before {\r\n  color: #1e90ff;\r\n}\r\n\r\n.blur-box {\r\n  min-height: 150px;\r\n  -webkit-backdrop-filter: blur(3px);\r\n  backdrop-filter: blur(3px);\r\n  background-color: hsl(0, 0%, 100%, 0.15);\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n  box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.1),\r\n    0.2em 0.2em 0.5em rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.player {\r\n  display: flex;\r\n  gap: 20px;\r\n  /* @media screen and (max-width: 767px) {\r\n    flex-direction: column;\r\n  } */\r\n}\r\n\r\n.player-nav {\r\n  /* width: 250px; */\r\n}\r\n\r\n.player-icon,\r\n.slider-icon,\r\n.change-quote,\r\n.volume_icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  background-size: 32px 32px;\r\n  background-position: center center;\r\n  background-repeat: no-repeat;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n  opacity: 0.8;\r\n  cursor: pointer;\r\n  transition: 0.3s;\r\n}\r\n\r\n.volume_icon-size {\r\n  width: 24px;\r\n  height: 24px;\r\n  background-size: 24px 24px;\r\n}\r\n\r\n.player-icon:hover,\r\n.slider-icon:hover,\r\n.change-quote:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.player-icon:active,\r\n.slider-icon:active,\r\n.change-quote:active {\r\n  border: 0;\r\n  outline: 0;\r\n  transform: scale(1.1);\r\n}\r\n\r\n.play {\r\n  width: 40px;\r\n  height: 40px;\r\n  background-size: 40px 40px;\r\n  background-image: url('../assets/svg/play.svg');\r\n}\r\n\r\n.pause {\r\n  background-image: url('../assets/svg/pause.svg');\r\n}\r\n\r\n.play-prev {\r\n  background-image: url('../assets/svg/play-prev.svg');\r\n}\r\n\r\n.play-next {\r\n  background-image: url('../assets/svg/play-next.svg');\r\n}\r\n\r\n.weather-wrapper {\r\n  display: block;\r\n  /* width: 250px; */\r\n  min-width: 210px;\r\n}\r\n\r\n.weather {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  text-align: left;\r\n}\r\n\r\n.weather ul {\r\n  width: 100%;\r\n  list-style: none;\r\n}\r\n\r\n.weather-info-list > li {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.last-updated-text {\r\n  margin-top: 10px;\r\n  color: #d3d3d3;\r\n  font-size: 14px;\r\n  border-top: 1px #d3d3d3 solid;\r\n}\r\n\r\n.weather-error {\r\n  margin-top: 10px;\r\n  color: rgb(252, 179, 179);\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  column-gap: 12px;\r\n}\r\n\r\n.weather-icon {\r\n  font-size: 44px;\r\n}\r\n\r\n.city {\r\n  width: 100%;\r\n  height: 30px;\r\n  margin-bottom: 5px;\r\n  font-size: 20px;\r\n  line-height: 24px;\r\n  color: #fff;\r\n  border: 0;\r\n  outline: 0;\r\n  border-bottom: 1px solid #fff;\r\n  background-color: transparent;\r\n}\r\n\r\n.city::placeholder {\r\n  font-size: 20px;\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.main {\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 40vh;\r\n  min-height: 260px; */\r\n  padding: 20px;\r\n}\r\n\r\n.slider-icon {\r\n  position: absolute;\r\n  top: 50%;\r\n  margin-top: -16px;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-prev {\r\n  left: 20px;\r\n  background-image: url('../assets/svg/slider-prev.svg');\r\n}\r\n\r\n.slide-next {\r\n  right: 20px;\r\n  background-image: url('../assets/svg/slider-next.svg');\r\n}\r\n\r\n.time {\r\n  min-height: 124px;\r\n  margin-bottom: 10px;\r\n  font-family: 'Arial-MT';\r\n  font-size: 100px;\r\n  letter-spacing: -4px;\r\n}\r\n\r\n.date {\r\n  /* min-height: 28px; */\r\n  font-size: 24px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.greeting-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: stretch;\r\n  align-items: center;\r\n  min-height: 48px;\r\n  width: 100vw;\r\n  font-size: 40px;\r\n}\r\n\r\n.greeting {\r\n  flex: 1;\r\n  padding: 10px;\r\n  text-align: right;\r\n}\r\n\r\n.name {\r\n  flex: 1;\r\n  max-width: 50%;\r\n  padding: 10px;\r\n  font-size: 40px;\r\n  text-align: left;\r\n  color: #fff;\r\n  background-color: transparent;\r\n  border: 0;\r\n  outline: 0;\r\n}\r\n\r\n.name::placeholder {\r\n  color: #fff;\r\n  opacity: 0.6;\r\n}\r\n\r\n.container {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  /* align-items: center; */\r\n  /* flex-direction: column; */\r\n}\r\n\r\n.radio_container {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  gap: 10px;\r\n  align-items: center;\r\n  background-color: #cecece;\r\n  width: fit-content;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n  height: 40px;\r\n  border-radius: 9999px;\r\n  box-shadow: inset 0.5px 0.5px 2px 0 rgba(0, 0, 0, 0.15);\r\n}\r\n\r\ninput.city {\r\n  display: block;\r\n}\r\n\r\ninput[type='radio'] {\r\n  appearance: none;\r\n  display: none;\r\n  cursor: pointer;\r\n}\r\n\r\nlabel {\r\n  font-family: 'Open Sans', sans-serif;\r\n  font-size: 16px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background-color: inherit;\r\n  width: 80px;\r\n  height: 30px;\r\n  text-align: center;\r\n  border-radius: 9999px;\r\n  overflow: hidden;\r\n  transition: linear 0.3s;\r\n  color: #6e6e6edd;\r\n  cursor: pointer;\r\n}\r\n\r\ninput[type='radio']:checked + label {\r\n  background-color: #1e90ff;\r\n  color: #f1f3f5;\r\n  font-weight: 700;\r\n  transition: 0.3s;\r\n}\r\n\r\n.footer,\r\n.quotes-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  align-items: center;\r\n  width: 100%;\r\n  /* height: 30vh; */\r\n  /* min-height: 160px; */\r\n  padding-bottom: 20px;\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.footer-contacts {\r\n  display: flex;\r\n  gap: 10px;\r\n  align-items: center;\r\n  list-style-type: none;\r\n}\r\n\r\n.logo {\r\n  width: 70px;\r\n  height: 35px;\r\n}\r\n.gh-logo {\r\n  width: 30px;\r\n}\r\n\r\n.github-link {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n.github-link:hover {\r\n  transform: scaleX(1.1);\r\n}\r\n\r\n.change-quote {\r\n  margin-bottom: 30px;\r\n  background-image: url('../assets/svg/reload.svg');\r\n}\r\n\r\n.quote {\r\n  min-height: 32px;\r\n}\r\n\r\n.author {\r\n  min-height: 20px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .header {\r\n    align-items: center;\r\n  }\r\n\r\n  .player {\r\n    width: 250px;\r\n    flex-direction: column;\r\n    gap: 0;\r\n  }\r\n\r\n  .play-list {\r\n    gap: 5px;\r\n  }\r\n\r\n  .weather-wrapper {\r\n    width: 250px;\r\n  }\r\n\r\n  .time {\r\n    min-height: 80px;\r\n    font-size: 72px;\r\n  }\r\n\r\n  .greeting-container {\r\n    min-height: 40px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: inherit;\r\n    padding: 5px;\r\n  }\r\n\r\n  .player-icon,\r\n  .slider-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 26px;\r\n    height: 26px;\r\n    background-size: 26px 26px;\r\n  }\r\n}\r\n\r\n@media (max-width: 580px) {\r\n  .blur-box {\r\n    height: fit-content;\r\n  }\r\n\r\n  .time {\r\n    min-height: 10px;\r\n    font-size: 62px;\r\n  }\r\n\r\n  .date {\r\n    font-size: 20px;\r\n  }\r\n\r\n  .greeting-container {\r\n    font-size: 28px;\r\n  }\r\n\r\n  .greeting {\r\n    padding: 5px;\r\n  }\r\n\r\n  .name {\r\n    font-size: 32px;\r\n    padding: 5px;\r\n  }\r\n\r\n  .header {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .weather {\r\n    width: 100%;\r\n    gap: 20px;\r\n    flex-direction: row;\r\n    align-items: flex-end;\r\n  }\r\n\r\n  .weather-title-wrapper {\r\n    display: block;\r\n  }\r\n\r\n  .radio_container {\r\n    height: 38px;\r\n  }\r\n\r\n  label {\r\n    width: 52px;\r\n  }\r\n\r\n  .change-quote {\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .city {\r\n    width: 100%;\r\n  }\r\n}\r\n@media (max-width: 420px) {\r\n  .quotes-container {\r\n    padding-top: 0;\r\n    padding-bottom: 0;\r\n  }\r\n\r\n  .player {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .player-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 25px;\r\n    height: 25px;\r\n    background-size: 25px 25px;\r\n  }\r\n\r\n  .body {\r\n    font-size: 14px;\r\n  }\r\n\r\n  .name,\r\n  .greeting-container {\r\n    font-size: 20px;\r\n  }\r\n\r\n  .date {\r\n    font-size: 18px;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .time {\r\n    font-size: 52px;\r\n  }\r\n\r\n  .player-icon,\r\n  .slider-icon,\r\n  .change-quote,\r\n  .volume_icon {\r\n    width: 20px;\r\n    height: 20px;\r\n    background-size: 20px 20px;\r\n  }\r\n}\r\n\r\n/*********************************************\r\nFloating Menu:\r\n**********************************************/\r\n\r\nul.fmenu {\r\n  color: #fff;\r\n  display: inline-block;\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  white-space: nowrap;\r\n}\r\n\r\nul.fmenu > li.fmenu-item {\r\n  display: inline-block;\r\n  margin-right: 1rem;\r\n  position: relative;\r\n}\r\n\r\n.trigger-menu {\r\n  display: flex;\r\n  align-content: center;\r\n  align-items: center;\r\n  box-sizing: border-box;\r\n  min-width: 3rem;\r\n  max-width: 3rem;\r\n  height: 3rem;\r\n  border: (3rem * 0.3 / 2) solid transparent;\r\n  border-radius: 3rem;\r\n  overflow: hidden;\r\n  text-align: center;\r\n  background-color: #505050;\r\n  cursor: pointer;\r\n  transition: max-width ease 0.4s;\r\n}\r\n\r\n.trigger-menu i {\r\n  display: block;\r\n  margin: 0 3rem * 0.195 / 2;\r\n  color: white;\r\n  font-size: 3rem * 0.5;\r\n  transition: color ease 0.3s;\r\n}\r\n\r\n.trigger-menu span {\r\n  display: block;\r\n  font-size: 1rem;\r\n  padding: 0 1ch;\r\n}\r\n\r\n.trigger-menu.expanded {\r\n  max-width: unset !important;\r\n}\r\n\r\n.trigger-menu.open i {\r\n  color: #ffd53e;\r\n}\r\n\r\n.trigger-menu:hover:not(.expanded) i {\r\n  color: #ffd53e;\r\n}\r\n\r\n.floating-menu {\r\n  display: block;\r\n  position: absolute;\r\n  /* bottom: 3rem * 1.25; */\r\n  /* top: 3rem * 1.25; */\r\n  bottom: calc(3rem * 1.25);\r\n  min-width: 100%;\r\n  max-width: 250px;\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  background-color: #505050;\r\n  border-radius: 0.75rem;\r\n  overflow: hidden;\r\n  max-height: 0px;\r\n  z-index: 100;\r\n  opacity: 0;\r\n  transition: max-height ease 0.6s, opacity ease 0.3s;\r\n}\r\n.floating-menu > li {\r\n  padding: 0 0.5rem;\r\n}\r\n\r\n.floating-menu > li a {\r\n  color: #fff;\r\n  font-size: 0.85rem;\r\n  text-decoration: none;\r\n  display: block;\r\n  padding: 0.75rem 0.5rem;\r\n}\r\n\r\n.floating-menu > li a i {\r\n  margin-right: 1ch;\r\n}\r\n\r\n.floating-menu > li a:hover {\r\n  color: #ffd53e;\r\n}\r\n\r\n.floating-menu > li:not(:last-child) a {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.15);\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -859,7 +858,7 @@ var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
 var ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta\r\n      name=\"viewport\"\r\n      content=\"width=device-width, initial-scale=1.0\" />\r\n    <link href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" rel=\"shortcut icon\" />\r\n\r\n    <title>momentum</title>\r\n  </head>\r\n  <body>\r\n    <header class=\"header\">\r\n      <div class=\"player blur-box\">\r\n        <div class=\"player-nav\">\r\n          <div class=\"progress-time-wrapper\">\r\n            <div class=\"track-name\"></div>\r\n            <div class=\"audio-duration\">\r\n              <div class=\"current\">0:00</div>\r\n              <div class=\"divider\">/</div>\r\n              <div class=\"length\"></div>\r\n            </div>\r\n          </div>\r\n          <div class=\"progress_container\">\r\n            <input\r\n              class=\"progress\"\r\n              type=\"range\"\r\n              name=\"audio_progress\"\r\n              id=\"audioProgress\"\r\n              min=\"0\"\r\n              max=\"100\"\r\n              value=\"0\" />\r\n          </div>\r\n          <div class=\"wrap-container\">\r\n            <div class=\"player-controls\">\r\n              <button class=\"play-prev player-icon\"></button>\r\n              <button class=\"play player-icon\"></button>\r\n              <button class=\"play-next player-icon\"></button>\r\n            </div>\r\n\r\n            <div class=\"volume-container\">\r\n              <div class=\"volume_icon volume_icon-size\"></div>\r\n            </div>\r\n            <!-- <div class=\"volume-slider\">\r\n            <div class=\"volume-percentage\"></div>\r\n          </div> -->\r\n          </div>\r\n        </div>\r\n        <ul class=\"play-list\"></ul>\r\n      </div>\r\n      <div class=\"weather-wrapper blur-box\">\r\n        <input type=\"text\" class=\"city\" placeholder=\"[enter city]\" />\r\n        <div class=\"weather\"></div>\r\n      </div>\r\n    </header>\r\n    <main class=\"main\">\r\n      <div class=\"slider-icons\">\r\n        <button class=\"slide-prev slider-icon\"></button>\r\n        <button class=\"slide-next slider-icon\"></button>\r\n      </div>\r\n      <time class=\"time\"></time>\r\n      <date class=\"date\"></date>\r\n      <div class=\"greeting-container\">\r\n        <span class=\"greeting\"></span>\r\n        <input\r\n          type=\"text\"\r\n          class=\"name\"\r\n          placeholder=\"[Enter name]\"\r\n          max=\"15\" />\r\n      </div>\r\n    </main>\r\n    <div class=\"quotes-container\">\r\n      <button class=\"change-quote\"></button>\r\n      <div>\r\n        <div class=\"quote\"></div>\r\n        <div class=\"author\"></div>\r\n      </div>\r\n    </div>\r\n    <footer class=\"footer\">\r\n      <div class=\"container\">\r\n        <div class=\"radio_container\">\r\n          <input type=\"radio\" name=\"radio\" id=\"en\" checked />\r\n          <label for=\"en\">Eng</label>\r\n          <input type=\"radio\" name=\"radio\" id=\"ru\" />\r\n          <label for=\"ru\">Рус</label>\r\n        </div>\r\n        <div class=\"footer__contacts-container\">\r\n          <ul class=\"footer-contacts\">\r\n            <li>\r\n              <a\r\n                class=\"github-link\"\r\n                href=\"https://github.com/Veronikanos\">\r\n                <img\r\n                  class=\"logo gh-logo\"\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\"\r\n                  alt=\"gh-logo\" />\r\n              </a>\r\n            </li>\r\n            <li>&copy; 2023</li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </footer>\r\n  </body>\r\n</html>\r\n";
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta\r\n      name=\"viewport\"\r\n      content=\"width=device-width, initial-scale=1.0\" />\r\n    <link href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" rel=\"shortcut icon\" />\r\n\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" />\r\n\t</head>\r\n    <title>momentum</title>\r\n  </head>\r\n  <body>\r\n    <header class=\"header\">\r\n      <div class=\"player blur-box\">\r\n        <div class=\"player-nav\">\r\n          <div class=\"progress-time-wrapper\">\r\n            <div class=\"track-name\"></div>\r\n            <div class=\"audio-duration\">\r\n              <div class=\"current\">0:00</div>\r\n              <div class=\"divider\">/</div>\r\n              <div class=\"length\"></div>\r\n            </div>\r\n          </div>\r\n          <div class=\"progress_container\">\r\n            <input\r\n              class=\"progress\"\r\n              type=\"range\"\r\n              name=\"audio_progress\"\r\n              id=\"audioProgress\"\r\n              min=\"0\"\r\n              max=\"100\"\r\n              value=\"0\" />\r\n          </div>\r\n          <div class=\"wrap-container\">\r\n            <div class=\"player-controls\">\r\n              <button class=\"play-prev player-icon\"></button>\r\n              <button class=\"play player-icon\"></button>\r\n              <button class=\"play-next player-icon\"></button>\r\n            </div>\r\n\r\n            <div class=\"volume-container\">\r\n              <div class=\"volume_icon volume_icon-size\"></div>\r\n            </div>\r\n            <!-- <div class=\"volume-slider\">\r\n            <div class=\"volume-percentage\"></div>\r\n          </div> -->\r\n          </div>\r\n        </div>\r\n        <ul class=\"play-list\"></ul>\r\n      </div>\r\n      <div class=\"weather-wrapper blur-box\">\r\n        <input type=\"text\" class=\"city\" placeholder=\"[enter city]\" />\r\n        <div class=\"weather\"></div>\r\n      </div>\r\n    </header>\r\n    <main class=\"main\">\r\n      <div class=\"slider-icons\">\r\n        <button class=\"slide-prev slider-icon\"></button>\r\n        <button class=\"slide-next slider-icon\"></button>\r\n      </div>\r\n      <time class=\"time\"></time>\r\n      <date class=\"date\"></date>\r\n      <div class=\"greeting-container\">\r\n        <span class=\"greeting\"></span>\r\n        <input\r\n          type=\"text\"\r\n          class=\"name\"\r\n          placeholder=\"[Enter name]\"\r\n          max=\"15\" />\r\n      </div>\r\n    </main>\r\n    <div class=\"quotes-container\">\r\n      <button class=\"change-quote\"></button>\r\n      <div>\r\n        <div class=\"quote\"></div>\r\n        <div class=\"author\"></div>\r\n      </div>\r\n    </div>\r\n    <footer class=\"footer\">\r\n\t\t\t<div class=\"settings\">\r\n\r\n\t\t\t</div>\r\n\t\t\t<ul class=\"fmenu\" id=\"mymenu\">\r\n\t\t\t\t<li class=\"fmenu-item\">\r\n\t\t\t\t\t\t<div class=\"trigger-menu expanded\">\r\n\t\t\t\t\t\t\t\t<i class=\"fa-regular fa-circle-user\"></i>\r\n\t\t\t\t\t\t\t\t<span class=\"text\">Language</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<ul class=\"floating-menu\">\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-regular fa-address-card\"></i>English</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-regular fa-comment-dots\"></i>Ukrainian</a></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"fmenu-item\">\r\n\t\t\t\t\t\t<div class=\"trigger-menu\">\r\n\t\t\t\t\t\t\t\t<i class=\"fa-solid fa-gear\"></i>\r\n\t\t\t\t\t\t\t\t<span class=\"text\">Settings</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<ul class=\"floating-menu\">\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-solid fa-palette\"></i>Customize theme</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-solid fa-language\"></i>Language & Timezone</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-solid fa-clock-rotate-left\"></i>Restore defaults</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-regular fa-file-lines\"></i>Inspect logs</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href='#'><i class=\"fa-regular fa-floppy-disk\"></i>Backup your profile</a></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n      <!-- <div class=\"container\">\r\n        <div class=\"radio_container\">\r\n          <input type=\"radio\" name=\"radio\" id=\"en\" checked />\r\n          <label for=\"en\">Eng</label>\r\n          <input type=\"radio\" name=\"radio\" id=\"ua\" />\r\n          <label for=\"ua\">Ukr</label>\r\n        </div> -->\r\n        <div class=\"footer__contacts-container\">\r\n          <ul class=\"footer-contacts\">\r\n            <li>\r\n              <a\r\n                class=\"github-link\"\r\n                href=\"https://github.com/Veronikanos\">\r\n                <img\r\n                  class=\"logo gh-logo\"\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\"\r\n                  alt=\"gh-logo\" />\r\n              </a>\r\n            </li>\r\n            <li>&copy; 2023</li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </footer>\r\n  </body>\r\n</html>\r\n";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -1657,6 +1656,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_quotes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/quotes */ "./src/js/quotes.js");
 /* harmony import */ var _js_audioplayer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/audioplayer */ "./src/js/audioplayer.js");
 /* harmony import */ var _js_translation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/translation */ "./src/js/translation.js");
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 // import 'style-loader';
 
@@ -1670,8 +1672,80 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+//The menu js class:
+class sikFloatingMenu {
+  constructor(menu) {
+    _defineProperty(this, "menuEl", null);
+    //The menu element:
+    this.menuEl = typeof menu === 'string' ? document.querySelector(menu) : menu;
+    //Attach handlers:
+    this.attachHandlers();
+  }
+  attachHandlers() {
+    if (this.menuEl) {
+      this.on(this.menuEl, 'click', '.trigger-menu', this._handler.bind(this));
+    }
+  }
+  open(item) {
+    let opened = item.closest('.fmenu').querySelectorAll('.trigger-menu.open');
+    for (const elem of opened) {
+      this.close(elem);
+    }
+    item.classList.add('open');
+    //expand:
+    let list = item.closest('li').querySelector('.floating-menu');
+    list.style.setProperty('max-height', this.measureExpandableList(list));
+    list.style.setProperty('opacity', '1');
+    item.style.setProperty('max-width', this.measureExpandableTrigger(item));
+    item.style.setProperty('max-width', this.measureExpandableTrigger(item));
+  }
+  close(item) {
+    let list = item.closest('li').querySelector('.floating-menu');
+    item.classList.remove('open');
+    //shrink:
+    list.style.removeProperty('max-height');
+    list.style.removeProperty('opacity');
+    item.style.removeProperty('max-width');
+  }
+  measureExpandableList(list) {
+    const items = list.querySelectorAll('li');
+    return items.length * this._getHeight(items[0], 'outer') + 10 + 'px';
+  }
+  measureExpandableTrigger(item) {
+    const textEle = item.querySelector('.text');
+    const sizeBase = this._getWidth(item, 'outer');
+    const sizeExpandLabel = this._getWidth(textEle, 'outer');
+    return sizeBase + sizeExpandLabel + 6 + 'px';
+  }
+  _handler(el, ev) {
+    if (el.classList.contains('open')) {
+      this.close(el);
+    } else {
+      this.open(el);
+    }
+  }
+  on(elem, type, selector, handler) {
+    elem.addEventListener(type, function (e) {
+      let el = e.target.closest(selector);
+      if (el) handler.call(this, el, e); //The element is bind to this
+    });
+  }
+
+  _getWidth(el, type) {
+    if (type === 'inner') return el.clientWidth;else if (type === 'outer') return el.offsetWidth;
+    return 0;
+  }
+  _getHeight(el, type) {
+    if (type === 'inner') return el.clientHeight;else if (type === 'outer') return el.offsetHeight;
+    return 0;
+  }
+}
+
+//Intialize menu:
+window.sik_menu = new sikFloatingMenu('#mymenu');
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.dc335feaa7681ff7f93a.js.map
+//# sourceMappingURL=bundle.00f1ece4c9eedfb1ac63.js.map

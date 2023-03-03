@@ -12,7 +12,6 @@ export const getWeather = async (city) => {
   );
   if (response.ok) {
     let data = await response.json();
-    console.log(data);
     return data;
   }
   return error.message;
