@@ -12,9 +12,9 @@ const langObject = {
     quoteTitle: 'Quote',
     audioPlayer: 'Audio Player',
     gallery: 'Background image',
-    wind: 'Wind speed:',
+    wind: 'Wind speed',
     windSpeed: 'm/s',
-    humidity: 'Humidity:',
+    humidity: 'Humidity',
     placeholder: '[Enter your name]',
     placeholderCity: '[Enter city]',
     defaultCity: 'Minsk',
@@ -26,7 +26,7 @@ const langObject = {
     addBtn: 'Add',
     errorNoCity: 'Such city doesn`t exist, try another one',
     errorEmptyInput: 'Empty input. Type a city and try again',
-    lastUpdatedText: 'Last updated:',
+    lastUpdatedText: 'Last updated',
   },
   ru: {
     langEn: 'Английский',
@@ -41,9 +41,9 @@ const langObject = {
     quoteTitle: 'Цитата',
     audioPlayer: 'Аудиоплеер',
     gallery: 'Фоновое изображение',
-    wind: 'Скорость ветра:',
+    wind: 'Скорость ветра',
     windSpeed: 'м/с',
-    humidity: 'Влажность воздуха:',
+    humidity: 'Влажность воздуха',
     placeholder: '[Введите ваше имя]',
     placeholderCity: '[Введите город]',
     defaultCity: 'Минск',
@@ -56,7 +56,7 @@ const langObject = {
     errorNoCity: 'Такого города не найдено, попробуйте другой',
     errorEmptyInput:
       'Пустая строка. Введите город и попробуйте снова',
-    lastUpdatedText: 'Последнее обновление:',
+    lastUpdatedText: 'Последнее обновление',
   },
 };
 

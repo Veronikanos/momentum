@@ -14,23 +14,7 @@ const translateText = async () => {
   greeting.innerText = `${langObject[lang][day]},`;
   putDate();
   putQuoteToMarkup(localStorage.getItem('randomQuoteNumber'));
-  await fillElementsOnWeatherBlock();
-
-  // const weatherIn = document.querySelector('.weatherIn');
-  const windText = document.querySelector('.wind-text');
-  const humidityText = document.querySelector('.humidity-text');
-  const lastUpdatedText = document.querySelector(
-    '.last-updated-text'
-  );
-  const cityInput = document.querySelector('.city');
-  const nameInput = document.querySelector('.name');
-
-  // weatherIn.innerText = langObject[lang].weather;
-  windText.innerText = langObject[lang].wind;
-  humidityText.innerText = langObject[lang].humidity;
-  lastUpdatedText.innerText = langObject[lang].lastUpdatedText;
-  cityInput.placeholder = langObject[lang].placeholderCity;
-  nameInput.placeholder = langObject[lang].placeholder;
+  await fillElementsOnWeatherBlock(localStorage.getItem('city'));
 };
 
 for (let i = 0; i < radioGroup.length; i++) {

@@ -8,7 +8,7 @@
     <link href="assets/8ddf56748f8527584389.ico" rel="shortcut icon" />
 
     <title>momentum</title>
-  <script defer src="bundle.c0b5825fc4c4d7db162b.js"></script></head>
+  <script defer src="bundle.d1627b3d1fe4528ebd0c.js"></script></head>
   <body>
     <header class="header">
       <div class="player">
@@ -48,37 +48,30 @@
         </div>
         <ul class="play-list"></ul>
       </div>
-      <div class="weather">
-        <div class="left-side-weather">
-          <input
-            type="text"
-            class="city"
-            placeholder="[enter city]" />
-          <!-- <div class="weather-title-wrapper">
-            <span class="weatherIn"> Weather in </span
-            ><span class="title-weather"> </span>
-          </div> -->
-          <div>
+
+      <div class="weather-wrapper">
+        <input type="text" class="city" placeholder="[enter city]" />
+        <div class="weather-error hidden"></div>
+        <ul class="weather">
+          <li>
             <span class="last-updated-text">Last updated:</span>
             <span class="updated-info"></span>
-          </div>
-        </div>
-        <div class="right-side-weather">
-          <!-- <div class="weather-error"></div> -->
-          <div class="description-container">
+          </li>
+
+          <li class="description-container">
             <i class="weather-icon owf"></i>
             <span class="temperature"></span>
             <span class="weather-description"></span>
-          </div>
-          <div>
+          </li>
+          <li>
             <span class="wind-text">Wind:</span
             ><span class="wind"></span>
-          </div>
-          <div>
+          </li>
+          <li>
             <span class="humidity-text"> Humidity:</span>
             <span class="humidity"></span>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </header>
     <main class="main">
@@ -97,7 +90,6 @@
           max="15" />
       </div>
     </main>
-
     <div class="quotes-container">
       <button class="change-quote"></button>
       <div>
@@ -113,10 +105,8 @@
           <input type="radio" name="radio" id="ru" />
           <label for="ru">Рус</label>
         </div>
-
         <div class="footer__contacts-container">
           <ul class="footer-contacts">
-            <li>&copy; 2023</li>
             <li>
               <a
                 class="github-link"
@@ -127,14 +117,7 @@
                   alt="gh-logo" />
               </a>
             </li>
-            <li>
-              <a class="logo-wrapper" href="https://rs.school/js/">
-                <img
-                  class="logo"
-                  src="assets/4a830b69f862583f6749.svg"
-                  alt="rss-logo" />
-              </a>
-            </li>
+            <li>&copy; 2023</li>
           </ul>
         </div>
       </div>

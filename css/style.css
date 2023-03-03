@@ -187,20 +187,27 @@ body {
   background-image: url('../assets/svg/play-next.svg');
 }
 
+.weather-wrapper {
+  display: block;
+}
+
 .weather {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  row-gap: 5px;
+  /* row-gap: 5px; */
   /* width: 180px; */
   /* min-height: 180px; */
   text-align: left;
+}
+
+.weather ul {
   list-style: none;
 }
 
-.weather-title-wrapper {
-  display: inline;
+.hidden {
+  display: none;
 }
 
 .weather-error {

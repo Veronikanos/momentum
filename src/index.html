@@ -48,33 +48,10 @@
         </div>
         <ul class="play-list"></ul>
       </div>
-
-      <ul class="weather">
-        <li>
-          <input
-            type="text"
-            class="city"
-            placeholder="[enter city]" />
-        </li>
-        <li>
-          <span class="last-updated-text">Last updated:</span>
-          <span class="updated-info"></span>
-        </li>
-        <!-- <div class="weather-error"></div> -->
-        <li class="description-container">
-          <i class="weather-icon owf"></i>
-          <span class="temperature"></span>
-          <span class="weather-description"></span>
-        </li>
-        <li>
-          <span class="wind-text">Wind:</span
-          ><span class="wind"></span>
-        </li>
-        <li>
-          <span class="humidity-text"> Humidity:</span>
-          <span class="humidity"></span>
-        </li>
-      </ul>
+      <div class="weather-wrapper">
+        <input type="text" class="city" placeholder="[enter city]" />
+        <div class="weather"></div>
+      </div>
     </header>
     <main class="main">
       <div class="slider-icons">
@@ -92,7 +69,6 @@
           max="15" />
       </div>
     </main>
-
     <div class="quotes-container">
       <button class="change-quote"></button>
       <div>
@@ -108,7 +84,6 @@
           <input type="radio" name="radio" id="ru" />
           <label for="ru">Рус</label>
         </div>
-
         <div class="footer__contacts-container">
           <ul class="footer-contacts">
             <li>
