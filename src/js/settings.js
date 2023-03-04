@@ -98,9 +98,7 @@ class sikFloatingMenu {
 //Intialize menu:
 window.sik_menu = new sikFloatingMenu('#mymenu');
 
-const settingsList = document.querySelector('.floating-menu');
-
-const renderSettingsMenu = () => {
+export const renderSettingsMenu = () => {
   const lang = localStorage.getItem('lang') ?? 'en';
 
   let settings = [];
@@ -115,7 +113,7 @@ const renderSettingsMenu = () => {
 				${settingTitle}
 			</div>
 			<div class="radio_container">
-				<input type="radio" name=${title} id=${id[0]} checked />
+				<input type="radio" name=${title} id=${id[0]} />
 				<label for=${id[0]}>${options[0]}</label>
 				<input type="radio" name=${title} id=${id[1]} />
 				<label for=${id[1]}>${options[1]}</label>
@@ -127,7 +125,5 @@ const renderSettingsMenu = () => {
   return settings;
 };
 
-settingsList.insertAdjacentHTML(
-  'beforeend',
-  renderSettingsMenu().join('')
-);
+document.querySelector('.floating-menu').innerHTML =
+  renderSettingsMenu().join('');
