@@ -29,7 +29,7 @@ for (let i = 0; i < radioGroup.length; i++) {
 }
 
 const getTranslationState = () => {
-  const language = localStorage.getItem('lang');
+  const language = localStorage.getItem('lang') ?? 'en';
   if (language) {
     for (let i = 0; i < radioGroup.length; i++) {
       if (radioGroup[i].id === language) {

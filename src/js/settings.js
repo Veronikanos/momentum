@@ -1,4 +1,5 @@
 import settingsObj from '../utils/settingsObj';
+import langObj from '../utils/languageObj';
 
 //The menu js class:
 class sikFloatingMenu {
@@ -100,20 +101,24 @@ window.sik_menu = new sikFloatingMenu('#mymenu');
 const settingsList = document.querySelector('.floating-menu');
 
 const renderSettingsMenu = () => {
+  const lang = localStorage.getItem('lang') ?? 'en';
+
   let settings = [];
 
-  settingsObj.forEach((item, idx) => {
+  settingsObj.forEach(({title, id, options, icon}) => {
+    const settingTitle = langObj[lang][title];
+
     settings.push(`
 		<li>
 			<div>
-				<i class="fa-solid ${item.icon}"></i>
-				${item.title.charAt(0).toUpperCase() + item.title.slice(1)}
+				<i class="fa-solid ${icon}"></i>
+				${settingTitle}
 			</div>
 			<div class="radio_container">
-				<input type="radio" name=${item.title} id=${item.id[0]} checked />
-				<label for=${item.id[0]}>${item.options[0]}</label>
-				<input type="radio" name=${item.title} id=${item.id[1]} />
-				<label for=${item.id[1]}>${item.options[1]}</label>
+				<input type="radio" name=${title} id=${id[0]} checked />
+				<label for=${id[0]}>${options[0]}</label>
+				<input type="radio" name=${title} id=${id[1]} />
+				<label for=${id[1]}>${options[1]}</label>
 			</div>
 		</li>
 		`);
