@@ -12,4 +12,5 @@ import './js/weather';
 import './js/quotes';
 import './js/audioplayer';
 import './js/settings';
+import './js/imagesApi';
 import './js/translation';

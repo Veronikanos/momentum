@@ -2,7 +2,7 @@ import settingsObj from '../utils/settingsObj';
 import langObj from '../utils/languageObj';
 
 //The menu js class:
-class sikFloatingMenu {
+export class sikFloatingMenu {
   menuEl = null;
   constructor(menu) {
     //The menu element:
@@ -96,7 +96,7 @@ class sikFloatingMenu {
 }
 
 //Intialize menu:
-window.sik_menu = new sikFloatingMenu('#mymenu');
+window.sik_menu = new sikFloatingMenu('#settingsMenu');
 
 export const renderSettingsMenu = () => {
   const lang = localStorage.getItem('lang') ?? 'en';

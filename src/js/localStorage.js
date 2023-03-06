@@ -1,5 +1,7 @@
 import {fillElementsOnWeatherBlock} from './weather';
 import {renderSettingsMenu} from './settings';
+import {setNewBackground} from './image-slider';
+import {renderImagesMenu} from './imagesApi';
 
 const input = document.querySelector('input.name');
 
@@ -59,6 +61,28 @@ const getLocalStorage = () => {
   checkedRadio.checked = true;
 
   getCheckedRadioForSettings();
+
+  const bg = localStorage.getItem('bg') ?? 'standard';
+  if (bg === 'standard') {
+    //first render images menu and set appropriate settinga
+    const floatingMenuImage = document.querySelector(
+      '.floating-menu.image'
+    );
+    floatingMenuImage.innerHTML = renderImagesMenu().join('');
+
+    localStorage.setItem('bg', 'standard');
+    setNewBackground();
+    //   const standardImageRadio = floatingMenuImage.querySelector(
+    //     'input[id="StandardOn"]'
+    //   );
+    //   const flickrImageRadio = floatingMenuImage.querySelector(
+    //     'input[id="FlickrOff"]'
+    //   );
+    //   standardImageRadio.checked = true;
+    //   flickrImageRadio.checked = true;
+    // } else {
+    //   // getBgFromApi();
+  }
 };
 
 getLocalStorage();

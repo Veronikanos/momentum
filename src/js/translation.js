@@ -63,12 +63,5 @@ const handleRadioChange = (e) => {
 };
 
 radioContainerLanguage.addEventListener('change', handleRadioChange);
-
-// const floatingMenu = document.querySelectorAll('.radio_container');
-// console.log(floatingMenu);
-
-// floatingMenu.forEach((item) =>
-//   item.addEventListener('change', handleRadioChange)
-// );
 const floatingMenu = document.querySelector('.floating-menu');
 floatingMenu.addEventListener('change', handleRadioChange);

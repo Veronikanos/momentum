@@ -35,6 +35,5 @@ const handleNextArrowClick = () => {
   setBg(normalizeNumber, currentTimeOfDay);
 };
 
-setNewBackground();
 prevArrow.addEventListener('click', handlePrevArrowClick);
 nextArrow.addEventListener('click', handleNextArrowClick);
