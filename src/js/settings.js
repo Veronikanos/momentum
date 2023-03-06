@@ -112,10 +112,10 @@ export const renderSettingsMenu = () => {
 				<i class="fa-solid ${icon}"></i>
 				${settingTitle}
 			</div>
-			<div class="radio_container">
+			<div class="radio_container" id="cont">
 				<input type="radio" name=${title} id=${id[0]} />
 				<label for=${id[0]}>${options[0]}</label>
-				<input type="radio" name=${title} id=${id[1]} />
+				<input type="radio" name=${title} id=${id[1]}  />
 				<label for=${id[1]}>${options[1]}</label>
 			</div>
 		</li>
@@ -124,6 +124,3 @@ export const renderSettingsMenu = () => {
 
   return settings;
 };
-
-document.querySelector('.floating-menu').innerHTML =
-  renderSettingsMenu().join('');

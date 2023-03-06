@@ -1,13 +1,13 @@
 import {getTimeOfDay} from './currentTime';
 import langObject from '../utils/languageObj';
 
-const greeting = document.querySelector('.greeting');
+export const greet = () => {
+  const greeting = document.querySelector('.greeting');
+  const lang = localStorage.getItem('lang') ?? 'en';
+  let day = getTimeOfDay();
+  // console.log(langObject[lang][day]);
 
-let day = getTimeOfDay();
-console.log(day);
+  greeting.innerText = `${langObject[lang][day]},`;
+};
 
-// if (localStorage.getItem('lang') === 'ru') {
-//   greeting.innerText = `${langObject.ru[day]},`;
-// } else {
-greeting.innerText = `${langObject.en[day]},`;
-// }
+// greet();
