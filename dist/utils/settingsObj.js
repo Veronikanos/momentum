@@ -12,7 +12,7 @@ const settingsObj = [
     id: ['weatherOn', 'weatherOff'],
   },
   {
-    title: 'audioPlayer',
+    title: 'player',
     icon: 'fa-circle-play',
     options: ['On', 'Off'],
     id: ['playerOn', 'playerOff'],
@@ -30,10 +30,10 @@ const settingsObj = [
     id: ['timeOn', 'timeOff'],
   },
   {
-    title: 'quoteTitle',
+    title: 'quote',
     icon: 'fa-quote-left',
     options: ['On', 'Off'],
-    id: ['quotesOn', 'quotesOff'],
+    id: ['quoteOn', 'quoteOff'],
   },
   {
     title: 'greeting',

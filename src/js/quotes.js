@@ -1,7 +1,7 @@
 import quotesEn from '../utils/quotesEN';
 import quotesRu from '../utils/quotesUA';
 
-const quote = document.querySelector('.quote');
+const quote = document.querySelector('.quoteTitle');
 const author = document.querySelector('.author');
 const buttonQuote = document.querySelector('.change-quote');
 

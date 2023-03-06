@@ -4,24 +4,21 @@ import {fillElementsOnWeatherBlock} from './weather';
 import {putQuoteToMarkup} from './quotes';
 import {renderSettingsMenu} from './settings';
 import {greet} from './greeting';
+import {getCheckedRadioForSettings} from './localStorage';
+import {hideOrShowSettingsBlocks} from './localStorage';
 
 const radioGroup = document.querySelectorAll(
   'input[name="language"]'
 );
 
 export const translateText = async () => {
-  // const lang = localStorage.getItem('lang') ?? 'en';
-
   greet();
   putDate();
   putQuoteToMarkup(localStorage.getItem('randomQuoteNumber'));
 
   await fillElementsOnWeatherBlock(localStorage.getItem('city'));
 
-  //translate settings block
-  // document.querySelector('.floating-menu').innerHTML =
-  //   renderSettingsMenu().join('');
-  // console.log(checkedRadio);
+  getCheckedRadioForSettings();
 };
 
 let radioContainerLanguage = document.querySelector('#Language');
@@ -32,7 +29,6 @@ const handleRadioChange = (e) => {
     return;
   }
 
-  // console.log(e.target);
   const checkedRadio = e.target;
 
   if (checkedRadio.name === 'language') {
@@ -50,7 +46,19 @@ const handleRadioChange = (e) => {
     );
     translateText();
   } else {
-    console.log(checkedRadio);
+    const checkedSettingElement = checkedRadio.id;
+
+    const checkedSettingInput = document.querySelector(
+      `#${checkedSettingElement}`
+    );
+
+    // set changed settings to localStorage
+    localStorage.setItem(
+      `${checkedSettingInput.name}`,
+      checkedSettingInput.id
+    );
+
+    hideOrShowSettingsBlocks(checkedSettingInput);
   }
 };
 

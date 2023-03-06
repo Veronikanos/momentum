@@ -2,12 +2,47 @@ import {fillElementsOnWeatherBlock} from './weather';
 import {renderSettingsMenu} from './settings';
 
 const input = document.querySelector('input.name');
-const inputCity = document.querySelector('.city');
 
 const setLocalStorage = () => {
   if (input.value) {
     localStorage.setItem('name', input.value);
   }
+};
+
+export const hideOrShowSettingsBlocks = (checkedSettingInput) => {
+  if (checkedSettingInput.id.includes('Off')) {
+    document.querySelector(
+      `.${checkedSettingInput.name}`
+    ).style.visibility = 'hidden';
+    document.querySelector(
+      `.${checkedSettingInput.name}`
+    ).style.opacity = '0';
+  } else {
+    document.querySelector(
+      `.${checkedSettingInput.name}`
+    ).style.visibility = 'visible';
+    document.querySelector(
+      `.${checkedSettingInput.name}`
+    ).style.opacity = '1';
+  }
+};
+
+export const getCheckedRadioForSettings = () => {
+  // get values from localStorage and render appropriate settings list
+  const radioGroup = document.querySelectorAll('.radio_container');
+
+  radioGroup.forEach((item) => {
+    const category = item.id.toLowerCase();
+    if (category !== 'language') {
+      const categoryId =
+        localStorage.getItem(`${category}`) ?? `${category}On`;
+
+      // highlight checked radio, use data from localStorage or default data
+      const checkedOption = item.querySelector(`#${categoryId}`);
+      checkedOption.checked = true;
+      hideOrShowSettingsBlocks(checkedOption);
+    }
+  });
 };
 
 const getLocalStorage = () => {
@@ -23,21 +58,7 @@ const getLocalStorage = () => {
   const checkedRadio = document.querySelector(`#${lang}`);
   checkedRadio.checked = true;
 
-  const radioGroup = document.querySelectorAll('.radio_container');
-  console.log(radioGroup);
-
-  // get values from localStorage and render appropriate settings list
-  radioGroup.forEach((item) => {
-    const category = item.id.toLowerCase();
-    if (category !== 'language') {
-      const categoryId =
-        localStorage.getItem(`${category}`) ?? `${category}On`;
-
-      // highlight checked radio, use data from localStorage or default data
-      const checkedOption = item.querySelector(`#${categoryId}`);
-      checkedOption.checked = true;
-    }
-  });
+  getCheckedRadioForSettings();
 };
 
 getLocalStorage();

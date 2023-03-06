@@ -1,7 +1,7 @@
 import langObject from '../utils/languageObj';
 
 // const weatherWrapper = document.querySelector('.weather-wrapper');
-const weatherBlock = document.querySelector('.weather');
+const weatherBlock = document.querySelector('.weather-block');
 const inputCity = document.querySelector('.city');
 // const lang = localStorage.getItem('lang') ?? 'en';
 

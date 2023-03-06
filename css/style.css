@@ -220,13 +220,13 @@ input.progress:hover {
   background-image: url('../assets/svg/play-next.svg');
 }
 
-.weather-wrapper {
+.weather {
   display: block;
   /* width: 250px; */
   min-width: 210px;
 }
 
-.weather {
+.weather-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -234,7 +234,7 @@ input.progress:hover {
   text-align: left;
 }
 
-.weather ul {
+.weather-block ul {
   width: 100%;
   list-style: none;
 }
@@ -330,7 +330,7 @@ input.progress:hover {
   margin-bottom: 20px;
 }
 
-.greeting-container {
+.greeting {
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
@@ -340,7 +340,7 @@ input.progress:hover {
   font-size: 40px;
 }
 
-.greeting {
+.greeting-text {
   flex: 1;
   padding: 10px;
   text-align: right;
@@ -375,7 +375,7 @@ input.city {
 }
 
 .footer,
-.quotes-container {
+.quoteTitle {
   display: flex;
   align-items: center;
   width: 100%;
@@ -386,7 +386,7 @@ input.city {
   padding-right: 20px;
 }
 
-.quotes-container {
+.quoteTitle {
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -419,7 +419,7 @@ input.city {
   background-image: url('../assets/svg/reload.svg');
 }
 
-.quote {
+.quoteTitle {
   min-height: 32px;
 }
 
@@ -451,12 +451,12 @@ input.city {
     font-size: 72px;
   }
 
-  .greeting-container {
+  .greeting {
     min-height: 40px;
     font-size: 30px;
   }
 
-  .greeting {
+  .greeting-text {
     padding: 5px;
   }
 
@@ -489,11 +489,11 @@ input.city {
     font-size: 20px;
   }
 
-  .greeting-container {
+  .greeting {
     font-size: 28px;
   }
 
-  .greeting {
+  .greeting-text {
     padding: 5px;
   }
 
@@ -530,7 +530,7 @@ input.city {
   }
 }
 @media (max-width: 420px) {
-  .quotes-container {
+  .quoteTitle {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -552,7 +552,7 @@ input.city {
   }
 
   .name,
-  .greeting-container {
+  .greeting {
     font-size: 20px;
   }
 

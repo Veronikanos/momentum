@@ -2,7 +2,7 @@ import {getTimeOfDay} from './currentTime';
 import langObject from '../utils/languageObj';
 
 export const greet = () => {
-  const greeting = document.querySelector('.greeting');
+  const greeting = document.querySelector('.greeting-text');
   const lang = localStorage.getItem('lang') ?? 'en';
   let day = getTimeOfDay();
 
