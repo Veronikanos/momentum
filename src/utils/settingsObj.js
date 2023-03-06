@@ -2,7 +2,7 @@ const settingsObj = [
   {
     title: 'language',
     icon: 'fa-language',
-    options: ['En', 'Ua'],
+    options: ['Eng', 'Ukr'],
     id: ['en', 'ua'],
   },
   {
@@ -15,7 +15,7 @@ const settingsObj = [
     title: 'audioPlayer',
     icon: 'fa-circle-play',
     options: ['On', 'Off'],
-    id: ['playerOn', 'playerOff'],
+    id: ['audioOn', 'audioOff'],
   },
   {
     title: 'date',
@@ -33,7 +33,7 @@ const settingsObj = [
     title: 'quoteTitle',
     icon: 'fa-quote-left',
     options: ['On', 'Off'],
-    id: ['quotesOn', 'quotesOff'],
+    id: ['quoteOn', 'quoteOff'],
   },
   {
     title: 'greeting',

@@ -2,7 +2,7 @@ const settingsObj = [
   {
     title: 'language',
     icon: 'fa-language',
-    options: ['En', 'Ua'],
+    options: ['Eng', 'Ukr'],
     id: ['en', 'ua'],
   },
   {

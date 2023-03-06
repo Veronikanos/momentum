@@ -24,30 +24,43 @@ export const translateText = async () => {
   // console.log(checkedRadio);
 };
 
-let radioContainerLanguage = document.querySelector(
-  '.radio_container'
-);
+let radioContainerLanguage = document.querySelector('#Language');
+// console.log(radioContainerLanguage);
 
 const handleRadioChange = (e) => {
   if (!e.target.matches('input[type="radio"]')) {
     return;
   }
+
+  // console.log(e.target);
   const checkedRadio = e.target;
 
-  localStorage.setItem('lang', checkedRadio.id);
+  if (checkedRadio.name === 'language') {
+    localStorage.setItem('lang', checkedRadio.id);
 
-  document.querySelector('.floating-menu').innerHTML =
-    renderSettingsMenu().join('');
-  const checked = document.querySelector(`#${checkedRadio.id}`);
-  checked.checked = true;
+    document.querySelector('.floating-menu').innerHTML =
+      renderSettingsMenu().join('');
+    const checked = document.querySelector(`#${checkedRadio.id}`);
+    checked.checked = true;
 
-  radioContainerLanguage = document.querySelector('.radio_container');
-  radioContainerLanguage.addEventListener(
-    'change',
-    handleRadioChange
-  );
-
-  translateText();
+    radioContainerLanguage = document.querySelector('#Language');
+    radioContainerLanguage.addEventListener(
+      'change',
+      handleRadioChange
+    );
+    translateText();
+  } else {
+    console.log(checkedRadio);
+  }
 };
 
 radioContainerLanguage.addEventListener('change', handleRadioChange);
+
+// const floatingMenu = document.querySelectorAll('.radio_container');
+// console.log(floatingMenu);
+
+// floatingMenu.forEach((item) =>
+//   item.addEventListener('change', handleRadioChange)
+// );
+const floatingMenu = document.querySelector('.floating-menu');
+floatingMenu.addEventListener('change', handleRadioChange);

@@ -106,17 +106,21 @@ export const renderSettingsMenu = () => {
   settingsObj.forEach(({title, id, options, icon}) => {
     const settingTitle = langObj[lang][title];
 
+    const firstOption = langObj[lang][options[0].toLowerCase()];
+    const secondOption = langObj[lang][options[1].toLowerCase()];
+
     settings.push(`
 		<li>
 			<div>
 				<i class="fa-solid ${icon}"></i>
 				${settingTitle}
 			</div>
-			<div class="radio_container" id="cont">
-				<input type="radio" name=${title} id=${id[0]} />
-				<label for=${id[0]}>${options[0]}</label>
-				<input type="radio" name=${title} id=${id[1]}  />
-				<label for=${id[1]}>${options[1]}</label>
+			<div class="radio_container" id=${langObj.en[title]}>
+				<input type="radio" name=${title} id=${id[0]}  />
+				<label for=${id[0]}>${firstOption}</label>
+				<input type="radio" name=${title} id=${id[1]}
+     />
+				<label for=${id[1]}>${secondOption}</label>
 			</div>
 		</li>
 		`);

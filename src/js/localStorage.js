@@ -18,11 +18,26 @@ const getLocalStorage = () => {
     fillElementsOnWeatherBlock(localStorage.getItem('city'));
   }
   const lang = localStorage.getItem('lang') ?? 'en';
-
-  document.querySelector('.floating-menu').innerHTML =
-    renderSettingsMenu().join('');
+  const floatingMenu = document.querySelector('.floating-menu');
+  floatingMenu.innerHTML = renderSettingsMenu().join('');
   const checkedRadio = document.querySelector(`#${lang}`);
   checkedRadio.checked = true;
+
+  const radioGroup = document.querySelectorAll('.radio_container');
+  console.log(radioGroup);
+
+  // get values from localStorage and render appropriate settings list
+  radioGroup.forEach((item) => {
+    const category = item.id.toLowerCase();
+    if (category !== 'language') {
+      const categoryId =
+        localStorage.getItem(`${category}`) ?? `${category}On`;
+
+      // highlight checked radio, use data from localStorage or default data
+      const checkedOption = item.querySelector(`#${categoryId}`);
+      checkedOption.checked = true;
+    }
+  });
 };
 
 getLocalStorage();
