@@ -12,5 +12,6 @@ import './js/weather';
 import './js/quotes';
 import './js/audioplayer';
 import './js/settings';
+import './js/clockStyleSettings';
 import './js/imagesApi';
 import './js/translation';
