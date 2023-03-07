@@ -72,13 +72,13 @@ const getLocalStorage = () => {
 
     localStorage.setItem('bg', 'standard');
     setNewBackground();
-    //   const standardImageRadio = floatingMenuImage.querySelector(
-    //     'input[id="StandardOn"]'
-    //   );
+    const standardImageRadio = floatingMenuImage.querySelector(
+      'input[id="standard"]'
+    );
     //   const flickrImageRadio = floatingMenuImage.querySelector(
     //     'input[id="FlickrOff"]'
     //   );
-    //   standardImageRadio.checked = true;
+    standardImageRadio.checked = true;
     //   flickrImageRadio.checked = true;
     // } else {
     //   // getBgFromApi();
