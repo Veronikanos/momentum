@@ -159,7 +159,7 @@ input.progress:hover {
 }
 
 .player-nav {
-  /* width: 250px; */
+  width: 250px;
 }
 
 .player-icon,
@@ -419,7 +419,7 @@ input.city {
 }
 
 .change-quote {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   background-image: url('../assets/svg/reload.svg');
 }
 
@@ -427,7 +427,7 @@ input.city {
   min-height: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .header {
     align-items: center;
   }
@@ -436,6 +436,15 @@ input.city {
     width: 250px;
     flex-direction: column;
     gap: 0;
+  }
+
+  .player-nav {
+    width: 100%;
+  }
+
+  .clock {
+    width: 200px;
+    height: 200px;
   }
 
   .play-list {
@@ -477,7 +486,11 @@ input.city {
 
 @media (max-width: 580px) {
   .blur-box {
-    height: fit-content;
+    min-height: auto;
+  }
+
+  .play-list {
+    display: none;
   }
 
   .time {
@@ -507,10 +520,15 @@ input.city {
   }
 
   .weather {
-    width: 100%;
+    width: 250px;
     gap: 20px;
     flex-direction: row;
     align-items: flex-end;
+  }
+
+  .clock {
+    width: 150px;
+    height: 150px;
   }
 
   .weather-title-wrapper {
@@ -521,14 +539,15 @@ input.city {
     width: 52px;
   }
 
-  .change-quote {
+  /* .change-quote {
     margin-bottom: 20px;
-  }
+  } */
 
   .city {
     width: 100%;
   }
 }
+
 @media (max-width: 420px) {
   .quoteTitle {
     padding-top: 0;

@@ -1,5 +1,4 @@
 import './index.html';
-// import 'style-loader';
 import '../css/style.css';
 import '../css/owfont-regular.css';
 

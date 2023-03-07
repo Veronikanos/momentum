@@ -26,10 +26,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'index.html'),
-      // assetModuleFilename: path.join(
-      //   'images',
-      //   '[name].[contenthash][ext]'
-      // ),
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.[contenthash].css',
@@ -43,9 +39,6 @@ module.exports = {
     }),
   ],
 
-  // watch: true,
-
-  // devtool: 'source-map',
   resolve: {
     fallback: {
       path: require.resolve('path-browserify'),
@@ -81,18 +74,6 @@ module.exports = {
           filename: 'fonts/[name][ext]',
         },
       },
-      // {
-      //   test: /\.mp3$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[ext]',
-      //         outputPath: 'assets/sounds/',
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.mp3$/,
         include: path.resolve(__dirname, 'src', 'sounds'),
@@ -107,16 +88,5 @@ module.exports = {
         ],
       },
     ],
-
-    //   test: /\.(png|jpg|jpeg|gif)$/i,
-    //   type: 'asset/resource',
-    // },
-    // +       {
-    // +         test: /\.svg$/,
-    // +         type: 'asset/resource',
-    // +         generator: {
-    // +           filename: path.join('icons', '[name].[contenthash][ext]'),
-    // +         },
-    // +       },
   },
 };
