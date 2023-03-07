@@ -1,4 +1,5 @@
 import {getTimeOfDay} from './currentTime';
+import {setFlickrBackground} from './imagesApi';
 
 let randomImageNumber;
 let currentTimeOfDay;
@@ -25,14 +26,20 @@ const handlePrevArrowClick = () => {
   randomImageNumber =
     randomImageNumber === 1 ? 20 : randomImageNumber - 1;
   const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
-  setBg(normalizeNumber, currentTimeOfDay);
+
+  localStorage.getItem('bg') === 'flickr'
+    ? setFlickrBackground()
+    : setBg(normalizeNumber, currentTimeOfDay);
 };
 
 const handleNextArrowClick = () => {
   randomImageNumber =
     randomImageNumber === 20 ? 1 : randomImageNumber + 1;
   const normalizeNumber = randomImageNumber.toString().padStart(2, 0);
-  setBg(normalizeNumber, currentTimeOfDay);
+
+  localStorage.getItem('bg') === 'flickr'
+    ? setFlickrBackground()
+    : setBg(normalizeNumber, currentTimeOfDay);
 };
 
 prevArrow.addEventListener('click', handlePrevArrowClick);

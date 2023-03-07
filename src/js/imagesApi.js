@@ -9,12 +9,6 @@ export const renderImagesMenu = () => {
 
   let settings = [];
 
-  // settingsObj.forEach(({title, id, options, icon}) => {
-  //   const settingTitle = langObj[lang][title];
-
-  //   const firstOption = langObj[lang][options[0].toLowerCase()];
-  //   const secondOption = langObj[lang][options[1].toLowerCase()];
-
   settings.push(`
 		<li>
 			<div>
@@ -22,7 +16,7 @@ export const renderImagesMenu = () => {
 			</div>
 			<div class="radio_container" id='Standard'>
 				<input type="radio" name='bg' id='standard'  />
-				<label for='standard'>On</label>
+				<label for='standard'></label>
 			</div>
 		</li>
 
@@ -32,18 +26,31 @@ export const renderImagesMenu = () => {
 			</div>
 			<div class="radio_container" id='Flickr'>
 				<input type="radio" name='bg' id='flickr'  />
-				<label for='flickr'>On</label>
+				<label for='flickr'></label>
 			</div>
 		</li>
 		`);
-  // });
 
   return settings;
 };
 
-const floatingMenuImage = document.querySelector(
-  '.floating-menu.image'
-);
+export const changeViewDueToSwitchBgImageSource = () => {
+  const bg = localStorage.getItem('bg') ?? 'standard';
+  bg === 'standard' ? setNewBackground() : setFlickrBackground();
+
+  const allImageRadio = floatingMenuImage.querySelectorAll(
+    'input[name="bg"]'
+  );
+  allImageRadio.forEach((item) => {
+    if (item.id === localStorage.getItem('bg')) {
+      item.checked = true;
+      item.nextElementSibling.innerText = 'On';
+    } else {
+      item.checked = false;
+      item.nextElementSibling.innerText = 'Off';
+    }
+  });
+};
 
 function getRandomNum(min, max) {
   min = Math.ceil(min);
@@ -51,14 +58,13 @@ function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const setFlickrBackground = async () => {
+export const setFlickrBackground = async () => {
   let currentTimeOfDay = getTimeOfDay();
   let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=742cf61afbc96838bf67736ac683f06e&tags=${currentTimeOfDay}&extras=url_l&format=json&nojsoncallback=1&safe_search=1`;
   const res = await fetch(url);
   const data = await res.json();
 
   const img = new Image();
-  console.log(data);
   let flickrNumber = getRandomNum(1, 99);
   if (data.stat === 'ok') {
     img.src = `${data.photos.photo[flickrNumber].url_l}`;
@@ -74,11 +80,14 @@ const handleBgImageChange = (e) => {
   const clickedRadio = e.target;
   console.log(e.target);
   localStorage.setItem('bg', clickedRadio.id);
+  changeViewDueToSwitchBgImageSource();
 
   localStorage.getItem('bg') === 'flickr'
     ? setFlickrBackground()
     : setNewBackground();
 };
 
+const floatingMenuImage = document.querySelector(
+  '.floating-menu.image'
+);
 floatingMenuImage.addEventListener('change', handleBgImageChange);
-// floatingMenuImage.innerHTML = renderImagesMenu().join('');
