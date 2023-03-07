@@ -15,7 +15,7 @@ export const showTime = () => {
   // show different style of clock
   const clockStyle = localStorage.getItem('clock') ?? 'numeric';
   if (clockStyle === 'numeric') {
-    const time = document.querySelector('.time');
+    const time = document.querySelector('time');
     time.textContent = currentTime;
   } else {
     const secondHand = document.querySelector('.second-hand');

@@ -56,13 +56,15 @@ export const getCheckedRadioForSettings = () => {
 };
 
 const getLocalStorage = () => {
+  localStorage.getItem('lang') ?? localStorage.setItem('lang', 'en');
+  const lang = localStorage.getItem('lang');
   if (localStorage.getItem('name')) {
     input.value = localStorage.getItem('name');
   }
   if (localStorage.getItem('city')) {
     fillElementsOnWeatherBlock(localStorage.getItem('city'));
   }
-  const lang = localStorage.getItem('lang') ?? 'en';
+
   const floatingMenu = document.querySelector('.floating-menu');
   floatingMenu.innerHTML = renderSettingsMenu().join('');
   const checkedRadio = document.querySelector(`#${lang}`);

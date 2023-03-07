@@ -38,6 +38,7 @@ body {
   /* height: 30vh; */
   /* min-height: 220px; */
   padding: 20px;
+  padding-bottom: 0;
 }
 
 .wrap-container {
@@ -319,7 +320,9 @@ input.progress:hover {
 }
 
 .time {
-  min-height: 124px;
+  display: flex;
+  align-items: center;
+  min-height: 250px;
   margin-bottom: 10px;
   font-family: 'Arial-MT';
   font-size: 100px;
@@ -327,9 +330,7 @@ input.progress:hover {
 }
 
 .date {
-  /* min-height: 28px; */
   font-size: 24px;
-  /* margin-bottom: 20px; */
 }
 
 .greeting {
@@ -391,6 +392,7 @@ input.city {
 .quoteTitle {
   flex-direction: column;
   justify-content: flex-end;
+  min-height: 50px;
 }
 
 .footer-contacts {
@@ -417,12 +419,8 @@ input.city {
 }
 
 .change-quote {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background-image: url('../assets/svg/reload.svg');
-}
-
-.quoteTitle {
-  min-height: 32px;
 }
 
 .author {
@@ -740,8 +738,8 @@ Classic Clock:
 **********************************************/
 
 .clock {
-  width: 20rem;
-  height: 20rem;
+  width: 250px;
+  height: 250px;
   position: relative;
 
   border: 10px solid #414040;
