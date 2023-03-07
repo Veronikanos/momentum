@@ -1,48 +1,22 @@
 import {sikFloatingMenu} from './settings';
 import {getTimeOfDay} from './currentTime';
 import {setNewBackground} from './image-slider';
-import {settingsImagesObj} from '../utils/settingsObj';
+import {changeInnerTextInsideCheckboxMenu} from './settings';
 
 window.sik_menu = new sikFloatingMenu('#settingsBackground');
 
-// export const renderSettingsMenuCheckbox = (obj) => {
-//   const lang = localStorage.getItem('lang') ?? 'en';
-
-//   let settings = [];
-
-//   obj.forEach(({title, name, id}) => {
-//     settings.push(`
-// 		<li>
-// 			<div>
-// 			${title}
-// 			</div>
-// 			<div class="radio_container">
-// 				<input type="radio" name=${name} id=${id}  />
-// 				<label for=${id}></label>
-// 			</div>
-// 		</li>
-// 		`);
-//   });
-
-//   return settings;
-// };
-
 export const changeViewDueToSwitchBgImageSource = () => {
-  const bg = localStorage.getItem('bg') ?? 'analog';
-  bg === 'analog' ? setNewBackground() : setFlickrBackground();
+  localStorage.getItem('bg') ??
+    localStorage.setItem('bg', 'standard');
+  const bg = localStorage.getItem('bg');
 
-  const allImageRadio = floatingMenuImage.querySelectorAll(
+  bg === 'standard' ? setNewBackground() : setFlickrBackground();
+
+  const allRadioBtns = floatingMenuImage.querySelectorAll(
     'input[name="bg"]'
   );
-  allImageRadio.forEach((item) => {
-    if (item.id === localStorage.getItem('bg')) {
-      item.checked = true;
-      item.nextElementSibling.innerText = 'On';
-    } else {
-      item.checked = false;
-      item.nextElementSibling.innerText = 'Off';
-    }
-  });
+
+  changeInnerTextInsideCheckboxMenu('bg', allRadioBtns);
 };
 
 function getRandomNum(min, max) {
@@ -71,7 +45,6 @@ export const setFlickrBackground = async () => {
 
 const handleBgImageChange = (e) => {
   const clickedRadio = e.target;
-  console.log(e.target);
   localStorage.setItem('bg', clickedRadio.id);
   changeViewDueToSwitchBgImageSource();
 

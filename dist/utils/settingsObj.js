@@ -43,4 +43,30 @@ const settingsObj = [
   },
 ];
 
+export const settingsImagesObj = [
+  {
+    title: 'Standard Image',
+    name: 'bg',
+    id: 'standard',
+  },
+  {
+    title: 'Flickr Image',
+    name: 'bg',
+    id: 'flickr',
+  },
+];
+
+export const settingsClockObj = [
+  {
+    title: 'Analog clock',
+    name: 'clock',
+    id: 'analog',
+  },
+  {
+    title: 'Numeric clock',
+    name: 'clock',
+    id: 'numeric',
+  },
+];
+
 export default settingsObj;

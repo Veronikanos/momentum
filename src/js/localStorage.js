@@ -5,6 +5,8 @@ import {renderSettingsMenuCheckbox} from './settings';
 // import {setFlickrBackground} from './imagesApi';
 import {changeViewDueToSwitchBgImageSource} from './imagesApi';
 import {settingsImagesObj} from '../utils/settingsObj';
+import {settingsClockObj} from '../utils/settingsObj';
+import {changeClockTypeView} from './clockStyleSettings';
 
 const input = document.querySelector('input.name');
 
@@ -15,6 +17,7 @@ const setLocalStorage = () => {
 };
 
 export const hideOrShowSettingsBlocks = (checkedSettingInput) => {
+  console.log(checkedSettingInput);
   if (checkedSettingInput.id.includes('Off')) {
     document.querySelector(
       `.${checkedSettingInput.name}`
@@ -34,7 +37,9 @@ export const hideOrShowSettingsBlocks = (checkedSettingInput) => {
 
 export const getCheckedRadioForSettings = () => {
   // get values from localStorage and render appropriate settings list
-  const radioGroup = document.querySelectorAll('.radio_container');
+  const radioGroup = document.querySelectorAll(
+    '.radio_container.settings'
+  );
 
   radioGroup.forEach((item) => {
     const category = item.id.toLowerCase();
@@ -69,10 +74,19 @@ const getLocalStorage = () => {
   const floatingMenuImage = document.querySelector(
     '.floating-menu.image'
   );
+
+  // console.log(settingsImagesObj);
   floatingMenuImage.innerHTML =
     renderSettingsMenuCheckbox(settingsImagesObj).join('');
-
   changeViewDueToSwitchBgImageSource();
+
+  //first render clock menu and set appropriate settings
+  const floatingMenuClock = document.querySelector(
+    '.floating-menu.clock-menu'
+  );
+  floatingMenuClock.innerHTML =
+    renderSettingsMenuCheckbox(settingsClockObj).join('');
+  changeClockTypeView();
 };
 
 getLocalStorage();

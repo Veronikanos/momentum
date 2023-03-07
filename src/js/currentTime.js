@@ -8,13 +8,13 @@ const timeBrakepoints = [
   '18:00:00',
 ];
 
-const showTime = () => {
+export const showTime = () => {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
 
   // show different style of clock
-  const clockStyle = localStorage.getItem('clockStyle') ?? 'classic';
-  if (clockStyle === 'classic') {
+  const clockStyle = localStorage.getItem('clock') ?? 'numeric';
+  if (clockStyle === 'numeric') {
     const time = document.querySelector('.time');
     time.textContent = currentTime;
   } else {

@@ -59,13 +59,13 @@ export const settingsImagesObj = [
 export const settingsClockObj = [
   {
     title: 'Analog clock',
-    name: 'analog',
-    id: 'clock',
+    name: 'clock',
+    id: 'analog',
   },
   {
     title: 'Numeric clock',
-    name: 'numeric',
-    id: 'clock',
+    name: 'clock',
+    id: 'numeric',
   },
 ];
 

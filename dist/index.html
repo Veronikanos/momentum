@@ -8,7 +8,7 @@
     <link href="assets/8ddf56748f8527584389.ico" rel="shortcut icon" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-	<script defer src="bundle.f1fd98377ce07f079206.js"></script></head>
+	<script defer src="bundle.05d981884348345cc340.js"></script></head>
     <title>momentum</title>
   </head>
   <body>
@@ -60,7 +60,22 @@
         <button class="slide-prev slider-icon"></button>
         <button class="slide-next slider-icon"></button>
       </div>
-      <time class="time"></time>
+      <time class="time numeric clock-js"></time>
+
+			<div class="clock analog clock-js">
+				<div class="outer-clock-face">
+					<div class="marking marking-one"></div>
+					<div class="marking marking-two"></div>
+					<div class="marking marking-three"></div>
+					<div class="marking marking-four"></div>
+				</div>
+				
+				<div class="inner-clock-face">
+					<div class="hand hour-hand"></div>
+					<div class="hand min-hand"></div>
+					<div class="hand second-hand"></div>
+				</div>
+			</div>
       <date class="date"></date>
       <div class="greeting greeting-container">
         <span class="greeting-text"></span>
@@ -82,25 +97,35 @@
 			<div class="settings">
 
 			</div>
-			<ul class="fmenu" id="mymenu">
+			<ul class="fmenu" id="settingsMenu">
 				<li class="fmenu-item">
 						<div class="trigger-menu">
 								<i class="fa-solid fa-gear"></i>
 								<span class="text">Settings</span>
 						</div>
 						<ul class="floating-menu">
-								<!-- <li>
-									<div>
-										<i class="fa-solid fa-language"></i>
-										Language 
-									</div>
-									<div class="radio_container">
-										<input type="radio" name="language" id="en" checked />
-										<label for="en">En</label>
-										<input type="radio" name="language" id="ua" />
-										<label for="ua">Ua</label>
-									</div>
-								</li> -->
+						</ul>
+				</li>
+			</ul>
+
+			<ul class="fmenu" id="settingsBackground">
+				<li class="fmenu-item">
+						<div class="trigger-menu">
+								<i class="fa-solid fa-image"></i>
+								<span class="text">Images</span>
+						</div>
+						<ul class="floating-menu image">
+						</ul>
+				</li>
+			</ul>
+
+			<ul class="fmenu" id="clockStyle">
+				<li class="fmenu-item">
+						<div class="trigger-menu">
+								<i class="fa-solid fa-clock"></i>
+								<span class="text">Clock style</span>
+						</div>
+						<ul class="floating-menu clock-menu">
 						</ul>
 				</li>
 			</ul>

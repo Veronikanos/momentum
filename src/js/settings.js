@@ -115,7 +115,7 @@ export const renderSettingsMenu = () => {
 				<i class="fa-solid ${icon}"></i>
 				${settingTitle}
 			</div>
-			<div class="radio_container" id=${langObj.en[title]}>
+			<div class="radio_container settings" id=${langObj.en[title]}>
 				<input type="radio" name=${title} id=${id[0]}  />
 				<label for=${id[0]}>${firstOption}</label>
 				<input type="radio" name=${title} id=${id[1]}
@@ -130,8 +130,6 @@ export const renderSettingsMenu = () => {
 };
 
 export const renderSettingsMenuCheckbox = (obj) => {
-  const lang = localStorage.getItem('lang') ?? 'en';
-
   let settings = [];
 
   obj.forEach(({title, name, id}) => {
@@ -149,4 +147,19 @@ export const renderSettingsMenuCheckbox = (obj) => {
   });
 
   return settings;
+};
+
+export const changeInnerTextInsideCheckboxMenu = (
+  inputName,
+  btnsGroup
+) => {
+  btnsGroup.forEach((item) => {
+    if (item.id === localStorage.getItem(`${inputName}`)) {
+      item.checked = true;
+      item.nextElementSibling.innerText = 'On';
+    } else {
+      item.checked = false;
+      item.nextElementSibling.innerText = 'Off';
+    }
+  });
 };
