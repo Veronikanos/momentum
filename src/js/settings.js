@@ -128,3 +128,25 @@ export const renderSettingsMenu = () => {
 
   return settings;
 };
+
+export const renderSettingsMenuCheckbox = (obj) => {
+  const lang = localStorage.getItem('lang') ?? 'en';
+
+  let settings = [];
+
+  obj.forEach(({title, name, id}) => {
+    settings.push(`
+		<li>
+			<div>
+			${title}
+			</div>
+			<div class="radio_container">
+				<input type="radio" name=${name} id=${id}  />
+				<label for=${id}></label>
+			</div>
+		</li>
+		`);
+  });
+
+  return settings;
+};

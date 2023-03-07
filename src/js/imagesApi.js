@@ -1,42 +1,35 @@
 import {sikFloatingMenu} from './settings';
 import {getTimeOfDay} from './currentTime';
 import {setNewBackground} from './image-slider';
+import {settingsImagesObj} from '../utils/settingsObj';
 
 window.sik_menu = new sikFloatingMenu('#settingsBackground');
 
-export const renderImagesMenu = () => {
-  const lang = localStorage.getItem('lang') ?? 'en';
+// export const renderSettingsMenuCheckbox = (obj) => {
+//   const lang = localStorage.getItem('lang') ?? 'en';
 
-  let settings = [];
+//   let settings = [];
 
-  settings.push(`
-		<li>
-			<div>
-				Standard Image
-			</div>
-			<div class="radio_container" id='Standard'>
-				<input type="radio" name='bg' id='standard'  />
-				<label for='standard'></label>
-			</div>
-		</li>
+//   obj.forEach(({title, name, id}) => {
+//     settings.push(`
+// 		<li>
+// 			<div>
+// 			${title}
+// 			</div>
+// 			<div class="radio_container">
+// 				<input type="radio" name=${name} id=${id}  />
+// 				<label for=${id}></label>
+// 			</div>
+// 		</li>
+// 		`);
+//   });
 
-		<li>
-			<div>
-			Flickr Image
-			</div>
-			<div class="radio_container" id='Flickr'>
-				<input type="radio" name='bg' id='flickr'  />
-				<label for='flickr'></label>
-			</div>
-		</li>
-		`);
-
-  return settings;
-};
+//   return settings;
+// };
 
 export const changeViewDueToSwitchBgImageSource = () => {
-  const bg = localStorage.getItem('bg') ?? 'standard';
-  bg === 'standard' ? setNewBackground() : setFlickrBackground();
+  const bg = localStorage.getItem('bg') ?? 'analog';
+  bg === 'analog' ? setNewBackground() : setFlickrBackground();
 
   const allImageRadio = floatingMenuImage.querySelectorAll(
     'input[name="bg"]'

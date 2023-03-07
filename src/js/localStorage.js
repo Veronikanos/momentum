@@ -1,9 +1,10 @@
 import {fillElementsOnWeatherBlock} from './weather';
 import {renderSettingsMenu} from './settings';
 import {setNewBackground} from './image-slider';
-import {renderImagesMenu} from './imagesApi';
+import {renderSettingsMenuCheckbox} from './settings';
 // import {setFlickrBackground} from './imagesApi';
 import {changeViewDueToSwitchBgImageSource} from './imagesApi';
+import {settingsImagesObj} from '../utils/settingsObj';
 
 const input = document.querySelector('input.name');
 
@@ -63,11 +64,13 @@ const getLocalStorage = () => {
   checkedRadio.checked = true;
 
   getCheckedRadioForSettings();
+
   //first render images menu and set appropriate settings
   const floatingMenuImage = document.querySelector(
     '.floating-menu.image'
   );
-  floatingMenuImage.innerHTML = renderImagesMenu().join('');
+  floatingMenuImage.innerHTML =
+    renderSettingsMenuCheckbox(settingsImagesObj).join('');
 
   changeViewDueToSwitchBgImageSource();
 };
