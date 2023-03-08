@@ -22,7 +22,6 @@ export const translateText = async () => {
 };
 
 let radioContainerLanguage = document.querySelector('#Language');
-// console.log(radioContainerLanguage);
 
 const handleRadioChange = (e) => {
   if (!e.target.matches('input[type="radio"]')) {

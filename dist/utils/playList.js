@@ -4,7 +4,7 @@ const playList = [
     src: './sounds/truth_of_touch.mp3',
   },
   {
-    title: 'Anthem of Ukraine (rock)',
+    title: 'Anthem of Ukraine',
     src: './sounds/anthem_of_Ukraine.mp3',
   },
   {

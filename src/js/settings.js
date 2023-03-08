@@ -18,10 +18,31 @@ export class sikFloatingMenu {
         this.menuEl,
         'click',
         '.trigger-menu',
-        this._handler.bind(this)
+        this.handler.bind(this)
+      );
+      // Add a click event listener to the document object to close any open menus when clicked outside
+      document.addEventListener(
+        'click',
+        this.closeAllMenus.bind(this)
       );
     }
   }
+
+  closeAllMenus(event) {
+    const openedMenus = document.querySelectorAll(
+      '.trigger-menu.open'
+    );
+    // Loop through all open menus and close them if the clicked element is not inside any of them
+    for (const menu of openedMenus) {
+      const isClickedInsideMenu = menu
+        .closest('.fmenu')
+        .contains(event.target);
+      if (!isClickedInsideMenu) {
+        this.close(menu);
+      }
+    }
+  }
+
   open(item) {
     let opened = item
       .closest('.fmenu')
@@ -60,17 +81,17 @@ export class sikFloatingMenu {
   measureExpandableList(list) {
     const items = list.querySelectorAll('li');
     return (
-      items.length * this._getHeight(items[0], 'outer') + 10 + 'px'
+      items.length * this.getHeight(items[0], 'outer') + 10 + 'px'
     );
   }
 
   measureExpandableTrigger(item) {
     const textEle = item.querySelector('.text');
-    const sizeBase = this._getWidth(item, 'outer');
-    const sizeExpandLabel = this._getWidth(textEle, 'outer');
+    const sizeBase = this.getWidth(item, 'outer');
+    const sizeExpandLabel = this.getWidth(textEle, 'outer');
     return sizeBase + sizeExpandLabel + 6 + 'px';
   }
-  _handler(el, ev) {
+  handler(el, ev) {
     if (el.classList.contains('open')) {
       this.close(el);
     } else {
@@ -83,12 +104,12 @@ export class sikFloatingMenu {
       if (el) handler.call(this, el, e); //The element is bind to this
     });
   }
-  _getWidth(el, type) {
+  getWidth(el, type) {
     if (type === 'inner') return el.clientWidth;
     else if (type === 'outer') return el.offsetWidth;
     return 0;
   }
-  _getHeight(el, type) {
+  getHeight(el, type) {
     if (type === 'inner') return el.clientHeight;
     else if (type === 'outer') return el.offsetHeight;
     return 0;

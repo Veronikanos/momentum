@@ -1,12 +1,11 @@
 import {fillElementsOnWeatherBlock} from './weather';
 import {renderSettingsMenu} from './settings';
-import {setNewBackground} from './image-slider';
 import {renderSettingsMenuCheckbox} from './settings';
-// import {setFlickrBackground} from './imagesApi';
 import {changeViewDueToSwitchBgImageSource} from './imagesApi';
 import {settingsImagesObj} from '../utils/settingsObj';
 import {settingsClockObj} from '../utils/settingsObj';
 import {changeClockTypeView} from './clockStyleSettings';
+import {greet} from './greeting';
 
 const input = document.querySelector('input.name');
 
@@ -17,7 +16,6 @@ const setLocalStorage = () => {
 };
 
 export const hideOrShowSettingsBlocks = (checkedSettingInput) => {
-  console.log(checkedSettingInput);
   if (checkedSettingInput.id.includes('Off')) {
     document.querySelector(
       `.${checkedSettingInput.name}`
@@ -64,6 +62,8 @@ const getLocalStorage = () => {
   if (localStorage.getItem('city')) {
     fillElementsOnWeatherBlock(localStorage.getItem('city'));
   }
+
+  greet();
 
   const floatingMenu = document.querySelector('.floating-menu');
   floatingMenu.innerHTML = renderSettingsMenu().join('');
