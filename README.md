@@ -1,7 +1,7 @@
 # Momentum
 
 Stay organized, and keep motivated to achieve your goals with my version of Momentum extension. 😀
-Enjoy this app [here](https://64075d7ef0d9c118b1ee035f--veronikanos-momentum.netlify.app)
+Enjoy this app [here](https://64087e459903cc258b393154--veronikanos-momentum.netlify.app)
 
 ## ☆☆ Key Features ☆☆
 
@@ -24,7 +24,7 @@ There were implemented an app translation without libraries as well. Tried to ge
 
 ![11](https://user-images.githubusercontent.com/49239848/223549350-aacd13a4-53b6-4554-8121-efa3fc884016.png)
 
-📌No more words! Just try [here](https://64075d7ef0d9c118b1ee035f--veronikanos-momentum.netlify.app)
+📌No more words! Just try [here](https://64087e459903cc258b393154--veronikanos-momentum.netlify.app)
 
 ---
 
